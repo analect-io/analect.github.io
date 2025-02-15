@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-GB" xml:lang="en-GB"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.40">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Colum McCoole">
+<meta name="dcterms.date" content="2025-02-10">
+
+<title>2. AI is Here, But its Business-Applicability may not be Obvious</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<script src="../../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap-3641037507ad89c0bd4681117c902dad.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-5CKF247L1G"></script>
+
+<script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-5CKF247L1G', { 'anonymize_ip': true});
+</script>
+<script data-goatcounter="https://analect.goatcounter.com/count" async="" src="//gc.zgo.at/count.js"></script>
+
+
+<link rel="stylesheet" href="../../../styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../../images/analect_logo.svg" alt="" class="navbar-logo">
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../posts"> 
+<span class="menu-text">Blog</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="https://www.linkedin.com/in/colum-mccoole-746b946a/"> <i class="bi bi-linkedin" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://github.com/Analect"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://analect.com/blog/index.xml"> <i class="bi bi-rss" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#identifying-what-can-be-solved-with-ai" id="toc-identifying-what-can-be-solved-with-ai" class="nav-link active" data-scroll-target="#identifying-what-can-be-solved-with-ai">Identifying What Can be Solved with AI</a></li>
+  <li><a href="#some-blueprints-for-planning-and-digital-transformation" id="toc-some-blueprints-for-planning-and-digital-transformation" class="nav-link" data-scroll-target="#some-blueprints-for-planning-and-digital-transformation">Some Blueprints for Planning and Digital Transformation</a>
+  <ul>
+  <li><a href="#developing-a-robust-business-case-per-domain" id="toc-developing-a-robust-business-case-per-domain" class="nav-link" data-scroll-target="#developing-a-robust-business-case-per-domain">Developing a robust business-case per domain</a></li>
+  </ul></li>
+  <li><a href="#the-importance-of-envisaging-personas" id="toc-the-importance-of-envisaging-personas" class="nav-link" data-scroll-target="#the-importance-of-envisaging-personas">The Importance of Envisaging Personas</a></li>
+  <li><a href="#change-management-required-to-embed-ai-usage" id="toc-change-management-required-to-embed-ai-usage" class="nav-link" data-scroll-target="#change-management-required-to-embed-ai-usage">Change Management Required to Embed AI Usage</a></li>
+  <li><a href="#setting-up-machine-learning-projects-for-success" id="toc-setting-up-machine-learning-projects-for-success" class="nav-link" data-scroll-target="#setting-up-machine-learning-projects-for-success">Setting up Machine Learning projects for success</a></li>
+  <li><a href="#codify-patterns-template-and-platform-them" id="toc-codify-patterns-template-and-platform-them" class="nav-link" data-scroll-target="#codify-patterns-template-and-platform-them">Codify Patterns, Template and Platform them</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content page-columns page-full" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">2. AI is Here, But its Business-Applicability may not be Obvious</h1>
+<p class="subtitle lead">AI will be transformational for your workforce, but they will need help to embrace it and practice applied AI — where to use it most effectively</p>
+  <div class="quarto-categories">
+    <div class="quarto-category">ai-strategy-series</div>
+    <div class="quarto-category">digital-transformation</div>
+    <div class="quarto-category">applied-ai</div>
+  </div>
+  </div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Colum McCoole <a href="mailto:colum.mccoole@analect.com" class="quarto-title-author-email"><i class="bi bi-envelope"></i></a> </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">10 February 2025</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Key Takeaway
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Even if a business has a highly-capable IT function, it may only have a handful of specialists experimenting with AI technologies. How do you scale that? Even if you have built valuable AI-driven prototypes (or are even in-production), getting customers or business users to adopt that solution as part of their day-to-day activities is often the biggest challenge.</p>
+<p>Even if you have managed to attract and retain many data-science types within your business, real bandwidth to embed AI within the organisation will only come with training those non-technical employees and reskilling them to leverage these new class of tools such as agentic-AI.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+AI Strategy Series (#2 of 5)
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="grid">
+<div class="g-col-6">
+<ul>
+<li><a href="../../../posts/ai-strategy-series/1-overview/index.html">#1. Framing an AI Strategy: Where Do You Start?</a></li>
+<li>#2. AI is Here, But its Business-Applicability may not be Obvious (this one)</li>
+<li><span style="color:  #D3D3D3;">#3. Platform Engineering for Evolving AI / ML Solutions (forthcoming)</span></li>
+</ul>
+</div>
+<div class="g-col-6">
+<ul>
+<li><span style="color:  #D3D3D3;">#4. DataOps Strategy: Embedding Data Everywhere (forthcoming)</span></li>
+<li><span style="color:  #D3D3D3;">#5. LLMs: Key Emerging Components of the AI Tech Stack (forthcoming)</span></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<section id="identifying-what-can-be-solved-with-ai" class="level3">
+<h3 class="anchored" data-anchor-id="identifying-what-can-be-solved-with-ai">Identifying What Can be Solved with AI</h3>
+<p>A confluence of factors (LLMs, a proliferation of GPU-compute, maleable cloud-based data and AI on edge devices) have ignited a market for applied AI. The pace of innovation is massive and these models are becoming more capable by the week. Barriers-to-entry, in terms of high-GPU machines, are being lowered with new methods, including <a href="https://huggingface.co/docs/optimum/en/concept_guides/quantization">quantization</a>. So running complex models on lower-powered AI edge devices will become a reality.</p>
+<!-- We are trying to think about the implications of all of this for a businesses within the financial-services sector, including private-equity firms.  -->
+<p>The difference between AI and ML is not always clear, and people tend to use the terms somewhat interchangeably. I find that this definition<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> is succinct:</p>
+<div class="grid">
+<div class="g-col-3">
+<p><span style="background-color: #E0E0E0;">Artificial Intelligence (AI)</span> focuses on creating machines (software) to perform complex tasks that typically require human intelligence, such as problem-solving (analysing), decision-making (reasoning), and understanding language (learning).</p>
+</div>
+<div class="g-col-5">
+<p><span style="background-color: #E0E0E0;">Machine Learning (ML)</span>, more specifically, is a <em>subset of AI</em> that focuses on developing algorithms and statistical models to enable a model to recognize patterns in data and then make predictions based on those patterns — to effectively perform the complex tasks described above. For example, training an ML model on a dataset that has customer data and an indication of which customers defaulted on their debt, and enabling that model to predict whether other customers may default on their debt.</p>
+</div>
+<div class="g-col-4">
+<p><span style="background-color: #E0E0E0;">Generative AI (GenAI)</span>, is a <em>subset of AI</em> capable of creating new content, such as text, images, or music, based on user input prompts. While machine learning is used to perform more narrowly defined tasks like categorizing data or making predictions, GenAI can respond dynamically to user inputs, and so is used for more creative tasks like composing text or conversing with customers via AI agents<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>.</p>
+</div>
+</div>
+<div class="grid">
+<div class="g-col-4">
+<p>In spite of all the hype, Generative AI remains small, compared to the <em>installed-base</em> of classical ML models (such as supervised and unsupervised learning). I’m not sure how scientific this bubble-chart is, but as a key thought-leader in this field, Andrew Ng’s opinion is important. GenAI penetration, as yet, is small since it is relatively new and it still suffers from certain key risks including potential issues with hallucination and safety, and public relations issues with deploying genAI.</p>
+</div>
+<div class="g-col-8">
+<div id="fig-andrewng" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-andrewng-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="./images/ng-growth-areas-ml.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-andrewng-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Andrew Ng’s Assessment of Value from AI technologies 3 Years Out<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Indeed, the posture of most corporates, as borne out by a16z’s survey below, remains much more internal-facing. Let’s find use-cases internally first, until such time as we are comfortable that the technology is good enough to evolve into customer-facing solutions.</p>
+<div id="fig-a16z" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-a16z-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="./images/How-willing-are-enterprises-to-use-LLMs-for-different-use-cases.jpg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-a16z-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: How willing are enterprises to use LLMs for different use cases?<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a>
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="some-blueprints-for-planning-and-digital-transformation" class="level3">
+<h3 class="anchored" data-anchor-id="some-blueprints-for-planning-and-digital-transformation">Some Blueprints for Planning and Digital Transformation</h3>
+<div class="grid">
+<div class="g-col-9">
+<p>I’m generally cautious in recommending “management guides”, since they can often be overloaded with waffle. However, in this nascent field, where there’s still a dearth of good literature, these two books emanating from McKinsey practitioners are worth feeding from. Admittedly, they are targeted at well-resourced corporates that tend to spend heavily on consultants, but there are nevertheless useful frameworks within each that have applicability to smaller teams too. <strong>Rewired</strong><a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a> is dubbed a how-to manual that their own consultants use to help companies build the capabilities to outcompete in the age of digital and AI. <strong>Beyond Performance 2.0</strong><a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a> covers every aspect of how to lead change at scale within an organisation.</p>
+<p>In <strong>Rewired</strong>, McKinsey partners open by acknowledging that over the past decade <span style="background-color: #E0E0E0;">“<em>digital</em> has become pervasive driven by the confluence of new technologies <em>(cloud, AI, ..)</em>, new architectural paradigms <em>(micro-services, APIs ..)</em> and new ways of building software <em>(agile, devsecops, ..)</em>, all emanating from the tech industry, but subsumed by industry more generally. This tide will only strengthen with generative AI, edge computing, quantum computing and the like. The inherent digital transformation is not one-off, rather its a journey to continuously increase competitiveness.”</span> The other observation the authors’ make is that <strong>it [digital transformation] is hard to do, with most businesses failing to achieve anything near expected revenue lifts or expected cost savings</strong>.</p>
+</div>
+<div class="g-col-3">
+<p><img src="./images/rewired-beyond-wiley-vertical.png" class="img-fluid"></p>
+</div>
+</div>
+<p>The <strong>Rewired</strong> book content, they claim, is an equivalent guide to the one McKinsey teams around the world use when working with clients on their digital and AI transformation. It is the result of constant development, refinement, and learning in the field over the past five years. For our purposes it’s certainly geared to larger well-resourced entities that have the capacity to build expansive teams and implement a gold-plated infrastructure for delivering AI solutions. However, the basic principles they preach are applicable to organisations big and small.</p>
+<section id="developing-a-robust-business-case-per-domain" class="level4">
+<h4 class="anchored" data-anchor-id="developing-a-robust-business-case-per-domain">Developing a robust business-case per domain</h4>
+<div style="background-color: #E0E0E0">
+<p>The authors advocate identifying a few important and self-contained domains in the business and rethink them completely. Typically, a domain is a subset of your enterprise that encapsulates a cohesive set of related activities — there are usually 10 - 15 domains in a business. No more than 2 - 5 should be selected for tansformation. Prioritising these should be measured along a value / feasibility framework:</p>
+<ul>
+<li><strong>value potential</strong> - measure improved customer experience, estimate financial benefits (KPIs), determine speed to value, are there synergies between domains to be transformed?</li>
+<li><strong>feasibility</strong> - is there strong executive sponsorship in the domain, data and technology readiness, ease of adoption of proposed changes and ease of scaling enterprise-wide.</li>
+</ul>
+<div id="fig-rewired-5step" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-rewired-5step-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="./images/mckinsey-rewired-c03ex001-notitle.png" class="img-fluid figure-img" style="width:95.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-rewired-5step-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3: Domain Reimagination: McKinsey 5-Step Process to Develop a Robust Business-case per Domain<a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a>
+</figcaption>
+</figure>
+</div>
+<p>Unmet needs of the user or process pain points are reconciled against a specific value lever. For each value lever, the process requires you identify potential digital solutions (e.g., apps or data assets) that users or customers will use as part of the improved experience you intend to provide. By design, each solution should activate at least one value lever. Solutions that are not explicitly tied to business value through measurable KPI improvements can result in failed efforts around digital transformation.</p>
+<div id="fig-rewired-domain-model" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-rewired-domain-model-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="./images/mckinsey-rewired-c03ex002-notitle.png" class="img-fluid figure-img" style="width:95.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-rewired-domain-model-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4: Step 2: Cascading from business domain to value levers, solutions and use-cases<a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a>
+</figcaption>
+</figure>
+</div>
+</div>
+</section>
+</section>
+<section id="the-importance-of-envisaging-personas" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="the-importance-of-envisaging-personas">The Importance of Envisaging Personas</h3>
+<p>An integral part of the problem-to-solve discovery (Step 1) in the domain reimagination process above is the ‘user unmet need’. That user could be internal (an employee) or external (a customer). <a href="https://georgian.io/about/">Georgian</a>, a Canadian VC specialsing in B2B software investments, operate a ‘growth network’ of potential portfolio investments and they produced a useful analysis of internally-facing personas and their intended GenAI use-cases. We’ve linked to the original blog-post in <a href="#fig-georgian" class="quarto-xref">Figure&nbsp;5</a>.</p>
+<div id="fig-georgian" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-georgian-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="./images/GenAI_Findings_GGN.jpg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-georgian-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5: GenAI use-cases, as derived from the Georgian Growth Network<a href="#fn9" class="footnote-ref" id="fnref9" role="doc-noteref"><sup>9</sup></a>
+</figcaption>
+</figure>
+</div>
+<p>Based on my own engagement with clients in the finance and VC domains, I’m including a few one-pagers that I assemble as part of a larger deck, aggregating various considerations that a persona in those fields might consider. This could be an exercise prior to delineating-out user needs and associated problems-to-solve, per the McKinsey framework described above. The Finance Executive persona (below) draws from a useful report from Celent<a href="#fn10" class="footnote-ref" id="fnref10" role="doc-noteref"><sup>10</sup></a> which echoes what we saw in <a href="#fig-a16z" class="quarto-xref">Figure&nbsp;2</a>, where the tendency among corporates (and banks, in this case) is to develop GenAI applications for an internal audience, only planning a roll-out for external users much later, when presumably rough-edges and hallucination risks can be mitigated.</p>
+<div class="column-page-right">
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">Finance Executive Persona</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Private Equity Investor Persona</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<p><object data="assets/202411_mccoole_strategyAI_deck9.pdf" type="application/pdf" width="100%" height="800"><a href="assets/202411_mccoole_strategyAI_deck9.pdf" download="">Download PDF file.</a></object></p>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<p><object data="assets/202411_mccoole_strategyAI_deck10.pdf" type="application/pdf" width="100%" height="800"><a href="assets/202411_mccoole_strategyAI_deck10.pdf" download="">Download PDF file.</a></object></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="change-management-required-to-embed-ai-usage" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="change-management-required-to-embed-ai-usage">Change Management Required to Embed AI Usage</h3>
+<p>In the first installment of this blog-series, we posited that the professionals involved in the day-to-day business of running a function, product or solution are the ones that will have the ideas for how things can be done differently, aided by AI, so it makes sense that they are also the ones that have a sense for what is viable, technologically-speaking, too — and develop the requisite skills to be able to build prototypes more easily. Enabling that in reality shouldn’t be underestimated and relies on the less glamorous and more arduous task of change management.</p>
+<p>The framework presented below borrows from <strong>Five Frames of Performance and Health</strong>, <a href="https://www.wiley.com/en-us/Beyond+Performance+2.0%3A+A+Proven+Approach+to+Leading+Large-Scale+Change%2C+2nd+Edition-p-9781119596660">Beyond Performance 2.0</a>, a seminal publication from partners and practitioners at McKinsey. Why the delineation between <em>Performance</em> and <em>Health</em>, you might ask? I suppose the analogy in their book is useful: for someone looking to run a marathon for the first time, for each performance step, there’s an equivalent health step that determines the actions to be taken for that objective to become a reality.</p>
+<p>This all might seem a little overkill, but it acknowledges the fact that as much as AI might be truly tranformational for businesses reliant on knowledge-workers, expecting them to understand it and fully embrace it without requisite support, isn’t going to be realistic. Digital transformation will probably only succeed with culture transformation within an organisation, requiring some form of change-management.</p>
+<p>A central idea behind this <em>Five Frames</em> approach in delivering successful change at scale is that leaders should put equal emphasis on <em>performance-</em> and <em>health-related</em> efforts — where <strong>Performance</strong> is ‘<em>What</em> an enterprise does to deliver to its stakeholders in financial and operational terms’, while <strong>Health</strong> is ‘<em>How</em> effectively an organization works together in pursuit of a common goal’.</p>
+<div class="column-page-right">
+<div class="grid">
+<div class="g-col-3" style="font-size: 80%;">
+<p>The five <span style="background-color: #E0E0E0;">performance frameworks</span> are:</p>
+<ol type="1">
+<li><em>Aspire:</em> <strong>Strategic objectives.</strong> Create a compelling long-term change vision, roll back the future to a mid-term aspiration, and guard against biases in the process.</li>
+<li><em>Assess:</em> <strong>Skillset requirements.</strong> Forecast skill “demand” and understand skill “supply” dynamics, and then identify how any gaps will be closed.</li>
+<li><em>Architect:</em> <strong>Bankable plan.</strong> Define the portfolio of initiatives to deliver on your strategic objectives and fulfill your skill requirements, then programmatically sequence actions and reallocate resources to deliver.</li>
+<li><em>Act:</em> <strong>Ownership model.</strong> Establish strong governance; decide how to scale up your portfolio of initiatives; monitor progress and dynamically adjust as plans are implemented.</li>
+<li><em>Advance:</em> <strong>Learning infrastructure.</strong> Institutionalize processes and expertise to enable knowledge sharing, continuous improvement, and continuous learning to characterize the day-to-day workings of the organization going forward.</li>
+</ol>
+</div>
+<div class="g-col-6">
+<div id="fig-five-frames" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-five-frames-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="./images/5frames-beyond-performance-c01x005.jpg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-five-frames-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6: The Five Frames of Performance and Health<a href="#fn11" class="footnote-ref" id="fnref11" role="doc-noteref"><sup>11</sup></a>
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="g-col-3" style="font-size: 80%;">
+<p>The five <span style="background-color: #E0E0E0;">health frameworks</span> are:</p>
+<ol type="1">
+<li><em>Aspire:</em> <strong>Health goals.</strong> Objectively check your health, choose where to be exceptional, and target any ailing areas in need of immediate improvement.</li>
+<li><em>Assess:</em> <strong>Mindset shifts.</strong> Pinpoint the helping and hindering behaviors related to health priority areas, explore the underlying mindset drivers of these behaviors, and name and reframe the critical few “root-cause” mindsets.</li>
+<li><em>Architect:</em> <strong>Influence levers.</strong> Reshape the work environment to influence needed shifts in mindsets and behaviors by hardwiring health interventions into performance initiatives and interactively cascading the change story.</li>
+<li><em>Act:</em> <strong>Energy generation.</strong> Mobilize influence leaders, make the change personal for a critical mass of leaders, and maintain high impact two-way communications.</li>
+<li><em>Advance:</em> <strong>Leadership placement.</strong> Prioritize roles by value-creation potential based on the go-forward strategy, match the best talent to priority roles, and operationalize the talent match process to ensure it’s regularly revisited.</li>
+</ol>
+</div>
+</div>
+</div>
+</section>
+<section id="setting-up-machine-learning-projects-for-success" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="setting-up-machine-learning-projects-for-success">Setting up Machine Learning projects for success</h3>
+<p>Leading on from the points above, part of the <em>health</em> of an organisation is having effective pillars in place that can underpin efforts to make machine-learning adoption across a business more effective and more likely to succeed. There are degrees to which this can be implemented. At a basic level, following industry best-practices is a good start and this eminently sensible guide <a href="#fn12" class="footnote-ref" id="fnref12" role="doc-noteref"><sup>12</sup></a> offers a good starting point. When it comes to educating the workforce on best-practices, there’s little point in reinventing the wheel. There are some excellent open-source resources out there from which to learn, among them those from the Turing Institute<a href="#fn13" class="footnote-ref" id="fnref13" role="doc-noteref"><sup>13</sup></a>. We’ve take the liberty of summarising some of the points around ML project structure from both in the one-pager below. I would urge you to delve into the source too. By all means these can be honed for a given industry or organisation, but as a foundation, they’re solid.</p>
+<p>In the next blog-post in this series, we’ll be talking about platforms, which is where an organisation will begin to formalise their own best-practices around working with AI.</p>
+<div class="column-page-right">
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true">Machine-Learning Project Templates</a></li></ul>
+<div class="tab-content">
+<div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
+<p><object data="assets/202411_mccoole_strategyAI_deck13.pdf" type="application/pdf" width="100%" height="800"><a href="assets/202411_mccoole_strategyAI_deck13.pdf" download="">Download PDF file.</a></object></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="codify-patterns-template-and-platform-them" class="level3">
+<h3 class="anchored" data-anchor-id="codify-patterns-template-and-platform-them">Codify Patterns, Template and Platform them</h3>
+<p>Experimentation and prototyping will be order of the day. Being able to do that iteratively and with purpose, requires that the right infrastructure and tooling is available and that robust systems for managing proprietary data are in place. Good governance around responsible AI practices need to be baked-in from the outset.</p>
+<p>Good patterns and best-practices around forming solutions / products should be identified, with templates of these then made available, perhaps on internal developer platforms so that teams have golden paths to follow, with appropriate guard-rails. I will use the next blog to elaborate on the theme of platform engineering.</p>
+
+
+</section>
+
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p><a href="https://www.packtpub.com/en-us/product/data-engineering-with-aws-9781804613139">Data Engineering with AWS</a>, Gareth Eagar, Packt Publishing, 2nd Ed. October 2023<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p><a href="https://www.coursera.org/articles/machine-learning-vs-ai">Machine Learning vs.&nbsp;AI: Differences, Uses, and Benefits</a>, Coursera Staff, January 2025<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p><a href="https://www.youtube.com/watch?v=5p248yoa3oE">Opportunities in AI, DeepLearning.AI / Stanford</a> Andrew Ng’s Assessment of Growth (shaded part) in different fields of AI, July 2023<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p><a href="https://a16z.com/generative-ai-enterprise-2024/">16 Changes to the Way Enterprises Are Building and Buying Generative AI</a>, by Sarah Wang and Shangda Xu, March 2024<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn5"><p><a href="https://www.wiley.com/en-us/Rewired%3A+The+McKinsey+Guide+to+Outcompeting+in+the+Age+of+Digital+and+AI-p-9781394207121">Rewired</a>, The McKinsey Guide to Outcompeting in the Age of Digital and AI, Wiley, June 2023.<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn6"><p><a href="https://www.wiley.com/en-us/Beyond+Performance+2.0%3A+A+Proven+Approach+to+Leading+Large-Scale+Change%2C+2nd+Edition-p-9781119596660">Beyond Performance 2.0</a>, A Proven Approach to Leading Large-Scale Change, 2nd Ed., Wiley, July 2019.<a href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn7"><p><a href="https://www.wiley.com/en-us/Rewired%3A+The+McKinsey+Guide+to+Outcompeting+in+the+Age+of+Digital+and+AI-p-9781394207121">Chapter 3: Have business leaders define what’s possible</a>, Rewired, Wiley, June 2023<a href="#fnref7" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn8"><p><a href="https://www.wiley.com/en-us/Rewired%3A+The+McKinsey+Guide+to+Outcompeting+in+the+Age+of+Digital+and+AI-p-9781394207121">Chapter 3: Have business leaders define what’s possible</a>, Rewired, Wiley, June 2023<a href="#fnref8" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn9"><p><a href="https://georgian.io/practitioners-perspectives-genai-risks-and-opportunities-ggn/">Practitioners Perspectives: GenAI Risks and Opportunities</a>, Georgian.io, 2023<a href="#fnref9" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn10"><p><a href="https://pages.awscloud.com/rs/112-TZM-766/images/AWS_Gen_AI_Making_Waves_Report.pdf">Generative AI Making Waves</a>, Adoption waves in banking and capital markets, Celent, AWS, May 2024.<a href="#fnref10" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn11"><p><a href="https://www.wiley.com/en-us/Beyond+Performance+2.0%3A+A+Proven+Approach+to+Leading+Large-Scale+Change%2C+2nd+Edition-p-9781119596660">Chapter 1: Performance and Health</a>, Beyond Performance 2.0, 2nd Ed., Wiley, July 2019<a href="#fnref11" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn12"><p><a href="https://medium.com/data-science-at-microsoft/setting-up-machine-learning-projects-for-success-4cba7840d24a">Setting up Machine Learning projects for success</a> A tried-and-tested guide to framing data science projects, Chris Hughes, May 2021<a href="#fnref12" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn13"><p><a href="https://alan-turing-institute.github.io/rds-course/">Introduction to Research Data Science</a> developed by, The Alan Turing Institute, <a href="https://www.turing.ac.uk/research-engineering">Research Engineering Group</a><a href="#fnref13" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@misc{mccoole2025,
+  author = {{Colum McCoole}},
+  title = {2. {AI} Is {Here,} {But} Its {Business-Applicability} May Not
+    Be {Obvious}},
+  date = {2025-02-10},
+  url = {https://analect.com/posts/ai-strategy-series/2-business-applicability-digital-transform/},
+  langid = {en-GB}
+}
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-mccoole2025" class="csl-entry quarto-appendix-citeas" role="listitem">
+Colum McCoole. 2025. <span>“2. AI Is Here, But Its
+Business-Applicability May Not Be Obvious.”</span> <a href="https://analect.com/posts/ai-strategy-series/2-business-applicability-digital-transform/">https://analect.com/posts/ai-strategy-series/2-business-applicability-digital-transform/</a>.
+</div></div></section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/analect\.com");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p><br> Copyright © 2025 Analect Limited<br> This website was created with <a href="https://quarto.org"><img src="../../../images/quarto.png" class="img-fluid" alt="Quarto" width="65"></a><br> <a href="http://creativecommons.org/licenses/by-nc/4.0/?ref=chooser-v1"><img src="../../../images/cc-by-nc-eu.svg" class="img-fluid" alt="CC BY-NC 4.0"></a><br></p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

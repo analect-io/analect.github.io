@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-GB" xml:lang="en-GB"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.40">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Colum McCoole">
+<meta name="dcterms.date" content="2025-02-14">
+
+<title>3. Platform Engineering for Evolving AI / ML Solutions</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<script src="../../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap-3641037507ad89c0bd4681117c902dad.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-5CKF247L1G"></script>
+
+<script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-5CKF247L1G', { 'anonymize_ip': true});
+</script>
+<script data-goatcounter="https://analect.goatcounter.com/count" async="" src="//gc.zgo.at/count.js"></script>
+
+
+<link rel="stylesheet" href="../../../styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../../images/analect_logo.svg" alt="" class="navbar-logo">
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../posts"> 
+<span class="menu-text">Blog</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="https://www.linkedin.com/in/colum-mccoole-746b946a/"> <i class="bi bi-linkedin" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://github.com/Analect"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://analect.com/blog/index.xml"> <i class="bi bi-rss" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#envisioning-a-tech-stack" id="toc-envisioning-a-tech-stack" class="nav-link active" data-scroll-target="#envisioning-a-tech-stack">Envisioning a Tech Stack</a></li>
+  <li><a href="#devops-gitops-mlops-how-did-we-get-here" id="toc-devops-gitops-mlops-how-did-we-get-here" class="nav-link" data-scroll-target="#devops-gitops-mlops-how-did-we-get-here">DevOps, GitOps, MLOps … How Did We Get Here?</a></li>
+  <li><a href="#platforms-for-provisioning-mlops" id="toc-platforms-for-provisioning-mlops" class="nav-link" data-scroll-target="#platforms-for-provisioning-mlops">Platforms for Provisioning MLOps</a></li>
+  <li><a href="#internal-developer-platforms" id="toc-internal-developer-platforms" class="nav-link" data-scroll-target="#internal-developer-platforms">Internal Developer Platforms</a></li>
+  <li><a href="#importance-of-a-fast-feedback-loop" id="toc-importance-of-a-fast-feedback-loop" class="nav-link" data-scroll-target="#importance-of-a-fast-feedback-loop">Importance of a fast Feedback Loop</a></li>
+  <li><a href="#data-centric-approach-to-mlops" id="toc-data-centric-approach-to-mlops" class="nav-link" data-scroll-target="#data-centric-approach-to-mlops">Data-centric approach to MLOps</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content page-columns page-full" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">3. Platform Engineering for Evolving AI / ML Solutions</h1>
+<p class="subtitle lead">The process of extracting business value from AI is complex which is why you want systems in place, namely platforms, that allow for a combination of experimentation and productionisation and for this to work iteratively.</p>
+  <div class="quarto-categories">
+    <div class="quarto-category">ai-strategy-series</div>
+    <div class="quarto-category">machine-learning</div>
+    <div class="quarto-category">platform</div>
+  </div>
+  </div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Colum McCoole <a href="mailto:colum.mccoole@analect.com" class="quarto-title-author-email"><i class="bi bi-envelope"></i></a> </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">14 February 2025</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Key Takeaway
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>To do machine-learning well requires rigour. Models trained on data are only as good as the data they are trained on and that data is changing, rendering older models useless. That’s where platforms come in. They contain the foundational blocks on which the process of MLOps gets performed. Clearly platform usage extends beyond machine-learning, but let’s view them in this more confined context here.</p>
+<p>Platforms work well when they help automate processes and when the feedback loop for those developing solutions is fast, requiring the underlying compute infrastructure to be fast. This is what is commonly referred to as the fly-wheel effect, enabling value-creation.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+AI Strategy Series (#3 of 5)
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="grid">
+<div class="g-col-6">
+<ul>
+<li><a href="../../../posts/ai-strategy-series/1-overview/index.html">#1. Framing an AI Strategy: Where Do You Start?</a></li>
+<li><a href="../../../posts/ai-strategy-series/2-business-applicability-digital-transform/index.html">#2. AI is Here, But its Business-Applicability may not be Obvious</a></li>
+<li>#3. Platform Engineering for Evolving AI / ML Solutions (this one)</li>
+</ul>
+</div>
+<div class="g-col-6">
+<ul>
+<li><span style="color:  #D3D3D3;">#4. DataOps Strategy: Embedding Data Everywhere (forthcoming)</span></li>
+<li><span style="color:  #D3D3D3;">#5. LLMs: Key Emerging Components of the AI Tech Stack (forthcoming)</span></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<section id="envisioning-a-tech-stack" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="envisioning-a-tech-stack">Envisioning a Tech Stack</h3>
+<p>Up to this point, we haven’t talked much about technology, for good reason — there are important structural and cultural elements that needed to be in place in an organisation so that the technology lands on fertile ground. Working with technology in pursuit of, let’s say, a machine-learning driven business, is complex and involves knitting together many systems and tools and then potentially running them in clusters in the cloud, which have a host of complexities themselves. But as we have laid-out in the first blog of this series, it’s possible to do things in stages and, in fact, you can get a long way with some basic components in place.</p>
+<p>Platform-engineering is about simplifying that journey for users in general — not just developers or data-scientist, per se. For machine learning to pervade the culture of an organisation, everyone in an organisation should be able to discover and experiment with these solutions. Having a common platform to do this can be transformative, since it reduces the barriers to entry for those less tech-savvy, but nonetheless motivated to learn more technically in the field of machine-learning and AI more generally.</p>
+<p>In my own learning journey, I’ve experimented with lots of technologies and built-out my own blueprint platform (<a href="#fig-simplified-platform" class="quarto-xref">Figure&nbsp;1</a>), including leveraging Backstage<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>, in order to reap the benefits that I’m articulating here. More on that later.</p>
+<div class="page-columns page-full">
+<div id="fig-simplified-platform" class="quarto-float quarto-figure quarto-figure-center anchored page-columns page-full">
+<figure class="quarto-float quarto-float-fig figure page-columns page-full">
+<div aria-describedby="fig-simplified-platform-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca" class="page-columns page-full">
+<img src="./images/simplified-platform-202502_light.png" class="img-fluid figure-img column-page-right">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-simplified-platform-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Analect MLOps Platform with Backstage as an Entrypoint
+</figcaption>
+</figure>
+</div>
+</div>
+<p>For organisations with geographically spread businesses, or indeed private-equity firms with disparate portfolio companies ripe for collaboration in machine-learning, then establishing one of these platforms centrally and hosting it in the cloud for each business to access their own tech artifacts securely, could be a good solution to seeding the organisation with a culture towards machine-learning more broadly.</p>
+<p>Let’s not get ahead of ourselves though. We need to think about what other primitives need to be in place before a solution like Backstage can thrive. Let’s address some of the components that sit under Backstage in our simplified system in <a href="#fig-simplified-platform" class="quarto-xref">Figure&nbsp;1</a>.</p>
+</section>
+<section id="devops-gitops-mlops-how-did-we-get-here" class="level3">
+<h3 class="anchored" data-anchor-id="devops-gitops-mlops-how-did-we-get-here">DevOps, GitOps, MLOps … How Did We Get Here?</h3>
+<p>The <span style="background-color: #E0E0E0;">DevOps</span> (a portmanteau of <em>Development</em> and <em>Operations</em>) movement spawns from collaboration between previously distinct software development and IT operations camps. It brought with it greater efficiencies as developers took on responsibilities for both writing and running their software. As part of the DevOps approach, pipelines for Continuous Integration and Continuous Delivery (CI/CD) that picked up the latest changes (in code), ran unit tests, built the software artifacts, ran integration tests, and finally deployed the change to production in tightly-controlled stages with rapid rollback if needed. This allowed for multiple deployments of software each day, compared to the month or even quarterly release cycles typical prior to DevOps.</p>
+<p><span style="background-color: #E0E0E0;">GitOps</span>, which itself grew out of the DevOps culture, relies on a model where the operating environment synchronizes its state directly from <a href="https://en.wikipedia.org/wiki/Git">Git</a> (using the pull principle), where configuration must be completely versioned in Git (infrastructure-as-code). The deployment in the operating environment is triggered by a continuously executed “reconciliation loop”, which detects all deviations from the target state and tries to compensate for them. The operating environment thereby always converges to the target state. This approach mimics and indeed leverages the kubernetes control-plane based architecture, something we’ll elaborate on below.</p>
+<p>Machine-Learning (ML) is now having its “DevOps” moment. Like DevOps, the <span style="background-color: #E0E0E0;">MLOps</span> (Machine Learning Operations) approach attempts to formalize near-automatic pipelines for the model lifecycle, from data collection, data preparation, and data wrangling, to model training, model evaluation, and model deployment to model monitoring and then back again for model updates. For a thorough overview of MLOps, have a read of this<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> paper. Our discussion here will remain a little higher-level, in the spirit of our objective of setting out an outline for an overall AI / ML strategy.</p>
+</section>
+<section id="platforms-for-provisioning-mlops" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="platforms-for-provisioning-mlops">Platforms for Provisioning MLOps</h3>
+<p>In pursuing an MLOps (machine learning operations) solution for usage in an investment research context, I’ve experimented with many different tools in what has become a very crowded space. Many of these tools are the same technologies, repurposed for a new set of tasks - think vector databases. Nevertheless, combining a mix of these tools in a modular way, while limiting the cognitive overload for developers that now have to contend with new complexities that micro-services and cloud-native technologies have unleashed, is challenging.</p>
+<p>I’ve tended to follow the well-beaten track of open-source solutions and many of these pervade in the most innovative parts of the ecosystem, but hosting them in conjunction with eachother generally requires you to immerse yourself in the world of kubernetes, which brings with it a whole other set of technical challenges.</p>
+<p>The alternative is to go all-in with cloud-solutions, where the likes of AWS offer a suite of pre-built machine-learning tools, but these, at scale, can become very expensive.</p>
+<div class="column-page-right">
+<div class="grid">
+<div class="g-col-4">
+<p>The <strong>stage of MLOps maturity</strong>, something I introduced in the first blog of this series, has an important bearing on the sophistication of the solution too. In the <em>Initial</em> phase, disparate tooling used for different parts of the value-chain doesn’t all have to fit seamlessly together. There are more manual interventions in the chain to get things working. However, by the <em>Scalable</em> phase, everything needs to be fully integrated and automated.</p>
+<p>There’s a thorough review of the MLOps tooling landscape from Neptune.ai<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> where they review 90 tools across 17 categories. An important take-away from the article is the number of open-source solutions that continue to thrive in this space. The modus operandi seems to be one to lure developer interest via open-source and then upsell users to selected enterprise features and offer support.</p>
+</div>
+<div class="g-col-8">
+<div id="fig-mlops-maturity" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-mlops-maturity-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="./images/mlops-maturity-model-aws-notitle.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-mlops-maturity-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: AWS MLOps Maturity Model<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a>
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<p>An <strong>organisation’s size</strong> could also be a determinant of the complexity of a solution and whether it is Saas or self-hosted. At one end of the range are companies experimenting with ML models or just starting to scale their first few deployments. At the other end are businesses that need powerful capabilities to develop and operate sophisticated ML models in production that drive mission-critical business applications deriving value from massive amounts of harvested data.</p>
+<p>A common thread underpinning most of these solutions is that they all mostly leverage containerising workloads, a pivotal technology introduced by Docker way back in 2013. The ubiquity of containers then drove the industry towards solutions around orchestrating these containerised components, where it seems the consensus has largely coalesced around Kubernetes<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a> as the preferred technology upon which to build platforms, even ones capable of running across different cloud providers.</p>
+</section>
+<section id="internal-developer-platforms" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="internal-developer-platforms">Internal Developer Platforms</h3>
+<p>While cloud native drove huge improvements in areas like scalability, availability and operability, it also meant setups (applications or running workloads) have became a lot more complex. Expecting developers to have deep knowledge around trouble-shooting code run on cloud-based clusters makes them less productive. Using the lingo, it’s not realistic that every developer (or data-scientist, in our context) can be full-stack. Enabling a team of developers (or data-scientists) to better operate in the cloud but retaining high-enough levels of controls around meeting a given security posture has driven a shift towards what is commonly referred to as ‘platform engineering’.</p>
+<p>The open-source IDP (internal developer platform) I have most experience with is Backstage, as per <a href="#fig-simplified-platform" class="quarto-xref">Figure&nbsp;1</a>, where it’s used as a front-end to control running existing workflows and creating new ones (via argo-workflows). I’ve included a one-pager on key features of that solution below, so I’m not going to elaborate too much here except to say that it is a versatile solution that offers a single pane-of-glass that sits within an organisation allowing users to document and control any resources running either internally or across various cloud-providers. As you can see, data-science oriented businesses like Zalando<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a> have used this platform as the basis for building-out their whole MLOps stack.</p>
+<p>One of the easier ways I have found to get up-and-running with Backstage, in conjunction with other core operating components (ArgoCD, Gitea etc..) is to leverage the <a href="https://github.com/cnoe-io/idpbuilder"><code>idpbuilder</code></a> tool. We have a separate one-pager on that below (see other tab), but in short it enables you to develop IDPs locally, running them initially on a <a href="https://kind.sigs.k8s.io/">kind</a> cluster, allowing for debugging combining various components together ahead of a production-grade deployment on a larger cloud-based cluster. That local-to-cloud handover isn’t quite seamless yet, but the tool is very promising. Various stacks (combinations of tools) are contained at <a href="https://github.com/cnoe-io/stacks">github.com/cnoe-io/stacks</a>, allowing new users to get a sense of the capabilities.</p>
+<p><a href="https://www.onyxia.sh/">Onyxia Datalab</a> is another interesting open-source platform for data-science developed by <a href="https://insee.fr/">INSEE</a>, the French National Institute of Statistics and Economic Studies. It resembles Backstage in part, especially <a href="https://datalab.sspcloud.fr/catalog/ide">Service Catalog</a>, which is essentially a libary of tooling as helm-charts, that get launched into a kubernetes environment on your users’ behalf. They have control allocating RAM, CPU and GPU to specific containers. The system is already tightly-integrated with S3 for data and <a href="https://www.vaultproject.io/">Vault</a> for secret management. For teams that have restrictions on exposing their data to cloud-based Saas systems, this might be an ideal proving-ground system for intial proof-of-concept work.</p>
+<div class="column-page-right">
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">Backstage as a Platform</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false"><code>idpbuilder</code> for building Platforms</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<p><object data="assets/202411_mccoole_strategyAI_deck15.pdf" type="application/pdf" width="100%" height="800"><a href="assets/202411_mccoole_strategyAI_deck15.pdf" download="">Download PDF file.</a></object></p>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<p><object data="assets/202411_mccoole_strategyAI_deck16.pdf" type="application/pdf" width="100%" height="800"><a href="assets/202411_mccoole_strategyAI_deck16.pdf" download="">Download PDF file.</a></object></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="importance-of-a-fast-feedback-loop" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="importance-of-a-fast-feedback-loop">Importance of a fast Feedback Loop</h3>
+<p>In addition to the MLOps platform solutions, as we have learned, there are many other Saas<a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a> offerings that, akin to <code>idpbuilder</code>, offer this develop locally, deploy anywhere hybrid capability. However, while <code>idpbuilder</code> is concerned with running-up technology stacks, these new-generation MLOps Saas solutions are all about creating encapsulated workflow jobs or pipelines, often defined in Python, utilising some <code>@decorators</code> to bring special functionality, like specifying cloud-based assets such as container runtimes with GPU access or defining a serverless cloud-based function (such as <a href="https://aws.amazon.com/step-functions/">AWS Step Functions</a>) to perform some batch job. I’m most familiar with Metaflow, but for a deeper dive into comparable solutions, have a look here<a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a>.</p>
+<p>What each of these solutions promise is an ability to build and debug these pipelines locally and then deploy them to run on more robust, more available or faster remote compute. Particularly in this era of LLM application development, none of us has much access to local GPU, so its imperative we have a way of running pipelines efficiently, often in a distributed way. <a href="#fig-google-mlops" class="quarto-xref">Figure&nbsp;3</a> depicts a typical 7-step MLOps process that often forms a working ML system. Generally speaking, the idea is to be able to get each of the steps working efficiently, with as short-as-possible feedback loops, so that developers can fix or refine those parts accordingly.</p>
+<p>On certain cloud-based infrastructure set-ups, let’s say we have Kubeflow running on an EKS cluster, it can sometimes take 30 minutes to have a stable running cluster and then troubleshooting jobs, particular those looking to distribute workloads across multiple workers in parallel can be a time-consuming and frustrating process.</p>
+<p>I have been recently prototyping with one of the new-breed serverless GPU platforms called <a href="https://modal.com/">Modal</a>. It’s well worth your time spending 30 minutes watching this MLOps on Modal<a href="#fn9" class="footnote-ref" id="fnref9" role="doc-noteref"><sup>9</sup></a> run-through, rather than me trying to explain things here. The bottom-line is that their infrastructure is laser-focused on this fast feedback loop concept, in terms of being able to run workloads fast in a distributed way, but only having to pay for the seconds of actual GPU-usage, as opposed to you having to secure, then manage a fleet of VMs with GPUs. You can have deployments on web endpoints that will only start on receipt of an inference request, ensuring compute spend is kept to a minimum. There’s another good run-through here<a href="#fn10" class="footnote-ref" id="fnref10" role="doc-noteref"><sup>10</sup></a>, especially pertaining to running multiple workloads in parallel for faster execution.</p>
+<div class="column-page-right">
+<div class="grid" style="background-color: #E0E0E0">
+<section id="mlops-iterative-process" class="level4 g-col-5" style="font-size: 80%;">
+<h4 class="anchored" data-anchor-id="mlops-iterative-process">MLOps Iterative Process</h4>
+<p>These are the actual processes involved in performing machine-learning operations, as opposed to the components used for MLOps. This workflow is modelled on the Practioners Guide to MLOps<a href="#fn11" class="footnote-ref" id="fnref11" role="doc-noteref"><sup>11</sup></a> from Google. The processes can consist of the following:</p>
+<ol type="1">
+<li><strong>ML development</strong> concerns experimenting and developing a robust and reproducible model training procedure (training pipeline code), which consists of multiple tasks from data preparation and transformation to model training and evaluation.</li>
+<li><strong>Training operationalization</strong> concerns automating the process of packaging, testing, and deploying repeatable and reliable training pipelines.</li>
+<li><strong>Continuous training</strong> concerns repeatedly executing the training pipeline in response to new data or to code changes, or on a schedule, potentially with new training settings.</li>
+<li><strong>Model deployment</strong> concerns packaging, testing, and deploying a model to a serving environment for online experimentation and production serving.</li>
+<li><strong>Prediction serving</strong> is about serving the model that is deployed in production for inference.</li>
+<li><strong>Continuous monitoring</strong> is about monitoring the effectiveness and efficiency of a deployed model.</li>
+<li><strong>Data and model management</strong> is a central, cross-cutting function for governing ML artifacts to support auditability, traceability, and compliance. Data and model management can also promote shareability, reusability, and discoverability of ML assets.</li>
+</ol>
+</section>
+<div class="g-col-7">
+<div id="fig-google-mlops" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-google-mlops-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="./images/mlops-processes-lifecycle-google.png" class="img-fluid figure-img" style="width:95.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-google-mlops-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3: <a href="https://services.google.com/fh/files/misc/practitioners_guide_to_mlops_whitepaper.pdf">Practitioners guide to MLOps:</a>, A framework for continuous delivery and automation of machine learning, Google, May 2021
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="data-centric-approach-to-mlops" class="level3">
+<h3 class="anchored" data-anchor-id="data-centric-approach-to-mlops">Data-centric approach to MLOps</h3>
+<p>Proprietary data is often referred to as the ‘secret sauce’ and those organisations who best harness it with ML will capture disproportionate economic value. A data-centric approach to building ML systems emphasizes data management over incremental modeling improvements. Synthetic data generation and data labeling (often performed by LLMs), validation, auditing, and ML monitoring have all become important parts of the MLOps process. The data-centric approach emphasizes data quality and monitoring as an essential part of building production ML systems.</p>
+<p>The next blog-post in this series will be delving into all things DataOps. Having some strategy around data-management, automated builds with gitops patterns, containerising workloads and using some form of orchestration can get you a good distance towards a well-functioning blueprint for a system that can work universally for different industry client-types.</p>
+
+
+</section>
+
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p><a href="https://backstage.io/">Backstage</a>, An open source framework for building developer portals.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p><a href="https://arxiv.org/pdf/2205.02302">Machine Learning Operations (MLOps):</a> Overview, Definition, and Architecture, Kreuzberger, Kuhl, and Hirschl, KIT and IBM, 2022<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p><a href="https://neptune.ai/blog/mlops-tools-platforms-landscape">MLOps Landscape in 2024: Top Tools and Platforms</a>, Stephen Oladele, September 2024<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>derived from: <a href="https://aifund.ai/wp-content/uploads/2022/06/mlops-emerging-trends-in-data-code-and-infrastructure.pdf">MLOps: Emerging Trends in Data, Code, and Infrastructure</a>, Venture Capital and Startup Perspective, June 2022<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn5"><p><a href="https://blog.upbound.io/k8s-is-not-the-platform-or-is-it-and-we-all-misunderstood">K8s Is Not the Platform – Or Is It and We All Misunderstood?</a>, Stefan Schimanski, Upbound, Nov.&nbsp;2023<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn6"><p><a href="https://engineering.zalando.com/posts/2023/08/sunrise-zalandos-developer-platform-based-on-backstage.html">Sunrise: Zalando’s developer platform based on Backstage</a>, Lessons learned from adopting Backstage as Developer Platform at Zalando, Aug.&nbsp;2023<a href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn7"><p><a href="https://neptune.ai/blog/mlops-tools-platforms-landscape">MLOps Landscape in 2024: Top Tools and Platforms</a>, Stephen Oladele, September 2024<a href="#fnref7" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn8"><p><a href="https://mlops.community/zenml-vs-flyte-vs-metaflow/">ZenML v. Flyte v. Metaflow</a>, Ankur Tyagi, January 2025<a href="#fnref8" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn9"><p><a href="https://www.youtube.com/watch?v=VRtdu082D4Y">MLOps on Modal</a>, Charles Frye presenting on training an SLM using Modal<a href="#fnref9" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn10"><p><a href="https://youtu.be/z_4KBYsyjks?t=1264">Orchestrating Flexible Compute for ML with Dagster and Modal</a>, with discussion of <a href="https://modal.com/docs/guide/scale#starmap"><code>Function.starmap()</code></a> to run multiple parallel workloads<a href="#fnref10" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn11"><p><a href="https://services.google.com/fh/files/misc/practitioners_guide_to_mlops_whitepaper.pdf">Practitioners guide to MLOps:</a>, A framework for continuous delivery and automation of machine learning, Google, May 2021<a href="#fnref11" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@misc{mccoole2025,
+  author = {{Colum McCoole}},
+  title = {3. {Platform} {Engineering} for {Evolving} {AI} / {ML}
+    {Solutions}},
+  date = {2025-02-14},
+  url = {https://analect.com/posts/ai-strategy-series/3-gitops-platforms-to-mlops/},
+  langid = {en-GB}
+}
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-mccoole2025" class="csl-entry quarto-appendix-citeas" role="listitem">
+Colum McCoole. 2025. <span>“3. Platform Engineering for Evolving AI / ML
+Solutions.”</span> <a href="https://analect.com/posts/ai-strategy-series/3-gitops-platforms-to-mlops/">https://analect.com/posts/ai-strategy-series/3-gitops-platforms-to-mlops/</a>.
+</div></div></section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/analect\.com");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p><br> Copyright © 2025 Analect Limited<br> This website was created with <a href="https://quarto.org"><img src="../../../images/quarto.png" class="img-fluid" alt="Quarto" width="65"></a><br> <a href="http://creativecommons.org/licenses/by-nc/4.0/?ref=chooser-v1"><img src="../../../images/cc-by-nc-eu.svg" class="img-fluid" alt="CC BY-NC 4.0"></a><br></p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

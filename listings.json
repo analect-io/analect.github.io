@@ -1,0 +1,18 @@
+[
+  {
+    "listing": "/index.html",
+    "items": [
+      "/posts/ai-strategy-series/1-overview/index.html",
+      "/posts/ai-strategy-series/2-business-applicability-digital-transform/index.html",
+      "/posts/ai-strategy-series/3-gitops-platforms-to-mlops/index.html"
+    ]
+  },
+  {
+    "listing": "/posts/index.html",
+    "items": [
+      "/posts/ai-strategy-series/3-gitops-platforms-to-mlops/index.html",
+      "/posts/ai-strategy-series/2-business-applicability-digital-transform/index.html",
+      "/posts/ai-strategy-series/1-overview/index.html"
+    ]
+  }
+]
