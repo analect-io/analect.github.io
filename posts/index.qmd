@@ -12,7 +12,7 @@ listing:
   page-size: 100
   sort: "date desc"
   fields: [date, reading-time, title, subtitle, categories, description, image]
-  feed: false
+  feed: true
   sort-ui: [date, categories]
   filter-ui: [title, author, subtitle, description, categories]
   max-description-length: 150

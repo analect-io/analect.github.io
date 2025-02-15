@@ -4,15 +4,15 @@ resources:
   - CNAME
 
 website:
-  title: ""
+  title: "Analect"
   site-url: https://analect.com
   google-analytics: 
     tracking-id: "G-5CKF247L1G" #see https://github.com/quarto-dev/quarto-cli/discussions/9065
   # cookie-consent: true
   description: ""
   navbar:
-    logo: /images/analect_logo.svg
-    favicon: /images/analect_89_x_75.png
+    logo: images/analect_logo.svg
+    favicon: images/analect_89_x_75.png
     title: false
     left:
       - href: index.qmd
@@ -31,7 +31,7 @@ website:
         href: https://github.com/Analect
         text: ""
       - icon: rss
-        href: https://analect.com/blog/index.xml
+        href: https://analect.com/posts/index.xml
         text: ""
       - href: about.qmd
         text: About  
