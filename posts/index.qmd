@@ -1,0 +1,27 @@
+---
+title: "Stuff I'm Thinking About"
+subtitle: Topics where I have a perspective that I think is worth sharing.
+listing:
+  contents: 
+  - "/**/*.qmd"
+  - "/**/*.ipynb"
+  - "!/**/_*.qmd"
+  categories: true
+  type: default
+  grid-columns: 3
+  page-size: 100
+  sort: "date desc"
+  fields: [date, reading-time, title, subtitle, categories, description, image]
+  feed: false
+  sort-ui: [date, categories]
+  filter-ui: [title, author, subtitle, description, categories]
+  max-description-length: 150
+page-layout: full
+page-footer:
+    left: |
+      <br>
+      © 2025 by Analect Limited<br>
+      This website was created with [![](quarto.png){fig-alt="Quarto" width=65px}](https://quarto.org)<br>
+      [![](cc-by-nc-eu.svg){fig-alt="CC BY-NC 4.0"}](http://creativecommons.org/licenses/by-nc/4.0/?ref=chooser-v1)<br>
+citation: false
+---

@@ -1,0 +1,242 @@
+---
+title: "1. Framing an AI Strategy: Where Do You Start?"
+subtitle: "AI, inspite of the hype, needs your attention. But probably more importantly, your understanding ... so that you can mold it for your specific needs"
+description: |
+   
+categories: [ai-strategy-series, data-science, machine-learning]
+# author: "[Colum McCoole](https://github.com/Analect)"
+date: 2025-02-03
+image: images/color-by-numbers.png
+execute: 
+  freeze: auto
+  eval: false
+format: 
+  html:
+    toc: true
+    footnotes-hover: true
+    crossrefs-hover: true
+#   typst: default
+# format-links:
+#   - format: typst
+#     text: PDF
+#     icon: file-pdf
+code-copy: hover
+reading-time: true
+filters:
+  - d2
+---
+
+::: {.callout-tip}
+## Key Takeaway
+
+Even if the term AI is flawed for its imprecision, the shift in thinking that it has unleashed, in terms of acknowledging digitalisation as table stakes for having a competitive edge in any business, upon which to layer these emerging technologies, can't be disputed.
+
+It's still early for the adoption of a strategy around AI, one that is initially explorative. Since advancements in this field are currently so rapid, no business can fully know how this will shape their future product or service, but to dismiss this as hype and not engage, would be a fatal error, in my opinion.
+:::
+
+::: {.callout-note collapse="true"}
+## AI Strategy Series (#1 of 5)
+::: {.grid}
+
+::: {.g-col-6}
+- #1. Framing an AI Strategy: Where Do You Start? (this one)
+- [#2. AI is Here, But its Business-Applicability may not be Obvious (forthcoming)]{style="color:  #D3D3D3;"}
+- [#3. Platform Engineering for Evolving AI / ML Solutions (forthcoming)]{style="color:  #D3D3D3;"}
+:::
+
+::: {.g-col-6}
+- [#4. DataOps Strategy: Embedding Data Everywhere]{style="color:  #D3D3D3;"}
+- [#5. LLMs: Key Emerging Components of the AI Tech Stack (forthcoming)]{style="color:  #D3D3D3;"}
+:::
+
+:::
+:::
+
+## Forming a Strategy around Machine Learning / AI
+
+If you were to believe the hype, every business executive these days is 'doing' AI. It has become a byword for sophistication in every product or service we might want. AI has become a veneer for everything - irrespective of whether a process involving the usage of artificial-intelligence was actually invoked in the production of a given product or the provision of a given service. 
+
+The MAD (ML, AI & Data) Landscape^[[The 2024 MAD](https://mad.firstmark.com/) contains over 2000 individual tools, up more than 40% on 2023. Is it any wonder that most feel overwhelmed.] produced by venture capital firm Firstmark, is considered a key annual survey of the AI ecosystem. Solutions tackling every niche are battling out for what Gartner forecast^[[Gartner](https://www.linkedin.com/pulse/gartner-predicts-ai-software-grow-297-billion-2027-louis-columbus-okpfc/) predicts AI software will grow to $297 billion by 2027.] to be a $300bn market for AI developer tools within three years. As a business setting out on an AI journey, **where are you supposed to start?**
+
+While there has been a degree of hype around Large Language Models (LLMs), unleashed by OpenAI's release of ChatGPT onto the market in late 2022, the effect has been to shine light on the value that can be derived from a more rigorous approach to machine learning and AI, especially one that is knitted into the fabric and culture of a business.
+
+### Where do you start?
+:::: {.grid}
+
+::: {.g-col-7}
+For a complex problem, one is often advised to break it down into a series of smaller problems, solving these iteratively. As an analogy, if the objective is to become a great artist, when you've never in fact held a paint brush, then a starting point might be a [colour-by-numbers](https://en.wikipedia.org/wiki/Paint_by_number) approach. Remember those?
+
+Not to over-trivialise the challenge of implementing a solid AI strategy, this series is my own *colour-by-numbers* attempt to assemble some ideas around important aspects of machine learning that I think are relevant to any business looking to become involved in this field. Having had a background in finance, with an emphasis on research, I've been an early convert to data-science in my career and its many, mostly open-source, tools. These same tools, in turn, have been assembled into a rich ecosystem of developer tools to tackle machine learning. But there can be an overwhelming number of them to master, so much so that one can get bogged-down in what technology stack to form, rather than looking beyond the technology and solving for the business use-cases. Having a sketch of a route to the AI higher-ground, much like having a picture we can colour, is better than having none at all.   
+
+:::
+
+::: {.g-col-5}
+
+\
+![cool2bkids.com/color-by-number](./images/color-by-numbers.png){#fig-colour}
+:::
+
+::::
+### Bring everyone on this journey
+
+To do machine learning well within an organisation requires that it is done methodically and iteratively at scale, a practice known as machine-learning operations, or **MLOps** for short. I've married my interest in platform-engineering more generally with this field and I think its methodologies can be transformative for companies.
+
+I'm firmly of the belief that, although technical, most of these technologies don't require you to be a data-scientist, per se, or even a software engineer. The scarcity of these professionals shouldn't prevent an organisation from embracing these ideas and running with them.
+
+In fact, they are the professionals involved in the day-to-day business of financing, investing-in and operating the disparate businesses, that are the ones that will have the ideas for how things can be done differently, aided by AI, so it makes sense that they are also the ones that have a sense for what is viable, technologically-speaking, too - and develop the requisite skills to be able to build prototypes more easily.
+
+Bottom line --- there needs to be a plan in place to educate people on these emerging technologies, since their future jobs will almost certainly entail leveraging them.
+
+### Stage your adoption
+
+While it was offered in the context of working with Large Language Models (LLMs), Georgian's *'Crawl-Walk-Run'* analogy (below left) applies more generally to an approach to AI adoption that can be calibrated to an organisation's overall level of sophistication with these technologies. It's acknowledged that there should be a staged approach towards adopting AI and adapting a business to then leverage AI. As a slightly more formal categorisation, the *MLOps Maturity Model* (below right) from AWS is appealing for its articulation around a phased approach to working with Machine Learning / AI:
+
+* **Initial phase** --- a secure experimentation environment, data-enabled, for internal users to build proof-of-concepts around solving a specific business problem with ML. AWS present their [Sagemaker](https://docs.aws.amazon.com/sagemaker/latest/dg/studio-updated.html) solution, but this could just as easily be a self-hosted JupyterHub, with connections into S3-hosted data assets, allowing users to collaborate on Jupyter notebooks.
+* **Repeatable phase** --- this typically involves productionising what has proved effective as a PoC in the phase above. Code in notebooks get formalised as more robust pipelines, split-out typically as feature, training and inference. In conjunction, code repository structures are formalised as are data repository (S3 bucket) structures, for containing models and model-artifacts.  This approach supports complete auditability of every experimentation.  An AWS sample environment with these structures, deployable via CDK is available at [aws-samples/aws-enterprise-mlops-framework](https://github.com/aws-samples/aws-enterprise-mlops-framework/tree/main/mlops-multi-account-cdk). I will discuss other lighter-touch MLOps solutions like [Modal](https://modal.com/docs/examples/hp_sweep_gpt) in part three of this blog-series.
+* **Reliable phase** --- even though the models have been generated via the ML pipelines, they need to be tested before they get promoted to production. An automatic testing methodology is introduced, for both the model and triggering infrastructure, in an isolated staging (pre-production) environment that simulates production.
+* **Scalable phase** --- after the productionisation of the first ML solution, scaling of the MLOps foundation to support multiple data science teams to collaborate and productionize tens or hundreds of ML use cases is necessary.
+
+::: {.column-page}
+::: {#fig-stages layout-ncol=2}
+
+![Georgian - Stages of LLM Adoption^[[Introducing Georgian's 'Call, Walk, Run' Framework for Adopting Generative AI](https://georgian.io/introducing-georgians-crawl-walk-run-framework-for-adopting-generative-ai/), by Ben Wilde, Eli Scott and Royal Sequeira, 2023]](images/georgian-approach-genai-dev.png){#fig-georgian}
+
+![AWS - MLOps Maturity Model^[[MLOps foundation roadmap for enterprises with Amazon SageMaker](https://aws.amazon.com/blogs/machine-learning/mlops-foundation-roadmap-for-enterprises-with-amazon-sagemaker/), by Sokratis Kartakis, Giuseppe Angelo Porcelli, Georgios Schinas and Shelbee Eigenbrode, June 2022]](images/aws-mlops-maturity-model.jpg){#fig-aws-mlops}
+
+Ramping to Different Levels of ML/AI Sophistication Happens in Stages
+:::
+:::
+
+### Documentation as a Framing Mechanism
+
+The landscape around AI/ML is evolving rapidly. There are new terminologies, new technology categories - a seemingly unending stream of solutions to problems we didn't even know we had. As with most things, it can be helpful to break them down into smaller addressable parts and to acknowledge who your end audience is. That's what I try to do with the **documentation hierarchy**, presented below, which I find helpful when engaging with clients. Levels 1 through 5 differ in terms of technical detail, tackling high-level concepts for business at the top and delving into technical implementation detail for technologists towards the bottom. Spanning *horizontally* are the delineated components of a MLOps value-chain. Think of the elements in Level 2 as the assets one draws on when evolving a machine-learning capability, while Level 3 are the processes undertaken (think in terms of a continuous life-cycle or fly-wheel) that sweat those assets for the delivery of business value-add. 
+
+::::: {.column-page-right}
+
+:::: {.grid}
+
+::: {.g-col-4 style="font-size: 80%;"}
+
+1. **High-Level Conceptual Docs** - answering questions like, what problems are we trying to solve with ML/AI?, do these technologies open new markets for our business? if we don't respond, can competitors leap-frog our position technologically?
+
+2. **ML/AI Value-chain** - this is our approach to breaking-down the various components that come together to form a system for implementing ML/AI solutions.
+
+3. **MLOps Processes Lifecycle** - there are many varied MLOps-process lifecycle frameworks in the wild. We have found this particular model from Google's Practitioners Guide to MLOps^[[Practitioners Guide to MLOps:](https://services.google.com/fh/files/misc/practitioners_guide_to_mlops_whitepaper.pdf), A framework for continuous delivery and automation of machine learning, Google White paper, May 2021] to be more instructive than others.
+
+4. **Proof of Concepts** - these are proof-of-concepts involving combining different technology stacks and solutions either within a delineated part of the value-chain or across multiple parts.
+
+5. **Projects / Implementations** - these are short project descriptions that depict approaches to encapsulating business processes as self-contained pipelines or where technologies are bundled as app-sets to solve particular business requirements.
+:::
+
+::: {.g-col-8}
+![Analect Documentation Hierarchy --- Using documentation to frame a plan for working with AI](./images/docs-hierarchy-202502.svg){#fig-docs-hierarchy}
+:::
+
+::::
+:::::
+
+This documentation hierarchy could also form as a **framework for planning** an AI strategy within an organisation. Level 1 is where high-level corporate aspirations can be set for what transformations are envisaged with these new technologies. Planning around building machine-learning operational capabilities and processes can be formed in Levels 2 and 3, respectively.  Then *proof-of-concepts* (Level 4) involving different coupling of technologies can be explored followed by actual project MVPs (minimum-viable-products) (Level 5), which have been prioritised for implementation at the higher levels. Based on feedback and learnings from these early implementations, project-planning and prioritisations at Level 1 will adjust accordingly, perhaps elevating certain successful MVPs to more widely-scoped production-ready implementations.
+
+### What I plan to cover in this blog series
+
+This blog series will reference technological approaches, but it won't be drilling down into the technical details of these. I'll aim to cover those off in a later blog-series.  Below you'll find a map of what we'll be covering. There's enough material and opinions out there to fill a book on each, no doubt, but sometimes its better to get started with a simple approach and refine to your own business' unique needs.
+
+
+::: {.column-page}
+```{.d2 pad=10 width="100%" theme="NeutralDefault" dark-theme="DarkMauve" sketch=true layout="elk"}
+**.style.font-size: 30
+
+explanation: |md
+  # AI Strategy Series:
+  I wanted to encapsulate some practical steps toward evolving   
+  a strategy around AI across a series of five blog-posts.   
+
+  1. **Skaffold a Plan** - who in the org can pioneer AI usage. Their  
+  experience will inform a broader workforce education effort.  
+  Decide on how you plan to **crawl**, **walk** then **run**. Document  
+  how this will work so as to hone the plan.  Now you have  
+  the outline that the rest of the business can colour-in.
+  2. **Business Applicability** - determining best use-cases for  
+  applying AI within an org. McKinsey blueprints for digital  
+  transformation and change-mgt. Personas for 'user-needs'.  
+  3. **Platform for Scale** - positioning the org to be able  
+  to perform machine-learning at scale, seeking to automate  
+  everything, enabling a fast interation loop and the fly-wheel  
+  effect. Use project templates and emphasise data-centricity.
+  4. **DataOps Foundations** - data becomes the differentiator  
+  when model performance converges. DataOps is all about  
+  curating that valuable resource. New tooling is making that  
+  data more pliable. Heavy database and data-processing infra  
+  is no longer a pre-requisite, but nature of workloads are  
+  shifting requiring a new gen. of pipelines / orchestration.  
+  5. **Emerging LLM Stack** - forthcoming  
+    
+
+
+|
+
+catalog: "" {
+  grid-columns: 3
+  style: {
+    fill: transparent
+    font-size: 50
+  }
+  skaffolding: 1. Skaffold a Plan {
+    grid-columns: 1
+    style: {
+      font-size: 40
+    }
+    Upskill Across the Org
+    Stage your Adoption
+    Plan using Documentation
+  }
+
+  applicability: 2. Business Applicability {
+    grid-columns: 1
+    style: {
+      font-size: 40
+    }
+    What Can be Solved with AI
+    Blueprints for Planning
+    Importance Envisaging Personas
+    Change Management Embed AI
+    ML Project templates
+    Codify Patterns / Modularity
+  }
+
+  platforms: 3. Platform for Scale {
+    grid-columns: 1
+    style: {
+      font-size: 40
+    }
+    Envisioning Tech Stack
+    DevOps, GitOps, MLOps
+    Platforms for MLOps
+    IDPs
+    Fast Feedback Loop
+    Data-centric MLOps
+  }
+
+  dataops: 4. DataOps Foundations {
+    grid-columns: 1
+    style: {
+      font-size: 40
+    }
+    What is DataOps?
+    Converging Table Formats
+    Embedded Databases
+    Serverless Solutions
+    ML / AI Workloads
+    New Gen Pipelines / Orch.
+  }
+
+  llms: 5. Emerging LLM Stack {
+    grid-columns: 1
+    style: {
+      font-size: 40
+    }
+    forthcoming
+  }
+}
+```
+:::
