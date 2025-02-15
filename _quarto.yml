@@ -1,0 +1,62 @@
+project:
+  type: website
+resources:
+  - CNAME
+
+website:
+  title: ""
+  site-url: https://analect.com
+  google-analytics: 
+    tracking-id: "G-5CKF247L1G" #see https://github.com/quarto-dev/quarto-cli/discussions/9065
+  # cookie-consent: true
+  description: ""
+  navbar:
+    logo: /images/analect_logo.svg
+    favicon: /images/analect_89_x_75.png
+    title: false
+    left:
+      - href: index.qmd
+        text: Home
+      - href: posts
+        text: Blog
+      # - href: pocs
+      #   text: Proof of Concepts
+      # - href: til
+      #   text: TIL
+    right: 
+      - icon: linkedin
+        href: https://www.linkedin.com/in/colum-mccoole-746b946a/
+        text: ""
+      - icon: github
+        href: https://github.com/Analect
+        text: ""
+      - icon: rss
+        href: https://analect.com/blog/index.xml
+        text: ""
+      - href: about.qmd
+        text: About  
+  page-footer:
+    left: |
+      <br>
+      Copyright &copy; 2025 Analect Limited<br>
+      This website was created with 
+      [![](/images/quarto.png){fig-alt="Quarto" width=65px}](https://quarto.org)<br>
+      [![](/images/cc-by-nc-eu.svg){fig-alt="CC BY-NC 4.0"}](http://creativecommons.org/licenses/by-nc/4.0/?ref=chooser-v1)<br>
+  draft-mode: visible
+
+format:
+  html:
+    toc: true
+    toc_depth: 3
+    toc_float: true
+    toc_smooth_scroll: true
+    toc_highlight: true
+    theme: cosmo
+    css: styles.css
+    code-copy: hover
+    fig-align: center
+    include-in-header:
+      text: |
+        <script data-goatcounter="https://analect.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+    #     <script type='application/ld+json'>{"@context":"http://www.schema.org","@type":"person","name":"Colum McCoole","jobTitle":"Founder","gender":"male","description":"Colum McCoole works .","url":"https://analect.com","image":"https://analect.com/images/colum_linkedin.jpg","address":{"@type":"PostalAddress","addressLocality":"Dublin","addressCountry":"Ireland"},"alumniOf":[{"@type":"CollegeOrUniversity","name":"University of Galway","sameAs":"https://www.universityofgalway.ie/"},{"@type":"CollegeOrUniversity","name":"UCD Michael Smurfit Graduate Business School","sameAs":"https://www.smurfitschool.ie/"}],"worksFor":[{"@type":"Organization","name":"Analect Limited"}],"birthPlace":"Limerick, Ireland","nationality":[{"@type":"Country","name":"Ireland"}]}</script>

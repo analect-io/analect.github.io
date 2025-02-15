@@ -1,0 +1,47 @@
+---
+title: "Colum McCoole"
+about:
+    template: trestles
+    image-width: 15em
+    links:
+        # - icon: house
+        #   text: Homepage
+        #   url: https://www.analect.com
+        - icon: linkedin
+          text: LinkedIn
+          url: https://www.linkedin.com/in/colum-mccoole-746b946a/
+        - icon: github
+          text: Github
+          url: https://github.com/Analect
+        - text: "{{< fa envelope >}} Email"
+          url: mailto:colum.mccoole@analect.com
+image: images/colum_linkedin.jpg
+comments: false
+---
+
+I have been working at the intersection of finance and technology most of my career. My roles in finance were research-based and involved leveraging technology which motivated me to deepen my technical knowledge around software development and data-engineering by forming my own start-up and consulting firm, Analect, in 2012.
+
+Lately, my focus has been on cloud-based platform engineering for machine-learning use-cases ([`MLOps`](https://en.wikipedia.org/wiki/MLOps)), including LLMs ([`Generative AI`](https://en.wikipedia.org/wiki/Generative_artificial_intelligence)), enabling the life-cycle of model development from data-acquisition through to model-training and selection and on-going auditing for business relevance and regulatory purposes. Given a dearth of data-scientists, business-users themselves can and should be enabled to experiment and work with these technologies with the right foundational platform tooling and guard-rails in place. My passion is to help create the know-how and culture for that vision to be realised.
+
+### Certification
+
+::: {.grid}
+
+::: {.g-col-6}
+[AWS Solutions Architect – Professional](https://aws.amazon.com/certification/certified-solutions-architect-professional/)
+
+[dlt ELT Specialist](https://github.com/dlt-hub/dlt-certificates/blob/main/certificates/technical_certification/93731f82ecf6b105f8c18a1e40adddb210d00a6f00957e5e2ca00948964cd550.md)
+:::
+
+::: {.g-col-3}
+[![](./images/aws-cert-solutions-arch-prof.png)](https://www.credly.com/badges/a6053261-f1a2-4b33-876e-2bb872a30daa/linked_in_profile)
+:::
+
+::: {.g-col-3}
+[![](./images/dlt_ELT_specialist.png)](https://github.com/dlt-hub/dlt-certificates/blob/main/certificates/technical_certification/93731f82ecf6b105f8c18a1e40adddb210d00a6f00957e5e2ca00948964cd550.md)
+:::
+:::
+
+### Personal life
+
+When not working, you’ll find me walking our Red Setter or sailing in Dublin Bay, both competitively and for pleasure.

@@ -1,0 +1,147 @@
+---
+title: "Analect"
+format: 
+  closeread-html:
+    remove-header-space: true
+    theme: cosmo
+    css: ./styles.css
+    cr-style:
+      section-background-color: white
+      narrative-background-color-sidebar: "#E0E0E0"
+      narrative-text-color-sidebar: black
+      narrative-font-family: 'Georgia, "Times New Roman", Times, serif'
+      narrative-font-size: 1.8rem
+      poem-font-family: 'Georgia, "Times New Roman", Times, serif'
+listing:
+  id: blog-list
+  contents: 
+    - "posts/ai-strategy-series/"
+    - "!posts/ai-strategy-series/**/_*.qmd"
+  sort: "date asc"
+  type: grid
+  categories: false
+  sort-ui: false
+  filter-ui: false
+  max-items: 5
+  image-height: 300px
+  max-description-length: 300
+  feed: false
+---
+
+```{=html}
+<style>
+  @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
+
+  #quarto-document-content h1 {
+    font-family: "Cormorant Garamond", "Times New Roman", Times, serif;
+    font-weight: 500;
+    font-size: 2.3em;
+    line-height: 1.1;
+    margin-top: 0;
+  }
+
+  .cr-section  .narrative-col  > *:first-child {
+    padding-block-start: 10svh;
+  }
+</style>
+```
+
+::::{.cr-section} 
+
+:::{focus-on="cr-analect"}
+# On Developing an AI Strategy 
+# ↓
+:::
+
+:::{#cr-analect}
+![](./images/Analect_Intelligent_Analysis_Horizontal.png){width="70%" fig-align="center"}
+:::
+
+You've been tasked with developing an **AI strategy** for your business ... @cr-aisearch
+  
+  
+... and you've read about **foundation models** ... @cr-foundation
+  
+[@cr-foundation]{scale-by="1.5" highlight="1,6"} 
+
+... and you've heard there are **software solutions** out there ...
+
+
+... that might get you **started** on that journey. @cr-mad1
+
+As you research the field, it seems that **AI** tooling is just a subset of **Machine Learning** tooling. [@cr-mad2]{scale-by="0.7"}
+
+Soon, you're **overwhelmed**. [@cr-mad3]{scale-by="1"}
+
+[@cr-mad3]{scale-by="2"}
+
+So we've put together a **blog-series** to get you started, instead.
+
+:::{#cr-aisearch}
+![](./images/search_ai_google_dalle.webp){fig-align="center"}
+:::
+
+:::{#cr-mad1}
+![](./images/mad-pdf-narrow.png)
+:::
+
+:::{#cr-mad2}
+![](./images/mad-pdf-wider.png)
+:::
+
+:::{#cr-mad3}
+![](./images/mad-pdf-widest.png)
+:::
+
+:::{#cr-foundation}
+| A **foundation model**, also known as large X model (LxM),
+| is a machine learning or deep learning model that is
+| trained on vast datasets so it can be applied across a
+| wide range of use cases.
+|
+| Generative AI applications like Large Language Models
+| are often examples of foundation models.
+|
+| Building foundation models is often highly resource-intensive,
+| with the most advanced models costing hundreds of millions of
+| dollars to cover the expenses of acquiring, curating, and
+| processing massive datasets, as well as the compute power
+| required for training.
+|  
+|  ...
+|  
+*[https://en.wikipedia.org/wiki/Foundation_model](https://en.wikipedia.org/wiki/Foundation_model)*
+:::
+::::
+
+\
+\
+\
+
+:::{#blog-list}
+:::
+
+:::: {.grid}
+::: {.g-col-2}
+\
+\
+![](./images/Analect_Intelligent_Analysis.png)
+:::
+
+::: {.g-col-1}
+:::
+
+::: {.g-col-6 style="font-size: 80%;"}
+#### About Analect
+I have been working at the intersection of finance and technology most of my career. While all my roles in finance involved leveraging technology, I focused on deepening my technical knowledge with my own start-up, Analect, formed in 2012. My motivation at the time, as a financial analyst, was to bring some of the compelling open-source tooling in the scientific community to the finance domain. More recently, my focus has been on cloud-based platform engineering for machine-learning use-cases (MLOps). Direct hands-on experience with these systems is a necessary part of being able to articulate ideas and strategy around how they can be leveraged within a financial services domain but also other industry domains too. Let's collaborate together.
+:::
+
+::: {.g-col-1}
+:::
+
+::: {.g-col-2}
+\
+\
+[![](./images/aws-cert-solutions-arch-prof.png)](https://www.credly.com/badges/a6053261-f1a2-4b33-876e-2bb872a30daa/linked_in_profile)
+:::
+::::
