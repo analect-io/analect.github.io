@@ -1,0 +1,207 @@
+---
+title: "2. AI is Here, But its Business-Applicability may not be Obvious"
+subtitle: "AI will be transformational for your workforce, but they will need help to embrace it and practice applied AI --- where to use it most effectively"
+description: |
+
+categories: [ai-strategy-series, digital-transformation, applied-ai]
+# author: "[Colum McCoole](https://github.com/Analect)"
+date: 2025-02-10
+image: images/rewired-beyond-wiley.png
+freeze: true
+execute: 
+  freeze: auto
+  eval: false
+format: 
+  html:
+    toc: true
+    toc-depth: 4
+code-copy: hover
+---
+
+::: {.callout-tip}
+## Key Takeaway
+Even if a business has a highly-capable IT function, it may only have a handful of specialists experimenting with AI technologies. How do you scale that? Even if you have built valuable AI-driven prototypes (or are even in-production), getting customers or business users to adopt that solution as part of their day-to-day activities is often the biggest challenge.
+
+Even if you have managed to attract and retain many data-science types within your business, real bandwidth to embed AI within the organisation will only come with training those non-technical employees and reskilling them to leverage these new class of tools such as agentic-AI.
+:::
+
+::: {.callout-note collapse="true"}
+## AI Strategy Series (#2 of 5)
+::: {.grid}
+
+::: {.g-col-6}
+- [#1. Framing an AI Strategy: Where Do You Start?](./../1-overview/index.qmd)
+- #2. AI is Here, But its Business-Applicability may not be Obvious (this one)
+- [#3. Platform Engineering for Evolving AI / ML Solutions (forthcoming)]{style="color:  #D3D3D3;"}
+:::
+
+::: {.g-col-6}
+- [#4. DataOps Strategy: Embedding Data Everywhere (forthcoming)]{style="color:  #D3D3D3;"}
+- [#5. LLMs: Key Emerging Components of the AI Tech Stack (forthcoming)]{style="color:  #D3D3D3;"}
+:::
+
+:::
+:::
+
+### Identifying What Can be Solved with AI
+
+A confluence of factors (LLMs, a proliferation of GPU-compute, maleable cloud-based data and AI on edge devices) have ignited a market for applied AI. The pace of innovation is massive and these models are becoming more capable by the week. Barriers-to-entry, in terms of high-GPU machines, are being lowered with new methods, including [quantization](https://huggingface.co/docs/optimum/en/concept_guides/quantization). So running complex models on lower-powered AI edge devices will become a reality.
+
+<!-- We are trying to think about the implications of all of this for a businesses within the financial-services sector, including private-equity firms.  -->
+
+
+The difference between AI and ML is not always clear, and people tend to use the terms somewhat interchangeably. I find that this definition^[[Data Engineering with AWS](https://www.packtpub.com/en-us/product/data-engineering-with-aws-9781804613139), Gareth Eagar, Packt Publishing, 2nd Ed. October 2023] is succinct:
+
+::::{.grid}
+
+::: {.g-col-3}
+[Artificial Intelligence (AI)]{style="background-color: #E0E0E0;"} focuses on creating machines (software) to perform complex tasks that typically require human intelligence, such as problem-solving (analysing), decision-making (reasoning), and understanding language (learning).
+:::
+
+::: {.g-col-5}
+[Machine Learning (ML)]{style="background-color: #E0E0E0;"}, more specifically, is a *subset of AI* that focuses on developing algorithms and statistical models to enable a model to recognize patterns in data and then make predictions based on those patterns --- to effectively perform the complex tasks described above. For example, training an ML model on a dataset that has customer data and an indication of which customers defaulted on their debt, and enabling that model to predict whether other customers may default on their debt.
+:::
+
+::: {.g-col-4}
+[Generative AI (GenAI)]{style="background-color: #E0E0E0;"}, is a *subset of AI* capable of creating new content, such as text, images, or music, based on user input prompts. While machine learning is used to perform more narrowly defined tasks like categorizing data or making predictions, GenAI can respond dynamically to user inputs, and so is used for more creative tasks like composing text or conversing with customers via AI agents^[[Machine Learning vs. AI: Differences, Uses, and Benefits](https://www.coursera.org/articles/machine-learning-vs-ai), Coursera Staff, January 2025].
+:::
+::::
+
+
+
+:::{.grid}
+
+:::{.g-col-4}
+In spite of all the hype, Generative AI remains small, compared to the *installed-base* of classical ML models (such as supervised and unsupervised learning). I'm not sure how scientific this bubble-chart is, but as a key thought-leader in this field, Andrew Ng's opinion is important. GenAI penetration, as yet, is small since it is relatively new and it still suffers from certain key risks including potential issues with hallucination and safety, and public relations issues with deploying genAI.
+:::
+
+:::{.g-col-8}
+![Andrew Ng's Assessment of Value from AI technologies 3 Years Out^[[Opportunities in AI, DeepLearning.AI / Stanford](https://www.youtube.com/watch?v=5p248yoa3oE) Andrew Ng's Assessment of Growth (shaded part) in different fields of AI, July 2023]](./images/ng-growth-areas-ml.png){#fig-andrewng}
+:::
+
+:::
+
+Indeed, the posture of most corporates, as borne out by a16z's survey below, remains much more internal-facing. Let's find use-cases internally first, until such time as we are comfortable that the technology is good enough to evolve into customer-facing solutions.
+
+![How willing are enterprises to use LLMs for different use cases?^[[16 Changes to the Way Enterprises Are Building and Buying Generative AI](https://a16z.com/generative-ai-enterprise-2024/), by Sarah Wang and Shangda Xu, March 2024]](./images/How-willing-are-enterprises-to-use-LLMs-for-different-use-cases.jpg){#fig-a16z}
+
+
+### Some Blueprints for Planning and Digital Transformation
+
+:::: {.grid}
+
+::: {.g-col-9}
+I'm generally cautious in recommending "management guides", since they can often be overloaded with waffle. However, in this nascent field, where there's still a dearth of good literature, these two books emanating from McKinsey practitioners are worth feeding from. Admittedly, they are targeted at well-resourced corporates that tend to spend heavily on consultants, but there are nevertheless useful frameworks within each that have applicability to smaller teams too. **Rewired**^[[Rewired](https://www.wiley.com/en-us/Rewired%3A+The+McKinsey+Guide+to+Outcompeting+in+the+Age+of+Digital+and+AI-p-9781394207121), The McKinsey Guide to Outcompeting in the Age of Digital and AI, Wiley, June 2023.] is dubbed a how-to manual that their own consultants use to help companies build the capabilities to outcompete in the age of digital and AI. **Beyond Performance 2.0**^[[Beyond Performance 2.0](https://www.wiley.com/en-us/Beyond+Performance+2.0%3A+A+Proven+Approach+to+Leading+Large-Scale+Change%2C+2nd+Edition-p-9781119596660), A Proven Approach to Leading Large-Scale Change, 2nd Ed., Wiley, July 2019.] covers every aspect of how to lead change at scale within an organisation.
+
+
+In **Rewired**, McKinsey partners open by acknowledging that over the past decade ["*digital* has become pervasive driven by the confluence of new technologies *(cloud, AI, ..)*, new architectural paradigms *(micro-services, APIs ..)* and new ways of building software *(agile, devsecops, ..)*, all emanating from the tech industry, but subsumed by industry more generally. This tide will only strengthen with generative AI, edge computing, quantum computing and the like. The inherent digital transformation is not one-off, rather its a journey to continuously increase competitiveness."]{style="background-color: #E0E0E0;"} The other observation the authors' make is that **it [digital transformation] is hard to do, with most businesses failing to achieve anything near expected revenue lifts or expected cost savings**.
+:::
+
+::: {.g-col-3}
+![](./images/rewired-beyond-wiley-vertical.png)
+:::
+::::
+
+The **Rewired** book content, they claim, is an equivalent guide to the one McKinsey teams around the world use when working with clients on their digital and AI transformation. It is the result of constant development, refinement, and learning in the field over the past five years. For our purposes it's certainly geared to larger well-resourced entities that have the capacity to build expansive teams and implement a gold-plated infrastructure for delivering AI solutions. However, the basic principles they preach are applicable to organisations big and small.
+
+#### Developing a robust business-case per domain
+:::: {style="background-color: #E0E0E0"}
+
+The authors advocate identifying a few important and self-contained domains in the business and rethink them completely. Typically, a domain is a subset of your enterprise that encapsulates a cohesive set of related activities --- there are usually 10 - 15 domains in a business. No more than 2 - 5 should be selected for tansformation. Prioritising these should be measured along a value / feasibility framework:
+
+- **value potential** - measure improved customer experience, estimate financial benefits (KPIs), determine speed to value, are there synergies between domains to be transformed?
+- **feasibility** - is there strong executive sponsorship in the domain, data and technology readiness, ease of adoption of proposed changes and ease of scaling enterprise-wide.
+
+![Domain Reimagination: McKinsey 5-Step Process to Develop a Robust Business-case per Domain^[[Chapter 3: Have business leaders define what's possible](https://www.wiley.com/en-us/Rewired%3A+The+McKinsey+Guide+to+Outcompeting+in+the+Age+of+Digital+and+AI-p-9781394207121), Rewired, Wiley, June 2023]](./images/mckinsey-rewired-c03ex001-notitle.png){#fig-rewired-5step width=95%}
+
+Unmet needs of the user or process pain points are reconciled against a specific value lever. For each value lever, the process requires you identify potential digital solutions (e.g., apps or data assets) that users or customers will use as part of the improved experience you intend to provide. By design, each solution should activate at least one value lever. Solutions that are not explicitly tied to business value through measurable KPI improvements can result in failed efforts around digital transformation.
+
+![Step 2: Cascading from business domain to value levers, solutions and use-cases^[[Chapter 3: Have business leaders define what's possible](https://www.wiley.com/en-us/Rewired%3A+The+McKinsey+Guide+to+Outcompeting+in+the+Age+of+Digital+and+AI-p-9781394207121), Rewired, Wiley, June 2023]](./images/mckinsey-rewired-c03ex002-notitle.png){#fig-rewired-domain-model width=95%}
+
+::::
+
+### The Importance of Envisaging Personas
+
+An integral part of the problem-to-solve discovery (Step 1) in the domain reimagination process above is the 'user unmet need'. That user could be internal (an employee) or external (a customer). [Georgian](https://georgian.io/about/), a Canadian VC specialsing in B2B software investments, operate a 'growth network' of potential portfolio investments and they produced a useful analysis of internally-facing personas and their intended GenAI use-cases. We've linked to the original blog-post in @fig-georgian.
+
+
+![GenAI use-cases, as derived from the Georgian Growth Network^[[Practitioners Perspectives: GenAI Risks and Opportunities](https://georgian.io/practitioners-perspectives-genai-risks-and-opportunities-ggn/), Georgian.io, 2023]](./images/GenAI_Findings_GGN.jpg){#fig-georgian}
+
+Based on my own engagement with clients in the finance and VC domains, I'm including a few one-pagers that I assemble as part of a larger deck, aggregating various considerations that a persona in those fields might consider. This could be an exercise prior to delineating-out user needs and associated problems-to-solve, per the McKinsey framework described above. The Finance Executive persona (below) draws from a useful report from Celent^[[Generative AI Making Waves](https://pages.awscloud.com/rs/112-TZM-766/images/AWS_Gen_AI_Making_Waves_Report.pdf), Adoption waves in banking and capital markets, Celent, AWS, May 2024.] which echoes what we saw in @fig-a16z, where the tendency among corporates (and banks, in this case) is to develop GenAI applications for an internal audience, only planning a roll-out for external users much later, when presumably rough-edges and hallucination risks can be mitigated.
+
+::: {.column-page-right}
+
+::: {.panel-tabset}
+
+## Finance Executive Persona
+
+{{< pdf assets/202411_mccoole_strategyAI_deck9.pdf width=100% height=800 >}}
+
+## Private Equity Investor Persona
+
+{{< pdf assets/202411_mccoole_strategyAI_deck10.pdf width=100% height=800 >}}
+:::
+:::
+
+### Change Management Required to Embed AI Usage
+
+In the first installment of this blog-series, we posited that the professionals involved in the day-to-day business of running a function, product or solution are the ones that will have the ideas for how things can be done differently, aided by AI, so it makes sense that they are also the ones that have a sense for what is viable, technologically-speaking, too --- and develop the requisite skills to be able to build prototypes more easily. Enabling that in reality shouldn't be underestimated and relies on the less glamorous and more arduous task of change management.
+
+The framework presented below borrows from **Five Frames of Performance and Health**, [Beyond Performance 2.0](https://www.wiley.com/en-us/Beyond+Performance+2.0%3A+A+Proven+Approach+to+Leading+Large-Scale+Change%2C+2nd+Edition-p-9781119596660), a seminal publication from partners and practitioners at McKinsey. Why the delineation between *Performance* and *Health*, you might ask? I suppose the analogy in their book is useful: for someone looking to run a marathon for the first time, for each performance step, there's an equivalent health step that determines the actions to be taken for that objective to become a reality.
+
+This all might seem a little overkill, but it acknowledges the fact that as much as AI might be truly tranformational for businesses reliant on knowledge-workers, expecting them to understand it and fully embrace it without requisite support, isn't going to be realistic. Digital transformation will probably only succeed with culture transformation within an organisation, requiring some form of change-management.
+
+A central idea behind this *Five Frames* approach in delivering successful change at scale is that leaders should put equal emphasis on *performance-* and *health-related* efforts --- where **Performance** is '*What* an enterprise does to deliver to its stakeholders in financial and operational terms', while **Health** is '*How* effectively an organization works together in pursuit of a common goal'.
+
+::: {.column-page-right}
+::: {.grid}
+
+::: {.g-col-3 style="font-size: 80%;"}
+The five [performance frameworks]{style="background-color: #E0E0E0;"} are:
+
+1. *Aspire:* **Strategic objectives.** Create a compelling long-term change vision, roll back the future to a mid-term aspiration, and guard against biases in the process.
+2. *Assess:* **Skillset requirements.** Forecast skill “demand” and understand skill “supply” dynamics, and then identify how any gaps will be closed.
+3. *Architect:* **Bankable plan.** Define the portfolio of initiatives to deliver on your strategic objectives and fulfill your skill requirements, then programmatically sequence actions and reallocate resources to deliver.
+4. *Act:* **Ownership model.** Establish strong governance; decide how to scale up your portfolio of initiatives; monitor progress and dynamically adjust as plans are implemented.
+5. *Advance:* **Learning infrastructure.** Institutionalize processes and expertise to enable knowledge sharing, continuous improvement, and continuous learning to characterize the day-to-day workings of the organization going forward.
+:::
+
+::: {.g-col-6}
+![The Five Frames of Performance and Health^[[Chapter 1: Performance and Health](https://www.wiley.com/en-us/Beyond+Performance+2.0%3A+A+Proven+Approach+to+Leading+Large-Scale+Change%2C+2nd+Edition-p-9781119596660), Beyond Performance 2.0, 2nd Ed., Wiley, July 2019]](./images/5frames-beyond-performance-c01x005.jpg){#fig-five-frames}
+:::
+
+::: {.g-col-3 style="font-size: 80%;"}
+The five [health frameworks]{style="background-color: #E0E0E0;"} are:
+
+1. *Aspire:* **Health goals.** Objectively check your health, choose where to be exceptional, and target any ailing areas in need of immediate improvement.
+2. *Assess:* **Mindset shifts.** Pinpoint the helping and hindering behaviors related to health priority areas, explore the underlying mindset drivers of these behaviors, and name and reframe the critical few “root-cause” mindsets.
+3. *Architect:* **Influence levers.** Reshape the work environment to influence needed shifts in mindsets and behaviors by hardwiring health interventions into performance initiatives and interactively cascading the change story.
+4. *Act:* **Energy generation.** Mobilize influence leaders, make the change personal for a critical mass of leaders, and maintain high impact two-way communications.
+5. *Advance:* **Leadership placement.** Prioritize roles by value-creation potential based on the go-forward strategy, match the best talent to priority roles, and operationalize the talent match process to ensure it’s regularly revisited.
+:::
+
+:::
+:::
+
+### Setting up Machine Learning projects for success
+
+Leading on from the points above, part of the *health* of an organisation is having effective pillars in place that can underpin efforts to make machine-learning adoption across a business more effective and more likely to succeed. There are degrees to which this can be implemented. At a basic level, following industry best-practices is a good start and this eminently sensible guide ^[[Setting up Machine Learning projects for success](https://medium.com/data-science-at-microsoft/setting-up-machine-learning-projects-for-success-4cba7840d24a) A tried-and-tested guide to framing data science projects, Chris Hughes, May 2021] offers a good starting point. When it comes to educating the workforce on best-practices, there's little point in reinventing the wheel. There are some excellent open-source resources out there from which to learn, among them those from the Turing Institute^[[Introduction to Research Data Science](https://alan-turing-institute.github.io/rds-course/) developed by, The Alan Turing Institute, [Research Engineering Group](https://www.turing.ac.uk/research-engineering)]. We've take the liberty of summarising some of the points around ML project structure from both in the one-pager below. I would urge you to delve into the source too. By all means these can be honed for a given industry or organisation, but as a foundation, they're solid.
+
+In the next blog-post in this series, we'll be talking about platforms, which is where an organisation will begin to formalise their own best-practices around working with AI.
+
+::: {.column-page-right}
+
+::: {.panel-tabset}
+
+## Machine-Learning Project Templates
+
+{{< pdf assets/202411_mccoole_strategyAI_deck13.pdf width=100% height=800 >}}
+
+:::
+:::
+
+### Codify Patterns, Template and Platform them
+
+Experimentation and prototyping will be order of the day. Being able to do that iteratively and with purpose, requires that the right infrastructure and tooling is available and that robust systems for managing proprietary data are in place. Good governance around responsible AI practices need to be baked-in from the outset.
+
+Good patterns and best-practices around forming solutions / products should be identified, with templates of these then made available, perhaps on internal developer platforms so that teams have golden paths to follow, with appropriate guard-rails. I will use the next blog to elaborate on the theme of platform engineering.
