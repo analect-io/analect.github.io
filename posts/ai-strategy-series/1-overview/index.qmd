@@ -159,20 +159,22 @@ explanation: |md
   2. **Business Applicability** - determining best use-cases for  
   applying AI within an org. McKinsey blueprints for digital  
   transformation and change-mgt. Personas for 'user-needs'.  
+  Codify patterns and seek to re-use these across teams.   
   3. **Platform for Scale** - positioning the org to be able  
   to perform machine-learning at scale, seeking to automate  
   everything, enabling a fast interation loop and the fly-wheel  
-  effect. Use project templates and emphasise data-centricity.
+  effect. Emphasise data-centricity above model-tuning.
   4. **DataOps Foundations** - data becomes the differentiator  
   when model performance converges. DataOps is all about  
   curating that valuable resource. New tooling is making that  
   data more pliable. Heavy database and data-processing infra  
   is no longer a pre-requisite, but nature of workloads are  
   shifting requiring a new gen. of pipelines / orchestration.  
-  5. **Emerging LLM Stack** - forthcoming  
-    
-
-
+  5. **Emerging LLM Stack** - whole new class of apps emerging  
+  driven by LLMs / GenAI. What are the risks with developing  
+  with these and what best-practices are emerging. Per fast  
+  feedback loop in MLOps, LLM Evals + Monitoring is key part  
+  of LLMOps. Other tooling emerging for new SDLC with LLMs.
 |
 
 catalog: "" {
@@ -185,6 +187,7 @@ catalog: "" {
     grid-columns: 1
     style: {
       font-size: 40
+      fill: "#E6FFE6"
     }
     Upskill Across the Org
     Stage your Adoption
@@ -195,6 +198,7 @@ catalog: "" {
     grid-columns: 1
     style: {
       font-size: 40
+      fill: "#E6FFE6"
     }
     What Can be Solved with AI
     Blueprints for Planning
@@ -208,11 +212,11 @@ catalog: "" {
     grid-columns: 1
     style: {
       font-size: 40
+      fill: "#E6FFE6"
     }
     Envisioning Tech Stack
     DevOps, GitOps, MLOps
-    Platforms for MLOps
-    IDPs
+    Platforms for MLOps / IDPs
     Fast Feedback Loop
     Data-centric MLOps
   }
@@ -225,7 +229,7 @@ catalog: "" {
     What is DataOps?
     Converging Table Formats
     Embedded Databases
-    Serverless Solutions
+    #Serverless Solutions
     ML / AI Workloads
     New Gen Pipelines / Orch.
   }
@@ -235,7 +239,13 @@ catalog: "" {
     style: {
       font-size: 40
     }
-    forthcoming
+    LLMs as a Developer Tool
+    Risks with Using LLMs
+    Best Practices with LLMs
+    LLM Evals + Monitoring
+    SDLC with LLMs
+    LLMOps
+    LLMs for Classical ML
   }
 }
 ```
