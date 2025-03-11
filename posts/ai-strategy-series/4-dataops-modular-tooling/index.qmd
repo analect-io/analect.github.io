@@ -1,6 +1,6 @@
 ---
 title: "4. DataOps: Emerging powerful modular tooling"
-subtitle: "Data Science depends on good data engineering."
+subtitle: "Data Science depends on good data engineering. Data is the differentiating factor in evolving powerful models and a new paradigm of composable data systems are coming to fruition to meet the demands of machine learning-driven businesses"
 description: |
 
 categories: [ai-strategy-series, machine-learning, dataops]
