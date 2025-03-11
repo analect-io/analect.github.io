@@ -14,7 +14,6 @@
 <item>
   <title>5. LLMs: Key Emerging Components of the AI Tech Stack</title>
   <dc:creator>Colum McCoole</dc:creator>
-  <dc:creator>[Colum McCoole](https://github.com/Analect)</dc:creator>
   <link>https://analect.com/posts/ai-strategy-series/5-llm-apps-llmops/</link>
   <description><![CDATA[ 
 
@@ -454,8 +453,7 @@ A useful case-study from the wild on LLM usage<sup>28</sup> at <strong>Clearwate
 <li id="fn30"><p><a href="https://aws.amazon.com/blogs/machine-learning/operationalize-llm-evaluation-at-scale-using-amazon-sagemaker-clarify-and-mlops-services/">Operationalize LLM Evaluation at Scale using Amazon SageMaker Clarify and MLOps services</a>, Sokratis Kartakis, Jagdeep Singh Soni, and Riccardo Gatti, AWS, Nov.&nbsp;2023.↩︎</p></li>
 </ol>
 </section><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@misc{mccoole2025,
-  author = {{Colum McCoole} and McCoole{]}(https://github.com/Analect),
-    {[}Colum},
+  author = {{Colum McCoole}},
   title = {5. {LLMs:} {Key} {Emerging} {Components} of the {AI} {Tech}
     {Stack}},
   date = {2025-03-07},
@@ -463,8 +461,8 @@ A useful case-study from the wild on LLM usage<sup>28</sup> at <strong>Clearwate
   langid = {en-GB}
 }
 </code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-mccoole2025" class="csl-entry quarto-appendix-citeas">
-Colum McCoole, and [Colum McCoole](https://github.com/Analect). 2025.
-<span>“5. LLMs: Key Emerging Components of the AI Tech Stack.”</span> <a href="https://analect.com/posts/ai-strategy-series/5-llm-apps-llmops/">https://analect.com/posts/ai-strategy-series/5-llm-apps-llmops/</a>.
+Colum McCoole. 2025. <span>“5. LLMs: Key Emerging Components of the AI
+Tech Stack.”</span> <a href="https://analect.com/posts/ai-strategy-series/5-llm-apps-llmops/">https://analect.com/posts/ai-strategy-series/5-llm-apps-llmops/</a>.
 </div></div></section></div> ]]></description>
   <category>ai-strategy-series</category>
   <category>machine-learning</category>
@@ -476,7 +474,6 @@ Colum McCoole, and [Colum McCoole](https://github.com/Analect). 2025.
 <item>
   <title>4. DataOps: Emerging powerful modular tooling</title>
   <dc:creator>Colum McCoole</dc:creator>
-  <dc:creator>[Colum McCoole](https://github.com/Analect)</dc:creator>
   <link>https://analect.com/posts/ai-strategy-series/4-dataops-modular-tooling/</link>
   <description><![CDATA[ 
 
@@ -833,16 +830,15 @@ Figure&nbsp;10: DAGWork’s 5-layer modular data-stack<sup>18</sup>
 <li id="fn20"><p><a href="https://www.datacouncil.ai/talks24/foundations-for-a-multi-modal-lakehouse-for-ai">Foundations for a Multi-Modal Lakehouse for AI</a>, Data Council Technical Talk, April 2024↩︎</p></li>
 </ol>
 </section><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@misc{mccoole2025,
-  author = {{Colum McCoole} and McCoole{]}(https://github.com/Analect),
-    {[}Colum},
+  author = {{Colum McCoole}},
   title = {4. {DataOps:} {Emerging} Powerful Modular Tooling},
   date = {2025-02-28},
   url = {https://analect.com/posts/ai-strategy-series/4-dataops-modular-tooling/},
   langid = {en-GB}
 }
 </code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-mccoole2025" class="csl-entry quarto-appendix-citeas">
-Colum McCoole, and [Colum McCoole](https://github.com/Analect). 2025.
-<span>“4. DataOps: Emerging Powerful Modular Tooling.”</span> <a href="https://analect.com/posts/ai-strategy-series/4-dataops-modular-tooling/">https://analect.com/posts/ai-strategy-series/4-dataops-modular-tooling/</a>.
+Colum McCoole. 2025. <span>“4. DataOps: Emerging Powerful Modular
+Tooling.”</span> <a href="https://analect.com/posts/ai-strategy-series/4-dataops-modular-tooling/">https://analect.com/posts/ai-strategy-series/4-dataops-modular-tooling/</a>.
 </div></div></section></div> ]]></description>
   <category>ai-strategy-series</category>
   <category>machine-learning</category>
