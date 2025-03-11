@@ -1,0 +1,1085 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-GB" xml:lang="en-GB"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.42">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Colum McCoole">
+<meta name="dcterms.date" content="2025-03-07">
+
+<title>5. LLMs: Key Emerging Components of the AI Tech Stack – Analect</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<link href="../../../images/analect_89_x_75.png" rel="icon" type="image/png">
+<script src="../../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap-e5bd5842818420112f2a87434b228a32.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-5CKF247L1G"></script>
+
+<script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-5CKF247L1G', { 'anonymize_ip': true});
+</script>
+<script data-goatcounter="https://analect.goatcounter.com/count" async="" src="//gc.zgo.at/count.js"></script>
+
+
+<link rel="stylesheet" href="../../../styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../../images/analect_logo.svg" alt="" class="navbar-logo">
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../posts"> 
+<span class="menu-text">Blog</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="https://www.linkedin.com/in/colum-mccoole-746b946a/"> <i class="bi bi-linkedin" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://github.com/Analect"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://analect.com/posts/index.xml"> <i class="bi bi-rss" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#llm-state-of-play" id="toc-llm-state-of-play" class="nav-link active" data-scroll-target="#llm-state-of-play">LLM State of Play</a></li>
+  <li><a href="#llms-as-a-developer-tool" id="toc-llms-as-a-developer-tool" class="nav-link" data-scroll-target="#llms-as-a-developer-tool">LLMs as a Developer Tool</a>
+  <ul>
+  <li><a href="#understand-different-ai-user-types" id="toc-understand-different-ai-user-types" class="nav-link" data-scroll-target="#understand-different-ai-user-types">Understand Different AI User-types</a></li>
+  <li><a href="#importance-of-the-rag-pattern" id="toc-importance-of-the-rag-pattern" class="nav-link" data-scroll-target="#importance-of-the-rag-pattern">Importance of the RAG Pattern</a></li>
+  <li><a href="#moving-beyond-chatbots-and-rag-implementations" id="toc-moving-beyond-chatbots-and-rag-implementations" class="nav-link" data-scroll-target="#moving-beyond-chatbots-and-rag-implementations">Moving Beyond Chatbots and RAG Implementations</a></li>
+  <li><a href="#outerbounds-metaflow-use-case-new-web-technologies-leveraging-ai" id="toc-outerbounds-metaflow-use-case-new-web-technologies-leveraging-ai" class="nav-link" data-scroll-target="#outerbounds-metaflow-use-case-new-web-technologies-leveraging-ai">Outerbounds (Metaflow) Use-case — New Web Technologies leveraging AI</a></li>
+  <li><a href="#llm-codegen-workflow" id="toc-llm-codegen-workflow" class="nav-link" data-scroll-target="#llm-codegen-workflow">LLM Codegen Workflow</a></li>
+  </ul></li>
+  <li><a href="#llmops-is-more-than-an-extension-of-mlops" id="toc-llmops-is-more-than-an-extension-of-mlops" class="nav-link" data-scroll-target="#llmops-is-more-than-an-extension-of-mlops">LLMOps is more than an Extension of MLOps</a></li>
+  <li><a href="#risks-with-using-llms" id="toc-risks-with-using-llms" class="nav-link" data-scroll-target="#risks-with-using-llms">Risks with Using LLMs</a></li>
+  <li><a href="#llm-evals-and-monitoring" id="toc-llm-evals-and-monitoring" class="nav-link" data-scroll-target="#llm-evals-and-monitoring">LLM Evals and Monitoring</a></li>
+  <li><a href="#better-flow-controls-for-llm-apps" id="toc-better-flow-controls-for-llm-apps" class="nav-link" data-scroll-target="#better-flow-controls-for-llm-apps">Better Flow Controls for LLM Apps</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content page-columns page-full" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">5. LLMs: Key Emerging Components of the AI Tech Stack</h1>
+<p class="subtitle lead">Convinced of the value LLMs can bring, the challenge becomes how can we securely and reliably get LLMs to perform complex tasks with real-world data.</p>
+  <div class="quarto-categories">
+    <div class="quarto-category">ai-strategy-series</div>
+    <div class="quarto-category">machine-learning</div>
+    <div class="quarto-category">llmops</div>
+  </div>
+  </div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p><a href="https://github.com/Analect">Colum McCoole</a> </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">7 March 2025</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Key Takeaway
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>LLMs have become progressively more capable and exponentially cheaper over the past two years. While they need careful curation when deployed as part of an overall business solution, LLMs have the potential to bring significant value to a business.</p>
+<p>Unlike traditional ML models, which operate on structured data, LLMs handle the vast and often messy world of text and code. This introduces a new layer of complexity, which demands special techniques for data ingestion, pre-processing, and training.</p>
+<p>LLMOps is about production monitoring and continual improvement, linked by evaluation. The better your evals, the faster you can iterate on experiments, and thus the faster you can converge on the best version of your system.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+AI Strategy Series (#5 of 5)
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="grid">
+<div class="g-col-6">
+<ul>
+<li><a href="../../../posts/ai-strategy-series/1-overview/index.html">#1. Framing an AI Strategy: Where Do You Start?</a></li>
+<li><a href="../../../posts/ai-strategy-series/2-business-applicability-digital-transform/index.html">#2. AI is Here, But its Business-Applicability may not be Obvious</a></li>
+<li><a href="../../../posts/ai-strategy-series/3-gitops-platforms-to-mlops/index.html">#3. Platform Engineering for Evolving AI / ML Solutions</a></li>
+</ul>
+</div>
+<div class="g-col-6">
+<ul>
+<li><a href="../../../posts/ai-strategy-series/4-dataops-modular-tooling/index.html">#4. DataOps Strategy: Embedding Data Everywhere</a></li>
+<li>#5. LLMs: Key Emerging Components of the AI Tech Stack (this one)</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<section id="llm-state-of-play" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="llm-state-of-play">LLM State of Play</h3>
+<div class="column-page-right">
+<div class="grid">
+<div class="g-col-6">
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If you skip this section, the only thing I would urge you to take away is that LLMs are getting more capable faster and the cost of using them has plummeted. There’s also a mix of as-good-as-best-in-class opensource models now available, with variants that are much more viably self-hosted, bringing with it more choice for users that may not wish to utilise API endpoints of the big foundation-model vendors. This, together with some other use-cases I hope to demonstrate in here, should convince those on the fence to embrace this innovation for their business.</p>
+</div>
+</div>
+<p>Given the pace of innovation in LLMs, it’s a somewhat moveable topic, so it’s perhaps useful to take a snapshot of where we currently stand in Q1 2025. In this field, I defer to better experts than myself and Simon Willison’s uncanny ability to offer precient observations<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> makes him a go-to source. In a recent review<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>, he made some of following observations:</p>
+<ul>
+<li>while 2023 was a ‘slow’ year for LLMs, with OpenAI maintaining dominance for most of that year with GPT-4, 2024 saw the pace of innovation spike, with as many as 18 labs<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> producing GPT-4 equivalent models.</li>
+<li>2024 was also the year of multi-modal LLMs, taking LLMs beyond text and gaining capabilities in processing images, audio and video.</li>
+<li>pricing for usage of the most capable models has continued to decline precipitously (<a href="#fig-a16z-llm-cost" class="quarto-xref">Figure&nbsp;1</a>) making the economics of using this technology all the while more compelling. Willison describes being able to label 68k photos with descriptions for a sum total of $1.68, leveraging Gemini 1.5 Flash 8B.</li>
+<li>he also points to the step-change in the sophistication of model now possible to run on local hardware, as even more capability is gettting packed into ever-smaller models. He actively records these milestones as he experiments, offering a valuable time-line of progress, such as these, from November through January.
+<ul>
+<li><a href="https://simonwillison.net/2024/Nov/12/qwen25-coder/">Qwen 2.5 Coder</a></li>
+<li><a href="https://simonwillison.net/2024/Dec/9/llama-33-70b/">Llama 3.3 70B</a></li>
+<li><a href="https://simonwillison.net/2025/Jan/30/mistral-small-3/">Mistral Small 3</a></li>
+</ul></li>
+</ul>
+</div>
+<div class="g-col-6">
+<div id="fig-a16z-llm-cost" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-a16z-llm-cost-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="./images/LLMflation-a16z.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-a16z-llm-cost-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: LLM inference cost is going down fast<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a>
+</figcaption>
+</figure>
+</div>
+<div id="fig-llm-ranking" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-llm-ranking-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="./images/top-llm-models-march-2025.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-llm-ranking-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: LLM Leaderboard - Comparison of GPT-4o, Llama 3, Mistral, Gemini and over 30 models — Dominance of Reasoning (inference-time compute) models<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a>
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<ul>
+<li>per model ranking in <a href="#fig-llm-ranking" class="quarto-xref">Figure&nbsp;2</a>, the presence of top-ranked opensource models is predominantly down to the efforts of labs from China, including DeepSeek and Alibaba (Qwen).</li>
+<li>January 2025 marked the arrival of DeepSeek V3 and R1 models, which you may recall rattled people’s assumptions around the possibility of being able to train these cutting-edge models for much less in compute cost than was previously assumed. It turns out that the low training cost posted at the time was taken a little out of context.</li>
+<li>Most compellingly, DeepSeek have been the first to properly opensource their methods (not just weights), which is a step-change.</li>
+<li>A note from Anthropic’s CEO<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a>, in which he argues for even stronger efforts to limit advanced chips for China, he posits that the interest in their reasoning R1 model was elevated, since they were the first to expose the Chain-of-Thought reasoning to users. You’ll recall, OpenAI’s o1 only gives you the final answer.</li>
+<li>In that same note, Amodei argues “<em>DeepSeek-V3 is not a unique breakthrough or something that fundamentally changes the economics of LLM’s; it’s an expected point on an ongoing cost reduction curve. What’s different this time is that the company that was first to demonstrate the expected cost reductions was Chinese.</em>”. Take from that what you will.</li>
+<li>The top-ranked models (<a href="#fig-llm-ranking" class="quarto-xref">Figure&nbsp;2</a>) are predominantly reasoning (inference-time compute) ones (OpenAI o1 and o3, DeepSeek R1, Qwen QwQ, Claude 3.7 Thinking and Gemini 2.0 Thinking are all examples of this pattern in action) or so-called MoE (mixture of experts)<a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a>, with Deepseek-V3 using as many as 256 different experts, per their paper<a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a>. Technical readers may find this discussion<a href="#fn9" class="footnote-ref" id="fnref9" role="doc-noteref"><sup>9</sup></a>.</li>
+<li>Willison also observes that these models are getting much better at handling PDFs and he offers well-documented approaches to leveraging this<a href="#fn10" class="footnote-ref" id="fnref10" role="doc-noteref"><sup>10</sup></a>. For instance, Gemini and Claude can both accept PDFs directly. For other models (including OpenAI) you need to break them up into images first—a PNG per page works well. These capabilities and reduced cost will only accelerate the sophistication of RAG (retrieval-augmented-generation) systems, a foundational capability for any business looking to use these technologies, as we’ll elaborate on lower down.</li>
+</ul>
+</div>
+</section>
+<section id="llms-as-a-developer-tool" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="llms-as-a-developer-tool">LLMs as a Developer Tool</h3>
+<p>The ability to leverage LLMs, as a developer tool, has dramatically changed the time-frame (and economics) of developing a model that can be iterated upon to solve a business problem. Convinced of the value they can bring, the challenge becomes how can we <strong>securely</strong> and <strong>reliably</strong> get LLMs to perform complex tasks with real-world data.</p>
+<p>For most LLM applications out there, your development steps will involve the selection of a foundation model, which you further have to optimize by using <strong>prompt engineering</strong>, <strong>fine-tuning</strong>, or <strong>RAG</strong><a href="#fn11" class="footnote-ref" id="fnref11" role="doc-noteref"><sup>11</sup></a>. The operational aspect of these three steps is the most critical to understand, something we’ll touch on in the LLMOps section below. For those keen to move beyond the abstract, I can whole-heartedly recommend the LLM Engineer’s Handbook<a href="#fn12" class="footnote-ref" id="fnref12" role="doc-noteref"><sup>12</sup></a>, which leads the reader through an end-to-end project implementation, which I personally think is the best way of gaining a clear understanding of how these technologies work and, more importantly, offers a spring-board for implementing a solution particular to your own business.</p>
+<section id="understand-different-ai-user-types" class="level4">
+<h4 class="anchored" data-anchor-id="understand-different-ai-user-types">Understand Different AI User-types</h4>
+<p>How you leverage LLMs as a business and the requisite sophistication of your LLMOps capability depends on the type of user you identify as. A helpful blog from AWS (linked below the diagram) depicts three main user-types along a continuum, with most users, as of today, probably identifying as ‘consumers’ — tapping into API end-points to feed an LLM some task. The ‘providers’ are the ones building models from scratch, where obviously much fewer organisations have such capabilities. In the middle are the ‘fine-tuners’, those that recognise the power of LLMs and that are prepared to build a level of expertise to be able to refine models for needs specific to their business use-cases.</p>
+<div id="fig-genai-user-types" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-genai-user-types-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="./images/AWS_GenAI_user-types.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-genai-user-types-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3: Operationalization journey per generative AI user type<a href="#fn13" class="footnote-ref" id="fnref13" role="doc-noteref"><sup>13</sup></a>
+</figcaption>
+</figure>
+</div>
+<div class="grid" style="font-size: 80%;">
+<div class="g-col-4">
+<ul>
+<li><strong>Providers</strong> - train models that are general-purpose. Each trained model needs to be benchmarked against many tasks not only to assess its performances but also to compare it with other existing models, to identify areas that needs improvement. Providers might become fine-tuners to support use cases based on a specific vertical (such as the financial sector).</li>
+</ul>
+</div>
+<div class="g-col-4">
+<ul>
+<li><strong>Fine-tuners</strong> - want to solve specific tasks (e.g.&nbsp;sentiment classification, summarization, question answering) as well as pre-trained models for adopting domain specific tasks. They need evaluation metrics generated by model providers to select the right pre-trained model as a starting point. they must curate and create their private datasets since publicly available datasets, even those designed for a specific task, may not adequately capture the nuances required for their particular use case.</li>
+</ul>
+</div>
+<div class="g-col-4">
+<ul>
+<li><strong>Consumers</strong> - consume general purpose or fine-tuned models in production, aiming to enhance their applications or services through the adoption of LLMs. robust monitoring and evaluation framework, model consumers can proactively identify and address regression in LLMs. Consumers might become fine-tuners to achieve more accurate results.</li>
+</ul>
+</div>
+</div>
+<p>As a proving ground for developing AI use-cases, the AWS ecosystem is no bad starting point, since they do the heavy-lifting around security on your behalf, allowing you to focus on evolving a solution that can add value. Their <a href="https://aws.amazon.com/bedrock/">Bedrock</a> platform offers a single API to various different LLM foundation-model providers and is best suited to the ‘consumers’ identified above. It offers an out-of-the-box solution that allows you to quickly deploy an API endpoint powered by one of the available foundation models.</p>
+<p>Alternatively, their <a href="https://aws.amazon.com/sagemaker/">SageMaker</a> is a multi-functional platform enabling you to customize your ML logic fully and is aimed at the ‘fine-tuners’, if not the ‘providers’. This incidentally is the system leveraged by the end-to-end project contained in the LLM Engineer’s Handbook, linked to earlier, for its greater versatility.</p>
+</section>
+<section id="importance-of-the-rag-pattern" class="level4 column-screen" style="background-color: #E0E0E0">
+<h4 class="anchored" data-anchor-id="importance-of-the-rag-pattern">Importance of the RAG Pattern</h4>
+<div class="grid">
+<div class="g-col-6">
+<div id="fig-aws-rag-pattern" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-aws-rag-pattern-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="./images/ML-16452-full-rag.jpg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-aws-rag-pattern-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4: Anatomy of RAG, derived from this blog<a href="#fn14" class="footnote-ref" id="fnref14" role="doc-noteref"><sup>14</sup></a>
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="g-col-3">
+<p>RAG is an efficient way to provide an FM (foundation model) with additional knowledge by using external data sources and is depicted in the diagram on the left:</p>
+<ul>
+<li><strong>Retrieval:</strong> Based on a user’s question (1), relevant information is retrieved from a knowledge base (2).</li>
+<li><strong>Augmentation:</strong> The retrieved information is added to the FM prompt (3.a) to augment its knowledge, along with the user query (3.b).</li>
+<li><strong>Generation:</strong> The FM generates an answer (4) by using the information provided in the prompt.</li>
+</ul>
+<p>From left to right (on left) are the <strong>retrieval</strong>, the <strong>augmentation</strong>, and the <strong>generation</strong> steps. In practice, the knowledge base is often a vector store, allowing for hybrid of key-word and semantic search.</p>
+</div>
+<div class="g-col-3" style="font-size: 80%;">
+<p><strong>Some Common RAG Use-cases:</strong></p>
+<ul>
+<li><strong>Employee training and resources</strong> – In this use case, chatbots can use employee training manuals, HR resources, and IT service documents to help employees onboard faster or find the information they need to troubleshoot internal issues.</li>
+<li><strong>Industrial maintenance</strong> – Maintenance manuals for complex machines can have several hundred pages. Building a RAG solution around these manuals helps maintenance technicians find relevant information faster. Note that maintenance manuals often have images and schemas, which could put them in a multimodal bucket.</li>
+<li><strong>Product information search</strong> – Field specialists need to identify relevant products for a given use case, or conversely find the right technical information about a given product.</li>
+<li><strong>Retrieving and summarizing financial news</strong> – Analysts need the most up-to-date information on markets and the economy and rely on large databases of news or commentary articles. A RAG solution is a way to efficiently retrieve and summarize the relevant information on a given topic.</li>
+</ul>
+</div>
+</div>
+</section>
+<p><br>
+With experience, an organisation’s sophistication in using these technologies will grow. As articulated in this blog<a href="#fn15" class="footnote-ref" id="fnref15" role="doc-noteref"><sup>15</sup></a>:</p>
+<blockquote class="blockquote">
+<p>A more scalable option is to have a centralized team build standard generative AI solutions codified into blueprints or constructs and allow teams to deploy and use them. This team can provide a platform that abstracts away these constructs with a user-friendly and integrated API and provide additional services such as LLMOps, data management, FinOps, and more. Establishing blueprints and constructs for generative AI runtimes, APIs, prompts, and orchestration such as LangChain, LiteLLM, and so on will simplify adoption of generative AI and increase overall safe usage. Offering standard APIs with access controls, consistent AI, and data and cost management makes usage straightforward, cost-efficient, and secure.</p>
+</blockquote>
+<section id="moving-beyond-chatbots-and-rag-implementations" class="level4">
+<h4 class="anchored" data-anchor-id="moving-beyond-chatbots-and-rag-implementations">Moving Beyond Chatbots and RAG Implementations</h4>
+<p>Anyone who has been following the development of LLMs over the past few years is probably suffering from chatbot or rag-system fatigue, since these are often presented as the pinacle of what these models are capable of, which of course is not the case. That’s why a use-case from Outerbounds<a href="#fn16" class="footnote-ref" id="fnref16" role="doc-noteref"><sup>16</sup></a> (maintainers of Metaflow) presented last year caught my eye, since it offers a more realistic glimpse of where we’re heading with these capabilities. We’ve tried to encapsulate its key message in the box below. Essentially it takes a banal furniture retailer website, for which little has changed in recent decades, and demonstrates how overlaying such a site with AI capabilities can be completely transformative. The narrative is probably easier to follow using the full-sized slides<a href="#fn17" class="footnote-ref" id="fnref17" role="doc-noteref"><sup>17</sup></a> and listening to the presentation. The point here is to illustrate the transformative effect that embeddeding machine-learning can have on a business.</p>
+</section>
+<section id="outerbounds-metaflow-use-case-new-web-technologies-leveraging-ai" class="level4 column-page-right" style="background-color: #E0E0E0">
+<h4 class="anchored" data-anchor-id="outerbounds-metaflow-use-case-new-web-technologies-leveraging-ai">Outerbounds (Metaflow) Use-case — New Web Technologies leveraging AI</h4>
+<div class="grid">
+<div class="g-col-6" style="font-size: 80%;">
+<p>To illustrate the changing sophistication of websites, a furniture retailer site is used. For the past 30 years, the same basic website design entails giving users an ability to filter available stock by price, type etc. with a query to the backend and the front-end refreshing to show the available products. The only real change in this model up until recently has been slicker photos of the products.</p>
+<p>However, with the arrival of LLMs, it’s now possible to allow users to place products into a picture of their own room and to interactively swap out products using natural language. Certain objects added within an image can be queried based on where you click within that image. LLMs can be used to improve product description summaries and a whole host of other things (blue squares on left below). Mean various other modelling opportunities with collected data present themselves (yellow squares on right below), taking the degree of sophistication around customer interaction to new heights.<br>
+<br>
+<br>
+</p>
+<div id="fig-model-categories" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-model-categories-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="./images/model-categories.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-model-categories-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5: An ML/AI-driven company of 2026: Categories of models leveraged<a href="#fn18" class="footnote-ref" id="fnref18" role="doc-noteref"><sup>18</sup></a>
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="g-col-6" style="font-size: 80%;">
+<p><br>
+<img src="./images/webapp-2.png" id="fig-webapp-functionalities" class="img-fluid" alt="New web functionality made possible by LLMs and related models"></p>
+<p>While all the focus these days seems to be on LLMs, a much broader set of models will become important in the coming years. This includes:</p>
+<ul>
+<li><strong>Multi-modal</strong> - where text, audio, images and potentially video are handled by a single model. Use-cases, based on our simple furniture retailer, might include an image-generator (show me a leather sofa) and object-recognizer (what is this lamp that has been placed in the image).</li>
+<li><strong>Hybrid Models</strong> - this is where pre-existing machine-learning models can be further enhanced with richer data-sets aided by LLMs that can help surface that data from unstructured sources.</li>
+</ul>
+</div>
+</div>
+<div class="grid">
+<div class="g-col-6" style="font-size: 80%;">
+<ul>
+<li><strong>Advanced Data &amp; ML</strong>
+<ul>
+<li><strong>causal marketing model</strong> - a sub-domain of models dedicated to better understanding the cause and effect of interactions with end-consumers intended to prompt some action. Should we offer them a discount? Are they more likely to desire a leather sofa?</li>
+<li><strong>LTV estimate</strong> - life-time value calculation is the predicted revenue generated by a customer over the entire relationship with a company. This will be an important factor in deciding the level of customer acquisiton cost you might be able to afford. LTV = ARPU x Customer Lifetime or LTV = ARPU/User Churn</li>
+<li><strong>Logistics optimzer</strong> - which products are most profitable to sell to consumers and easily available/deliverable.</li>
+<li><strong>Inventory forecasting</strong> - how much inventory of each product should we ideally be holding?</li>
+</ul></li>
+</ul>
+</div>
+<div class="g-col-6" style="font-size: 80%;">
+<div id="fig-hybrid-models" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-hybrid-models-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="./images/hybrid-models-2.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-hybrid-models-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6: Illustration of Hybrid models - combining classic ML and LLM models
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="llm-codegen-workflow" class="level4">
+<h4 class="anchored" data-anchor-id="llm-codegen-workflow">LLM Codegen Workflow</h4>
+<p>Much of our discussion of LLMs so far has been very much at the macro level — how can LLM be deployed as part of RAG system or used to underpin image generators or object recognizers on a modern website. But of course, LLMs, particularly those that are orientated towards code-generation, have become invaluable at the micro-level for developers too. As an illustration of this, Simon Willison’s blog that we linked to earlier, is teeming with examples of how he levers LLMs cleverly to bring greater levels of productivity to his work. His own <a href="https://llm.datasette.io/en/stable/">llm</a> CLI tool is being constantly enhanced for better integration into new capabilities being enabled by large language models. Another seasoned developer and blogger, Harper Reed, has also penned a valuable piece<a href="#fn19" class="footnote-ref" id="fnref19" role="doc-noteref"><sup>19</sup></a> which illustrates his usage of LLMs to structure a software solution through a series of question prompts, which he then step-by-step converts into code, also leveraging LLMs. In addition to ‘greenfield’ coding, he adapts this approach to work with legacy code-bases too. There have been plenty of doom-and-gloom narratives around the damaging effect of Co-pilot on nascent programmers, but like any tool, LLMs, when wielded sensibly, can be massively productivity-enhancing.</p>
+</section>
+</section>
+<section id="llmops-is-more-than-an-extension-of-mlops" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="llmops-is-more-than-an-extension-of-mlops">LLMOps is more than an Extension of MLOps</h3>
+<p>A single prompt fed into an LLM might produce varying responses over time. This can lead to inconsistencies in applications powered by LLMs. LLMOps implements strategies to manage output consistency. Unlike traditional ML models, which operate on structured data, LLMs handle the vast and often messy world of text and code. This introduces a new layer of complexity, which demands special techniques for data ingestion, pre-processing, and training.</p>
+<blockquote class="blockquote">
+<p>While MLOps addresses the principles and practices of managing various ML models, LLMOps focuses on the distinct aspects of LLMs, including their large size, highly complex training requirements, prompt management, and non-deterministic nature of generating answers.<a href="#fn20" class="footnote-ref" id="fnref20" role="doc-noteref"><sup>20</sup></a></p>
+</blockquote>
+<p>I’m not about to go down a rabbit-hole and teach you about LLMOps, when others have done that more eloquently (follow the linked footnote above). What I will do, however, is point you towards a <a href="https://applied-llms.org/about.html">group of practitioners</a> in this field (Applied LLMs) that have assembled an invaluable resource mid 2024 that runs through their experiences and ‘lessons-learned’ from a year shipping LLM applications<a href="#fn21" class="footnote-ref" id="fnref21" role="doc-noteref"><sup>21</sup></a>, with a video version here<a href="#fn22" class="footnote-ref" id="fnref22" role="doc-noteref"><sup>22</sup></a>. They split their learnings under <strong>Tactical</strong>, <strong>Operational</strong> and <strong>Strategy</strong> headings. We’ve tried to summarise the <em>tactical</em> part in the grey box within the embedded PDF below. I would encourage you to read the full note, linked above.</p>
+<p>Takeaways from the piece I found most compelling include:</p>
+<ul>
+<li><strong>The model isn’t the product, the system around it is</strong> - For teams that aren’t building models, the rapid pace of innovation is a boon as they migrate from one SOTA (state-of-the-art) model to the next, chasing gains in context size, reasoning capability, and price-to-value to build better and better products.</li>
+<li><strong>calibrate risk tolerance based on the use-case</strong> - for less critical applications, such as a recommender system, or internal-facing applications like content classification or summarization, excessively strict requirements only slow progress without adding much value.</li>
+<li><strong>Focus on model evaluation</strong> - LLMOps is about production monitoring and continual improvement, linked by evaluation. The better your evals, the faster you can iterate on experiments, and thus the faster you can converge on the best version of your system.</li>
+<li><strong>Empower everyone to use new AI technology</strong> - while it may seem expensive to have a team spend a few days hacking on speculative projects, the outcomes may surprise you.</li>
+</ul>
+<div class="column-page-right">
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">LLMOps Methodologies</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+  <p><a href="assets/202411_mccoole_strategyAI_deck27.pdf" target="_blank">Download PDF File</a></p>
+   <object data="assets/202411_mccoole_strategyAI_deck27.pdf" type="application/pdf" width="100%" height="800">
+    <p>Unable to display PDF file. <a href="assets/202411_mccoole_strategyAI_deck27.pdf">Download</a> instead.</p>
+  </object>
+  
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="risks-with-using-llms" class="level3">
+<h3 class="anchored" data-anchor-id="risks-with-using-llms">Risks with Using LLMs</h3>
+<p>This is a broad topic, best tackled elsewhere in-depth, but as a helpful starting point, I would point you toward this blog<a href="#fn23" class="footnote-ref" id="fnref23" role="doc-noteref"><sup>23</sup></a>, where the authors, viewing through a generative AI lens, acknowledge the need to address the intricate challenges and opportunities arising from Generative AI’s innovative nature, which would include the following aspects:</p>
+<ul>
+<li><strong>Complexity</strong> can be unpredictable due to the ability of large language models (LLMs) to generate new content</li>
+<li>Potential <strong>intellectual property</strong> infringement is a concern due to the lack of transparency in the model training data</li>
+<li><strong>Low accuracy</strong> in generative AI can create incorrect or controversial content</li>
+<li>Resource utilization requires a specific operating model to meet the <strong>substantial computational resources</strong> required for training and prompt and token sizes</li>
+<li><strong>Continuous learning</strong> necessitates additional data annotation and curation strategies</li>
+<li><strong>Compliance</strong> is also a rapidly evolving area, where data governance becomes more nuanced and complex, and poses challenges</li>
+<li><strong>Integration</strong> with legacy systems requires careful considerations of compatibility, data flow between systems, and potential performance impacts.</li>
+</ul>
+<p>Any generative AI lens therefore needs to combine the following elements, each with varying levels of prescription and enforcement, to address these challenges and provide the basis for responsible AI usage:</p>
+<ul>
+<li><strong>Policy</strong> – The system of principles to guide decisions</li>
+<li><strong>Guardrails</strong> – The rules that create boundaries to keep you within the policy</li>
+<li><strong>Mechanisms</strong> – The process and tools</li>
+</ul>
+</section>
+<section id="llm-evals-and-monitoring" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="llm-evals-and-monitoring">LLM Evals and Monitoring</h3>
+<p>Among the <a href="https://applied-llms.org/about.html">practitioners</a> alluded to earlier, Hamel Husain blogs<a href="#fn24" class="footnote-ref" id="fnref24" role="doc-noteref"><sup>24</sup></a> extensively on LLMs, often with very pertinent content based on his direct consulting experience in implementing AI systems with clients. His big insight (per <a href="#fig-husain-evals-mental-model" class="quarto-xref">Figure&nbsp;7</a>) is that <em>improvement requires process</em> — you need to be evaluating your LLMs constantly in order to iterate for their improvement. Evaluation of a customized LLM against the base LLM (or other models) is necessary to make sure the customization process has improved the model’s performance on your specific task or dataset.</p>
+<p>He’s not a big fan of off-the-shelf model evaluation tools. Rather, there can be lots of domain-specific data that needs capturing, so it can often make sense to customise a data-reviewing tool using a simple front-end like Gradio, Streamlit or Shiny. Such an app can also encompass labelling, allowing for capturing human review. A central message is to remove any friction in the process of being able to <em>look</em><a href="#fn25" class="footnote-ref" id="fnref25" role="doc-noteref"><sup>25</sup></a> at your data produced by your LLM app.</p>
+<p>LLM-as-a-judge can be helpful as a bolt-on capability to a functioning eval system, but it is really important that it is aligned to a human. Use experts to label LLM-as-a-judge output until this judge-human alignment is sufficiently good. The important thing is not to revert to using this approach too early before exhausting the prompt-engineering and fine-tuning steps. He’s also adamant that you need to design metrics that are specific to your business, along with tests to evaluate your AI’s performance. The data you get from these tests should also be reviewed regularly to make sure you’re on track. There’s a presentation<a href="#fn26" class="footnote-ref" id="fnref26" role="doc-noteref"><sup>26</sup></a> on this approach worth watching.</p>
+<div class="column-screen">
+<div class="grid" style="background-color: #E0E0E0">
+<div class="g-col-1">
+
+</div>
+<section id="mental-model-for-improving-ai-systems" class="level4 g-col-5">
+<h4 class="anchored" data-anchor-id="mental-model-for-improving-ai-systems">Mental model for improving AI systems</h4>
+<div id="fig-husain-evals-mental-model" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-husain-evals-mental-model-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="./images/husain-evals-mental-model.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-husain-evals-mental-model-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;7: How To Systematically Improve The AI<a href="#fn27" class="footnote-ref" id="fnref27" role="doc-noteref"><sup>27</sup></a>
+</figcaption>
+</figure>
+</div>
+</section>
+<div class="g-col-6" style="font-size: 80%;">
+<p><br>
+The key insight is that you need both quantitative and qualitative feedback loops that are FAST. You start with <strong>LLM invocations</strong> (both synthetic and human-generated), then simultaneously:</p>
+<ol type="1">
+<li>Run <strong>unit tests</strong> to catch regressions and verify expected behaviors. People tend to skip this stuff, however it is the foundation for good evaluation systems. You can potentially use LLMs to synthetically bootstrap test-cases.</li>
+<li>Collect detailed <strong>logging traces</strong> to understand model behavior. Log your traces to a database of some sort and spend time examining them.</li>
+</ol>
+<p>These feed into <strong>evaluation and curation</strong> (which needs to be increasingly automated over time). The eval process combines:</p>
+<ol type="1">
+<li>Human review</li>
+<li>Model-based evaluation</li>
+<li>A/B testing</li>
+</ol>
+<p>The results then inform two parallel streams:</p>
+<ol type="1">
+<li><strong>Prompt engineering</strong> improvements - with a minimal evaluation system, you want to begin to iterate on your AI with prompt-engineering. Determine if your test-coverage is good. Are you logging your traces correctly?</li>
+<li><strong>Fine-tuning</strong> with carefully curated data - by having a system to capture human evaluation (labelling good and bad cases), this curated data has the potential to be leveraged for fine-tuning a model, driving further improvement.</li>
+</ol>
+</div>
+</div>
+</div>
+<p><br>
+A useful case-study from the wild on LLM usage<a href="#fn28" class="footnote-ref" id="fnref28" role="doc-noteref"><sup>28</sup></a> at <strong>Clearwater Analytics</strong> and their rigorous LLM evaluation process is available from this blog<a href="#fn29" class="footnote-ref" id="fnref29" role="doc-noteref"><sup>29</sup></a>. This is evidence of the lengths to which companies, utilising LLMs, will go to ensure that their solutions are particularly robust. We’ve captured the essence of the Clearwater evaluation process in the box below, but we would point you back to the linked blog for more detail. We also have an embedded one-pager lower down, summarising a series of really thoughtful pieces put out by their engineering team. For those looking for a larger-scale evaluation framework that already fully-formed, we would urge your to study this Sagemaker-based<a href="#fn30" class="footnote-ref" id="fnref30" role="doc-noteref"><sup>30</sup></a> approach.</p>
+<div class="column-page-right">
+<div class="grid" style="background-color: #E0E0E0">
+<section id="clearwaters-evaluation-framework-for-llms" class="level5 g-col-6">
+<h5 class="anchored" data-anchor-id="clearwaters-evaluation-framework-for-llms">Clearwater’s Evaluation Framework for LLMs:</h5>
+<ol type="1">
+<li><strong>Attribute Selection:</strong> Based on the specific use case, we select a set of attributes and their scoring criteria. These attributes are chosen to best assess the model’s performance in the given context.</li>
+<li><strong>System Prompt Creation:</strong> The selected attributes are incorporated into the system prompt, creating a comprehensive instruction set for the AI judges.</li>
+<li><strong>Question Set Preparation:</strong> We retrieve a set of curated questions relevant to the use case. Each question comes with a reference answer and contextual information.</li>
+<li><strong>LLM Response Generation:</strong> The LLM being evaluated generates responses to these questions.</li>
+<li><strong>User Prompt Construction:</strong> We combine the question, reference answer, context, and the LLM’s response into a user prompt.</li>
+<li><strong>Multi-Judge Evaluation:</strong> Both the system and user prompts are sent to each AI judge in the panel. This ensures a diverse range of evaluations.</li>
+<li><strong>Result Aggregation and Analysis:</strong> The judges’ evaluations are collected, aggregated, and analyzed to form a comprehensive assessment of the LLM’s performance.</li>
+</ol>
+</section>
+<div class="g-col-6">
+<p><img src="./images/clearwater_llm-as-judge-evaluation.webp" class="img-fluid"></p>
+</div>
+</div>
+</div>
+<p><br>
+</p>
+</section>
+<section id="better-flow-controls-for-llm-apps" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="better-flow-controls-for-llm-apps">Better Flow Controls for LLM Apps</h3>
+<p>We’ve covered alot of ground here, so we’ll close-out with a final nod towards some novel opensource tooling designed to aid the development process of LLM Apps, especially ones that expect to leverage calling out to agentic systems. Those with greatest experience in developing LLMs articulate that common friction points with GenAI applications can include logically modeling application flow, debugging and recreating error cases, and curating data for testing/evaluation. The developers of <a href="https://burr.dagworks.io/">Burr</a> say these problems all got easier to reason about when they modeled applications as state machines composed of actions designed for introspection. An application will hold state and make decisions off of that state. You can therefore capture your application as a state-machine, modifying the state as you go. The nice thing about this tooling is that it’s light-weight, it doesn’t seek to obfuscate function calling (as some other agentic frameworks do) and it has nice byproduct properties allowing for data-gathering for evaluation. We’ve tried to capture the essence of the solution in the one-pager embedded below.</p>
+<div class="column-page-right">
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true">Control Flow for Agents</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false">Clearwater Analytics Case-study</a></li></ul>
+<div class="tab-content">
+<div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
+  <p><a href="assets/202411_mccoole_strategyAI_deck37.pdf" target="_blank">Download PDF File</a></p>
+   <object data="assets/202411_mccoole_strategyAI_deck37.pdf" type="application/pdf" width="100%" height="800">
+    <p>Unable to display PDF file. <a href="assets/202411_mccoole_strategyAI_deck37.pdf">Download</a> instead.</p>
+  </object>
+  
+</div>
+<div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
+  <p><a href="assets/202411_mccoole_strategyAI_deck28.pdf" target="_blank">Download PDF File</a></p>
+   <object data="assets/202411_mccoole_strategyAI_deck28.pdf" type="application/pdf" width="100%" height="800">
+    <p>Unable to display PDF file. <a href="assets/202411_mccoole_strategyAI_deck28.pdf">Download</a> instead.</p>
+  </object>
+  
+</div>
+</div>
+</div>
+</div>
+<p>That concludes our intial AI Strategy series. We’ve probably just scratched the surface on various topics, but hopefully we’ve sketched for you an outline for an approach to get started with leveraging AI for your business. We hope to follow-up with another series that gets more technical in nature and that builds upon this foundational perspective we’ve shared.</p>
+
+
+</section>
+
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>Simon Willison’s <a href="https://simonwillison.net/tags/llm/">content tagged with ‘llm’</a><a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p><a href="https://simonwillison.net/2025/Mar/8/nicar-llms/">What’s new in the world of LLMs, for NICAR 2025</a>, National Institute for Computer-Assisted Reporting, 8 March 2025<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>18 labs put out a GPT-4 equivalent model in 2024: Google, OpenAI, Alibaba (Qwen), Anthropic, Meta, Reka AI, O1 AI, Amazon, Cohere, DeepSeek, Nvidia, Mistral, NexusFlow, Zhipu AI, xAI, AI21 Labs, Princeton &amp; Tencent (source: Simon Willison)<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>LLM inference cost is going down fast, from: <a href="https://a16z.com/llmflation-llm-inference-cost/">Welcome to LLMflation</a>, Guido Appenzeller, a16z, Nov.&nbsp;2024<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn5"><p>LLM Leaderboard from: <a href="https://artificialanalysis.ai/leaderboards/models">artificialanalysis.ai</a>, Comparison of GPT-4o, Llama 3, Mistral, Gemini and over 30 models<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn6"><p><a href="https://darioamodei.com/on-deepseek-and-export-controls#fn:8">On DeepSeek and Export Controls</a>, Dario Amodei, January 2025<a href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn7"><p>Mixture of experts (MoE) basics: The MoE architecture uses different subsets of its parameters to process different inputs. Each MoE layer contains a group of neural networks, or experts, preceded by a gating module that learns to choose which one(s) to use based on the input. In this way, different experts learn to specialize in different types of examples. Because not all parameters are used to produce any given output, the network uses less energy and runs faster than models of similar size that use all parameters to process every input.<a href="#fnref7" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn8"><p><a href="https://github.com/deepseek-ai/DeepSeek-V3/blob/main/DeepSeek_V3.pdf">DeepSeek-V3 Technical Report</a>, DeepSeek-AI, Dec.&nbsp;26, 2024<a href="#fnref8" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn9"><p><a href="https://youtu.be/Ae_Ieh93K64?t=286">DeepSeek, Reasoning Models, and the Future of LLMs</a>, a16z partners Guido Appenzeller and Marco Mascorro, discussing reasoning models, 5 March 2025<a href="#fnref9" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn10"><p><a href="https://github.com/simonw/nicar-2025-scraping/blob/main/README.md#3-structured-data-extraction-using-llm">Structured data extraction using LLM</a>, Simon Willison, Nicar25 Scraping Workshop, March 2025<a href="#fnref10" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn11"><p>Retrieval-augmented generation (RAG) is fundamental in most generative AI applications. RAG’s core responsibility is to inject custom data into the large language model (LLM) to perform a given action (e.g., summarize, reformulate, and extract the injected data). You often want to use the LLM on data it wasn’t trained on (e.g., private or new data). As fine-tuning an LLM is a highly costly operation, RAG is a compelling strategy that bypasses the need for constant fine-tuning to access that new data.<a href="#fnref11" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn12"><p>Chapter 11 - MLOps and LLMOps, <a href="https://www.packtpub.com/en-us/product/llm-engineers-handbook-9781836200079/chapter/mlops-and-llmops-11/section/mlops-and-llmops-ch11lvl1sec68">LLM Engineer’s Handbook</a>, Paul Iusztin &amp; Maxime Labonne, Packt Publishing, Oct.&nbsp;2024<a href="#fnref12" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn13"><p>Operationalization journey per generative AI user type: from <a href="https://aws.amazon.com/blogs/machine-learning/fmops-llmops-operationalize-generative-ai-and-differences-with-mlops/">FMOps/LLMOps: Operationalize generative AI and differences with MLOps</a>, Sokratis Kartakis and Heiko Hotz, AWS, Sept.&nbsp;2023.<a href="#fnref13" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn14"><p><a href="https://aws.amazon.com/blogs/machine-learning/from-rag-to-fabric-lessons-learned-from-building-real-world-rags-at-genaiic-part-1/">From RAG to fabric: Lessons learned from building real-world RAGs at GenAIIC – Part 1</a>, AWS Machine Learning Blog, Oct.&nbsp;2024<a href="#fnref14" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn15"><p><a href="https://aws.amazon.com/blogs/machine-learning/achieve-operational-excellence-with-well-architected-generative-ai-solutions-using-amazon-bedrock/">Achieve operational excellence with well-architected generative AI solutions using Amazon Bedrock</a>, AWS Machine Learning Blog, Oct.&nbsp;2024<a href="#fnref15" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn16"><p><a href="https://www.youtube.com/watch?v=tRQzhJuRXkk">Beyond MLOps: Building AI systems with Metaflow</a>, Ville Tuulos of Outerbounds presenting at Data Council, April 2024.<a href="#fnref16" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn17"><p>Building AI Systems with Metaflow <a href="https://www.datacouncil.ai/hubfs/Data%20Council/slides/austin24/1045A_MLOps_2_Ville_Data%20Council%202024_%20Beyond%20MLOps%20-%20Building%20AI%20Systems%20with%20Metaflow.pdf">slide-deck</a>, Ville Tuulos, Outerbounds, April 2024<a href="#fnref17" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn18"><p>An ML/AI-driven company of 2026 from: <a href="https://www.datacouncil.ai/hubfs/Data%20Council/slides/austin24/1045A_MLOps_2_Ville_Data%20Council%202024_%20Beyond%20MLOps%20-%20Building%20AI%20Systems%20with%20Metaflow.pdf">Building AI Systems with Metaflow slide-deck</a>, Ville Tuulos, Outerbounds, April 2024.<a href="#fnref18" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn19"><p><a href="https://harper.blog/2025/02/16/my-llm-codegen-workflow-atm/">My LLM codegen workflow atm</a>, by Harper Reed, 16 Feb.&nbsp;2025<a href="#fnref19" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn20"><p>Chapter 11 - MLOps and LLMOps, <a href="https://www.packtpub.com/en-us/product/llm-engineers-handbook-9781836200079/chapter/mlops-and-llmops-11/section/mlops-and-llmops-ch11lvl1sec68">LLM Engineer’s Handbook</a>, Paul Iusztin &amp; Maxime Labonne, Packt Publishing, Oct.&nbsp;2024<a href="#fnref20" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn21"><p><a href="https://applied-llms.org/">What We’ve Learned From A Year of Building with LLMs</a>, June 2024<a href="#fnref21" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn22"><p><a href="https://www.youtube.com/watch?v=qBHfQT3YtyY">Lessons From A Year Building With LLMs</a>, AI Engineer conference, July 2024<a href="#fnref22" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn23"><p><a href="https://aws.amazon.com/blogs/machine-learning/achieve-operational-excellence-with-well-architected-generative-ai-solutions-using-amazon-bedrock/">Achieve operational excellence with well-architected generative AI solutions using Amazon Bedrock</a>, Akarsha Sehwag, Zorina Alliata, Malcolm Orr, and Tanvi Singhal, AWS, Oct.&nbsp;2024.<a href="#fnref23" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn24"><p>Hamel Husain blog on matters pertaining to LLMs at <a href="https://hamel.dev/">https://hamel.dev/</a><a href="#fnref24" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn25"><p><a href="https://ai-execs.com/8_lookatdata.html">Looking at Data: Your Secret Weapon</a>, Hamel Husain, Jan.&nbsp;2025<a href="#fnref25" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn26"><p><a href="https://www.youtube.com/watch?v=eLXF0VojuSs">How to Construct Domain Specific LLM Evaluation Systems: Hamel Husain and Emil Sedgh</a>, Rechat development of Lucy, an AI personal assistant designed to support real estate agents.<a href="#fnref26" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn27"><p>How To Systematically Improve The AI from: <a href="https://hamel.dev/blog/posts/evals/#problem-how-to-systematically-improve-the-ai">Your AI Product Needs Evals</a>, How to construct domain-specific LLM evaluation systems, Hamel Husain, March 2024.<a href="#fnref27" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn28"><p><a href="https://aws.amazon.com/blogs/machine-learning/how-clearwater-analytics-is-revolutionizing-investment-management-with-generative-ai-and-amazon-sagemaker-jumpstart/">How Clearwater Analytics is revolutionizing investment management with generative AI and Amazon SageMaker JumpStart</a> AWS Machine Learning Blog, Dec.&nbsp;2024<a href="#fnref28" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn29"><p><a href="https://medium.com/cwan-engineering/a-cutting-edge-framework-for-evaluating-llm-output-edab53373514">A Cutting-Edge Framework for Evaluating LLM Output</a>, Clearwater Analytics Engineering, Aug.&nbsp;2024<a href="#fnref29" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn30"><p><a href="https://aws.amazon.com/blogs/machine-learning/operationalize-llm-evaluation-at-scale-using-amazon-sagemaker-clarify-and-mlops-services/">Operationalize LLM Evaluation at Scale using Amazon SageMaker Clarify and MLOps services</a>, Sokratis Kartakis, Jagdeep Singh Soni, and Riccardo Gatti, AWS, Nov.&nbsp;2023.<a href="#fnref30" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@misc{mccoole2025,
+  author = {{Colum McCoole} and McCoole{]}(https://github.com/Analect),
+    {[}Colum},
+  title = {5. {LLMs:} {Key} {Emerging} {Components} of the {AI} {Tech}
+    {Stack}},
+  date = {2025-03-07},
+  url = {https://analect.com/posts/ai-strategy-series/5-llm-apps-llmops/},
+  langid = {en-GB}
+}
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-mccoole2025" class="csl-entry quarto-appendix-citeas" role="listitem">
+Colum McCoole, and [Colum McCoole](https://github.com/Analect). 2025.
+<span>“5. LLMs: Key Emerging Components of the AI Tech Stack.”</span> <a href="https://analect.com/posts/ai-strategy-series/5-llm-apps-llmops/">https://analect.com/posts/ai-strategy-series/5-llm-apps-llmops/</a>.
+</div></div></section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/analect\.com");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p><br> Copyright © 2025 Analect Limited<br> This website was created with <a href="https://quarto.org"><img src="../../../images/quarto.png" class="img-fluid" alt="Quarto" width="65"></a><br> <a href="http://creativecommons.org/licenses/by-nc/4.0/?ref=chooser-v1"><img src="../../../images/cc-by-nc-eu.svg" class="img-fluid" alt="CC BY-NC 4.0"></a><br></p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

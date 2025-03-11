@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-GB" xml:lang="en-GB"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.40">
+<meta name="generator" content="quarto-1.6.42">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -32,15 +32,16 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../../">
+<link href="../../../images/analect_89_x_75.png" rel="icon" type="image/png">
 <script src="../../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../site_libs/bootstrap/bootstrap-3641037507ad89c0bd4681117c902dad.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-e5bd5842818420112f2a87434b228a32.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -260,8 +261,8 @@ Figure&nbsp;1: Analect MLOps Platform with Backstage as an Entrypoint
 </section>
 <section id="devops-gitops-mlops-how-did-we-get-here" class="level3">
 <h3 class="anchored" data-anchor-id="devops-gitops-mlops-how-did-we-get-here">DevOps, GitOps, MLOps … How Did We Get Here?</h3>
-<p>The <span style="background-color: #E0E0E0;">DevOps</span> (a portmanteau of <em>Development</em> and <em>Operations</em>) movement spawns from collaboration between previously distinct software development and IT operations camps. It brought with it greater efficiencies as developers took on responsibilities for both writing and running their software. As part of the DevOps approach, pipelines for Continuous Integration and Continuous Delivery (CI/CD) that picked up the latest changes (in code), ran unit tests, built the software artifacts, ran integration tests, and finally deployed the change to production in tightly-controlled stages with rapid rollback if needed. This allowed for multiple deployments of software each day, compared to the month or even quarterly release cycles typical prior to DevOps.</p>
-<p><span style="background-color: #E0E0E0;">GitOps</span>, which itself grew out of the DevOps culture, relies on a model where the operating environment synchronizes its state directly from <a href="https://en.wikipedia.org/wiki/Git">Git</a> (using the pull principle), where configuration must be completely versioned in Git (infrastructure-as-code). The deployment in the operating environment is triggered by a continuously executed “reconciliation loop”, which detects all deviations from the target state and tries to compensate for them. The operating environment thereby always converges to the target state. This approach mimics and indeed leverages the kubernetes control-plane based architecture, something we’ll elaborate on below.</p>
+<p>The <span style="background-color: #E0E0E0;">DevOps</span> (a portmanteau of <em>Development</em> and <em>Operations</em>) movement spawns from collaboration between previously distinct software development and IT operations camps. It brought with it greater efficiencies as developers took on responsibilities for both writing and running their software. As part of the DevOps approach, pipelines for Continuous Integration and Continuous Delivery (CI/CD) that picked up the latest changes (in code), ran unit tests, built the software artifacts, ran integration tests, and finally deployed the change to production in tightly-controlled stages with rapid rollback if needed. This allowed for multiple deployments of software each day, compared to the monthly or even quarterly release cycles typical prior to DevOps.</p>
+<p><span style="background-color: #E0E0E0;">GitOps</span>, which itself grew out of the DevOps culture, relies on a model where the operating environment synchronizes its state directly from <a href="https://en.wikipedia.org/wiki/Git">Git</a> (using the pull principle), where configuration must be completely versioned in Git (infrastructure-as-code). The deployment in the operating environment is triggered by a continuously executed “reconciliation loop”, which detects all deviations from the target state and undertakes a convergence process from the current state to that target. This approach mimics and indeed leverages the kubernetes control-plane based architecture, something I’ll elaborate on below.</p>
 <p>Machine-Learning (ML) is now having its “DevOps” moment. Like DevOps, the <span style="background-color: #E0E0E0;">MLOps</span> (Machine Learning Operations) approach attempts to formalize near-automatic pipelines for the model lifecycle, from data collection, data preparation, and data wrangling, to model training, model evaluation, and model deployment to model monitoring and then back again for model updates. For a thorough overview of MLOps, have a read of this<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> paper. Our discussion here will remain a little higher-level, in the spirit of our objective of setting out an outline for an overall AI / ML strategy.</p>
 </section>
 <section id="platforms-for-provisioning-mlops" class="level3 page-columns page-full">
@@ -303,10 +304,18 @@ Figure&nbsp;2: AWS MLOps Maturity Model<a href="#fn4" class="footnote-ref" id="f
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">Backstage as a Platform</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false"><code>idpbuilder</code> for building Platforms</a></li></ul>
 <div class="tab-content">
 <div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
-<p><object data="assets/202411_mccoole_strategyAI_deck15.pdf" type="application/pdf" width="100%" height="800"><a href="assets/202411_mccoole_strategyAI_deck15.pdf" download="">Download PDF file.</a></object></p>
+  <p><a href="assets/202411_mccoole_strategyAI_deck15.pdf" target="_blank">Download PDF File</a></p>
+   <object data="assets/202411_mccoole_strategyAI_deck15.pdf" type="application/pdf" width="100%" height="800">
+    <p>Unable to display PDF file. <a href="assets/202411_mccoole_strategyAI_deck15.pdf">Download</a> instead.</p>
+  </object>
+  
 </div>
 <div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
-<p><object data="assets/202411_mccoole_strategyAI_deck16.pdf" type="application/pdf" width="100%" height="800"><a href="assets/202411_mccoole_strategyAI_deck16.pdf" download="">Download PDF file.</a></object></p>
+  <p><a href="assets/202411_mccoole_strategyAI_deck16.pdf" target="_blank">Download PDF File</a></p>
+   <object data="assets/202411_mccoole_strategyAI_deck16.pdf" type="application/pdf" width="100%" height="800">
+    <p>Unable to display PDF file. <a href="assets/202411_mccoole_strategyAI_deck16.pdf">Download</a> instead.</p>
+  </object>
+  
 </div>
 </div>
 </div>
@@ -314,10 +323,10 @@ Figure&nbsp;2: AWS MLOps Maturity Model<a href="#fn4" class="footnote-ref" id="f
 </section>
 <section id="importance-of-a-fast-feedback-loop" class="level3 page-columns page-full">
 <h3 class="anchored" data-anchor-id="importance-of-a-fast-feedback-loop">Importance of a fast Feedback Loop</h3>
-<p>In addition to the MLOps platform solutions, as we have learned, there are many other Saas<a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a> offerings that, akin to <code>idpbuilder</code>, offer this develop locally, deploy anywhere hybrid capability. However, while <code>idpbuilder</code> is concerned with running-up technology stacks, these new-generation MLOps Saas solutions are all about creating encapsulated workflow jobs or pipelines, often defined in Python, utilising some <code>@decorators</code> to bring special functionality, like specifying cloud-based assets such as container runtimes with GPU access or defining a serverless cloud-based function (such as <a href="https://aws.amazon.com/step-functions/">AWS Step Functions</a>) to perform some batch job. I’m most familiar with Metaflow, but for a deeper dive into comparable solutions, have a look here<a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a>.</p>
+<p>In addition to the MLOps platform solutions, as we have learned, there are many other Saas<a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a> offerings that, akin to <code>idpbuilder</code>, offer this ‘develop locally, deploy anywhere’ hybrid capability. However, while <code>idpbuilder</code> is concerned with running-up technology stacks, these new-generation MLOps Saas solutions are all about creating encapsulated workflow jobs or pipelines, often defined in Python, utilising some <code>@decorators</code> to bring special functionality, like specifying cloud-based assets such as container runtimes with GPU access or defining a serverless cloud-based function (such as <a href="https://aws.amazon.com/step-functions/">AWS Step Functions</a>) to perform some batch job. I’m most familiar with Metaflow, but for a deeper dive into comparable solutions, have a look here<a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a>.</p>
 <p>What each of these solutions promise is an ability to build and debug these pipelines locally and then deploy them to run on more robust, more available or faster remote compute. Particularly in this era of LLM application development, none of us has much access to local GPU, so its imperative we have a way of running pipelines efficiently, often in a distributed way. <a href="#fig-google-mlops" class="quarto-xref">Figure&nbsp;3</a> depicts a typical 7-step MLOps process that often forms a working ML system. Generally speaking, the idea is to be able to get each of the steps working efficiently, with as short-as-possible feedback loops, so that developers can fix or refine those parts accordingly.</p>
-<p>On certain cloud-based infrastructure set-ups, let’s say we have Kubeflow running on an EKS cluster, it can sometimes take 30 minutes to have a stable running cluster and then troubleshooting jobs, particular those looking to distribute workloads across multiple workers in parallel can be a time-consuming and frustrating process.</p>
-<p>I have been recently prototyping with one of the new-breed serverless GPU platforms called <a href="https://modal.com/">Modal</a>. It’s well worth your time spending 30 minutes watching this MLOps on Modal<a href="#fn9" class="footnote-ref" id="fnref9" role="doc-noteref"><sup>9</sup></a> run-through, rather than me trying to explain things here. The bottom-line is that their infrastructure is laser-focused on this fast feedback loop concept, in terms of being able to run workloads fast in a distributed way, but only having to pay for the seconds of actual GPU-usage, as opposed to you having to secure, then manage a fleet of VMs with GPUs. You can have deployments on web endpoints that will only start on receipt of an inference request, ensuring compute spend is kept to a minimum. There’s another good run-through here<a href="#fn10" class="footnote-ref" id="fnref10" role="doc-noteref"><sup>10</sup></a>, especially pertaining to running multiple workloads in parallel for faster execution.</p>
+<p>On certain cloud-based infrastructure set-ups, let’s say we have Kubeflow running on an EKS cluster, it can sometimes take 30 minutes to have a stable running cluster and then troubleshooting jobs, in particular those looking to distribute workloads across multiple workers in parallel, can be a time-consuming and frustrating process.</p>
+<p>I have been recently prototyping with one of the new-breed of serverless GPU platforms called <a href="https://modal.com/">Modal</a>. It’s well worth your time spending 30 minutes watching this MLOps on Modal<a href="#fn9" class="footnote-ref" id="fnref9" role="doc-noteref"><sup>9</sup></a> run-through, rather than me trying to explain things here. The bottom-line is that their infrastructure is laser-focused on this fast feedback loop concept, in terms of being able to run workloads fast in a distributed way, but only having to pay for the seconds of actual GPU-usage, as opposed to you having to secure, then manage a fleet of VMs with GPUs. You can have deployments on web endpoints that will only start on receipt of an inference request, ensuring compute spend is kept to a minimum. There’s another good run-through here<a href="#fn10" class="footnote-ref" id="fnref10" role="doc-noteref"><sup>10</sup></a>, especially pertaining to running multiple workloads in parallel for faster execution.</p>
 <div class="column-page-right">
 <div class="grid" style="background-color: #E0E0E0">
 <section id="mlops-iterative-process" class="level4 g-col-5" style="font-size: 80%;">
