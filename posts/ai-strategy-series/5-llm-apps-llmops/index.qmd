@@ -4,7 +4,7 @@ subtitle: "Convinced of the value LLMs can bring, the challenge becomes how can 
 description: |
 
 categories: [ai-strategy-series, machine-learning, llmops]
-author: "[Colum McCoole](https://github.com/Analect)"
+# author: "[Colum McCoole](https://github.com/Analect)"
 date: 2025-03-07
 image: images/husain-evals-mental-model.png
 draft: false
