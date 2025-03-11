@@ -139,7 +139,7 @@ This documentation hierarchy could also form as a **framework for planning** an 
 
 ### What I plan to cover in this blog series
 
-This blog series will reference technological approaches, but it won't be drilling down into the technical details of these. I'll aim to cover those off in a later blog-series.  Below you'll find a map of what we'll be covering. There's enough material and opinions out there to fill a book on each, no doubt, but sometimes its better to get started with a simple approach and refine to your own business' unique needs.
+This blog series will reference technological approaches, but it won't be drilling down into the technical details of these. I'll aim to cover those off in a later blog-series.  Below you'll find a map of what we'll be covering. There's enough material and opinions out there to fill a book on each, no doubt, but sometimes it's better to get started with a simple approach and refine to your own business' unique needs.
 
 
 ::: {.column-page}
