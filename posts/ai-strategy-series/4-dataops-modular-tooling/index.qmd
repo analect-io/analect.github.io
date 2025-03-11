@@ -1,0 +1,375 @@
+---
+title: "4. DataOps: Emerging powerful modular tooling"
+subtitle: "Data Science depends on good data engineering."
+description: |
+
+categories: [ai-strategy-series, machine-learning, dataops]
+author: "[Colum McCoole](https://github.com/Analect)"
+date: 2025-02-28
+image: images/fode_0105_data-science-hierarchy.png
+draft: false
+freeze: true
+execute: 
+  freeze: auto
+  eval: false
+format: 
+  html:
+    toc: true
+    toc-depth: 4
+code-copy: hover
+reading-time: true
+filters:
+  - d2
+---
+
+::: {.callout-tip}
+## Key Takeaway
+
+::: {.grid}
+::: {.g-col-6}
+Although many data scientists are eager to build and tune ML models, the reality is an estimated 70% to 80% of their time is spent toiling in the bottom three parts of the hierarchy — **gathering data**, **cleaning data**, **processing data**.
+
+Making it easy for your team to work with a curated set of data, by combining modular components of modern data-stack, will ease the iterative process of experimentation and allow for productionisation of workflows that scale more easily.
+:::
+
+::: {.g-col-6}
+![Data Science Hierarchy of Needs^[[The AI Hierarchy of Needs](https://hackernoon.com/the-ai-hierarchy-of-needs-18f111fcc007), Monica Rogati, June 2017.]](./images/fode_0105_data-science-hierarchy.png){#fig-data-science-hierarchy}
+:::
+:::
+We are in a sweet-spot in terms of being able to harvest the fruits of years of effort from various opensource projects directed at making working with data at scale more efficient and less dependent on proprietary solutions. For those locked into vendors, it's perhaps time to dispense with those relationships and avail of this new generation of performant tools.
+:::
+
+::: {.callout-note collapse="true"}
+## AI Strategy Series (#4 of 5)
+::: {.grid}
+
+::: {.g-col-6}
+- [#1. Framing an AI Strategy: Where Do You Start?](./../1-overview/index.qmd)
+- [#2. AI is Here, But its Business-Applicability may not be Obvious](./../2-business-applicability-digital-transform/index.qmd)
+- [#3. Platform Engineering for Evolving AI / ML Solutions](./../3-gitops-platforms-to-mlops/index.qmd)
+:::
+
+::: {.g-col-6}
+- #4. DataOps Strategy: Embedding Data Everywhere (this one)
+- [#5. LLMs: Key Emerging Components of the AI Tech Stack](./../5-llm-apps-llmops/index.qmd)
+:::
+
+:::
+:::
+
+### Recap So Far
+
+By way of recap of this [AI strategy blog-series](https://analect.com/posts/#category=ai-strategy-series), so far we have covered off skaffolding a strategy, planning through documentation, the importance of finding a relevant business-application for experimentation and ultimate productionisation, as well as the necessity of evolving a solid platform on which to be able to iterate on AI solutions, scale them, and weave them into the fabric of your business. We will continue that journey with two more blog-posts in this series, focusing initially on all things DataOps-related, before diving into the world of LLM-based application development and its promise, pointing to important lessons-learned so far from respected practitioners in this field. 
+
+::: {.column-page}
+```{.d2 pad=10 width="100%" theme="NeutralDefault" dark-theme="DarkMauve" sketch=true layout="elk"}
+**.style.font-size: 30
+
+explanation: |md
+  # AI Strategy Series:
+  I wanted to encapsulate some practical steps toward evolving   
+  a strategy around AI across a series of five blog-posts.   
+
+  1. **Skaffold a Plan** - who in the org can pioneer AI usage. Their  
+  experience will inform a broader workforce education effort.  
+  Decide on how you plan to **crawl**, **walk** then **run**. Document  
+  how this will work so as to hone the plan.  Now you have  
+  the outline that the rest of the business can colour-in.
+  2. **Business Applicability** - determining best use-cases for  
+  applying AI within an org. McKinsey blueprints for digital  
+  transformation and change-mgt. Personas for 'user-needs'.  
+  Codify patterns and seek to re-use these across teams.   
+  3. **Platform for Scale** - positioning the org to be able  
+  to perform machine-learning at scale, seeking to automate  
+  everything, enabling a fast interation loop and the fly-wheel  
+  effect. Emphasise data-centricity above model-tuning.
+  4. **DataOps Foundations** - data becomes the differentiator  
+  when model performance converges. DataOps is all about  
+  curating that valuable resource. New tooling is making that  
+  data more pliable. Heavy database and data-processing infra  
+  is no longer a pre-requisite, but nature of workloads are  
+  shifting requiring a new gen. of pipelines / orchestration.  
+  5. **Emerging LLM Stack** - whole new class of apps emerging  
+  driven by LLMs / GenAI. What are the risks with developing  
+  with these and what best-practices are emerging. Per fast  
+  feedback loop in MLOps, LLM Evals + Monitoring is key part  
+  of LLMOps. Other tooling emerging for new SDLC with LLMs.
+|
+
+catalog: "" {
+  grid-columns: 3
+  style: {
+    fill: transparent
+    font-size: 50
+  }
+  skaffolding: 1. Skaffold a Plan {
+    grid-columns: 1
+    style: {
+      font-size: 40
+    }
+    Upskill Across the Org
+    Stage your Adoption
+    Plan using Documentation
+  }
+
+  applicability: 2. Business Applicability {
+    grid-columns: 1
+    style: {
+      font-size: 40
+    }
+    What Can be Solved with AI
+    Blueprints for Planning
+    Importance Envisaging Personas
+    Change Management Embed AI
+    ML Project templates
+    Codify Patterns / Modularity
+  }
+
+  platforms: 3. Platform for Scale {
+    grid-columns: 1
+    style: {
+      font-size: 40
+    }
+    Envisioning Tech Stack
+    DevOps, GitOps, MLOps
+    Platforms for MLOps / IDPs
+    Fast Feedback Loop
+    Data-centric MLOps
+  }
+
+  dataops: 4. DataOps Foundations {
+    grid-columns: 1
+    style: {
+      font-size: 40
+      fill: "#E6FFE6"
+    }
+    What is DataOps?
+    Composable Data Systems
+    Converging Table Formats
+    Embedded Databases
+    #Serverless Solutions
+    New Gen Pipelines / Orch.
+    ML / AI Workloads
+  }
+
+  llms: 5. Emerging LLM Stack {
+    grid-columns: 1
+    style: {
+      font-size: 40
+      fill: "#E6FFE6"
+    }
+    LLM State of Play
+    LLMs as a Developer Tool
+    LLMOps more than MLOps ext.
+    Risks with Using LLMs
+    LLM Evals + Monitoring
+    Better Flow Controls
+  }
+}
+```
+:::
+
+### What is DataOps?
+
+:::: {.grid}
+::: {.g-col-6}
+It is critical to architect data thoughtfully for easy consumption and reuse; otherwise, scaling becomes challenging. The goal is to have clean, relevant, and available data (see @fig-data-dimensions) so that agile teams can use it to make better decisions and build better data-enabled solutions.
+
+Data *volume*, *velocity*, and *variety* require novel and automated ways to ‘operate’ this data. In accordance with software development, where DevOps is the de-facto standard to operate code, **DataOps** is an emerging approach advocated by practitioners to tackle data management challenges for analytics.
+
+While there may be different definitions of what DataOps is, at its core it is about automation and observability. This includes automating the deployment of the data platform (and updates to the platform), as well as deployment and updates to the transform code that produces data products.
+
+A key part of this automation is managing infrastructure for the data platform and logic for data transformations as version-managed code. In the same way, when deploying data transformation code, this code should be managed and deployed from a version-controlled code repository.
+:::
+
+::: {.g-col-6 style="font-size: 80%; background-color: #E0E0E0"}
+
+##### Key capabilities of a DataOps tool include:
+
+1. **Data Pipeline Orchestration:** This automates, coordinates, and monitors data pipelines through a single integrated platform, simplifying the management of complex data flows. It handles connector management and workflow impact analysis and maintains audit logs.  Can be thought of as ‘meta-orchestration’ of the code and tools acting upon the data.
+
+2. **Data Pipeline Observability:** Optimizes pipelines by monitoring data quality, detecting issues, tracing data lineage, and identifying anomalies using live and historical metadata. This capability includes monitoring, logging, and business-rule detection.
+
+3. **Data Pipeline Test Automation:** This tool supports QA runs, validation of business rules, management of test scripts, and execution of regression tests, ensuring the reliability of pipeline code.
+
+4. **Data Pipeline Deployment Automation:** Automates version control, DevOps integration, release management, and change management approvals across data release cycles, following a continuous integration/continuous deployment (CI/CD) methodology.
+
+5. **Environment Management:** This minimizes manual efforts by creating, maintaining, and optimizing pipeline deployment across different environments (development, testing, staging, production). It uses an infrastructure-as-code approach to consistently apply runtime conditions across all pipeline stages.
+
+source: 2024 Gartner Market Guide to DataOps^[[2024 Gartner Market Guide to DataOps](https://datakitchen.io/2024-gartner-market-guide-to-dataops/), DataKitchen Marketing Team, Aug. 2024] 
+:::
+
+::::
+
+![McKinsey's nine dimensions for assessing data quality^[Nine dimensions for assessing data quality: [Rewired](https://www.wiley.com/en-us/Rewired%3A+The+McKinsey+Guide+to+Outcompeting+in+the+Age+of+Digital+and+AI-p-9781394207121), The McKinsey Guide to Outcompeting in the Age of Digital and AI, Wiley, June 2023.]](./images/mckinsey-data-quality-c24ex002_v2.png){#fig-data-dimensions}
+
+### Composable Data Systems
+
+Wes McKinney, the original author of the [pandas](https://pandas.pydata.org/) library and a long-time advocate for better opensource data analysis tooling, penned an important blog^[[The Road to Composable Data Systems:](https://wesmckinney.com/blog/looking-back-15-years/), Thoughts on the Last 15 Years and the Future, Wes McKinney, September 2023] at the end of 2023 that took stock of the culmination of many years to effort to arrive at a better, more composable tool-set.
+
+While compute and networking speeds have soared over the past decade, data-analytics has lagged badly - the bottleneck often being CPU-bound, given a typical, up to now, need to serialize and de-serialize data moving between different ecosystem layers. Without a standardized solution for data interchange and in-memory computation, systems pay a steep penalty both in computational cost and development time to interoperate with each other. While libraries like *pandas* had been transformational for the data-analytics profession, it was generally accepted that it also had performance, scale, and memory-use problems. In McKinney's words, pandas had to do everything for itself, and this was an enormous burden for a fully volunteer-based open source project. 
+
+Hence his involvement in various parallel projects to solve these problems, culminating in The Composable Data Management System Manifesto^[[The Composable Data Management System Manifesto](https://www.vldb.org/pvldb/vol16/p2679-pedreira.pdf), Proceedings of the VLDB (very large database) Endowment, Volume 16 No. 10, Pedro Pedreira et al., June 2023] and a more detailed version articulated by Voltron Data (the driving force behind the open-source [Ibis project](https://github.com/ibis-project)) who have assembled a well-articulated technical series called [The Composable Codex](https://voltrondata.com/codex) which brings a useful historical context to what has needed to happen to unleash better productivity around the data ecosystem, all enabled by open standards for exchanging and operating on data, allowing for more composable data systems being built that are **modular**, **interoperable**, **customizable**, and **extensible** (MICE). While we summarise some key concepts from this manifesto below, I would urge readers to read the Codex in full for a greater understanding of the importance of this seismic shift in thinking that will underpin how companies perform DataOps into the future.
+
+
+::: {.column-page-right}
+::: {.grid}
+
+::: {.g-col-4}
+Even before the rise of LLMs, there was a real need for faster, more scalable, more cost-effective machine learning, as volumes of data grew exponentially. A *before* and *after* illustration of this shift to a better data ecosystem is probably well illustrated by NVIDIA's tongue-and-cheek portrayal of a day in the life of a data-scientist, prior to GPUs. The data ecosystem changes are obviously more than just GPUs, but are probably best summarised as **Accelerated Workflows**, in general, enabled by tooling that operates on layers and as standards between those layers envisaged by the composable data system.
+:::
+
+::: {.g-col-8}
+![GPU-powered data science enables much greater interactivity, but affords fewer coffee breaks^[[GPU-powered data science enables much greater interactivity, but affords fewer coffee breaks](https://developer.nvidia.com/blog/gpu-accelerated-analytics-rapids/), Shashank Prasanna & Mark Harris, NVIDIA, Oct. 2018]](./images/a-day-in-the-life-1-1024x410.png){#fig-nvidia-day-in-the-life}
+:::
+
+:::
+:::
+
+<!-- The Composable Codex -->
+
+::::: {.column-screen}
+:::: {.grid}
+::: {.g-col-6}
+::: {.panel-tabset}
+
+## Standards + Layers
+
+![A composable data system, with 3 key standards^[A composable data system, with 3 key standards: [Open standards over silos](https://voltrondata.com/codex/open-standards), Chapter 1, Open Standards, The Composable Codex, Voltron Data, 2023]](./images/composable-software-system-resources.png){#fig-voltron-composable-standards}
+
+## Ibis as Composable UI
+
+![Ibis is a composable UI that can interoperate with multiple execution engines and data storage layers.^[Ibis is a composable UI that can interoperate with multiple execution engines and data storage layers.: [Bridging divides: Language interoperability](https://voltrondata.com/codex/language-interoperability), Chapter 2, Language Interoperability, The Composable Codex, Voltron Data, 2023]](./images/diverse-system-ibis-codes-written.png){#fig-voltron-codex-ibis-composable}
+
+## Substrait as IR Standard
+
+![Code flows from the user through the UI, which then passes the IR plan to the engine for execution.^[Code flows from the user through the UI, which then passes the IR (intermediate representation) plan to the engine for execution: [Bridging divides: Language interoperability](https://voltrondata.com/codex/language-interoperability), Chapter 2, Language Interoperability, The Composable Codex, Voltron Data, 2023]](./images/substrait-language-interoperability-data-access.png){#fig-voltron-composable-interoperability}
+
+## Evolving Data Connectivity
+
+![Comparison of the three connectivity approaches: with a database-specific connector (Status Quo), with ADBC and a non-Arrow native driver, and with ADBC and an Arrow-native driver^[ Comparison of the three connectivity approaches: [From data sprawl to data connectivity](https://voltrondata.com/codex/data-connectivity), Chapter 3, Data Connectivity, The Composable Codex, Voltron Data, 2023]](./images/different-data-sources-data-connectivity.png){#fig-voltron-datasource-connectivity}
+
+:::
+:::
+
+::: {.g-col-6}
+\
+\
+[The Composable Codex](https://voltrondata.com/codex) has a concept of *Layers* (1, 2 and 3) and *Standards* (A, B and C).
+
+##### Layers:
+
+- [**User Interface [1]**]{style="background-color: #E0E0E0;"} - Users interact with this UI in order to initiate operations on data. This is typically exposed as a language frontend or API. 
+- [**Execution Engine [2]**]{style="background-color: #E0E0E0;"} - this engine performs operations on the data, as specified by users. 
+- [**Data Storage [3]**]{style="background-color: #E0E0E0;"} - the layer that stores data that is available to users.
+
+##### Standards:
+
+- [**[Substrait](https://substrait.io/) [A]**]{style="background-color: #E0E0E0;"} - is a format standard for describing compute operations on structured data. 
+- [**[ADBC (Arrow Database Connectivity)](https://arrow.apache.org/adbc/current/index.html) [B]**]{style="background-color: #E0E0E0;"} - applications code to this API standard (like JDBC or ODBC), but fetch result sets in Arrow format. 
+- [**[Arrow](https://arrow.apache.org/) [C]**]{style="background-color: #E0E0E0;"} - is focused on a standardized memory representation of columnar data.
+
+Cycling through the series of tabs on the left, The Composable Codex envisages a minimal viable data system as broken down into three main *layers*: UI, a query execution engine and a data-storage layer. Between those layers are [*standards*](https://standards.theodi.org/introduction/what-are-open-standards-for-data/), intended to ease friction between those layers and enhance interoperablitity for data (common data-structures), queries (common formats) and systems (serialization/data-interchange). On the second tab, we see projects like [Ibis](https://ibis-project.org/) which works by decoupling the dataframe API (python) from the backend execution. Most backends support a SQL dialect, which Ibis compiles its expressions into, enabling queries (driving complex ETL) to be written once and work against multiple backends. Ibis uses [Apache Arrow](https://arrow.apache.org/) to provide a common data format for data interchange between Ibis and backends that is fast. Ibis is also able to compile queries to Substrait, an evolving cross-language serialization protocol. On the right-most tab, we see an evolution of status-quo systems (squareDB) towards using this fully-integrated modern data-tooling (triangleDB) resulting in vastly improved data-stack performance.
+:::
+
+::::
+:::::
+
+
+### Convergence of technologies around Table Formats
+
+Building out shareable, yet robust, datasources across a company no longer needs to involve heavily-engineered solutions and expensive proprietary technology stacks. On the contrary, hosting data on cheap cloud-based object storage without losing its *queryability* has become mainstream with the emergence of what are called Data Lakehouses (@fig-data-lakehouse), a combination of the features of Data Lakes and Data Warehouses.
+
+Integral to these new data systems are a series of open-standard *Table Formats* like [`hudi`](https://hudi.apache.org/), [`iceberg`](https://iceberg.apache.org/) and [`delta-lake`](https://delta.io/), developed by big tech companies in recent years to solve their scaling needs. A Table Format is a data management layer that organises and tracks data files in a data lake as a logical table. These formats help manage datasets in data lakes, allowing for [ACID](https://en.wikipedia.org/wiki/ACID) transactions, time-travel queries, and efficient data retrieval.
+
+According to Julien Le Dem^[[The advent of the Open Data Lake:](https://sympathetic.ink/2024/11/07/The-Advent-Of-The-Open-Data-Lake.html), Julien Le Dem, Nov. 2024], who was involved in designing standards like Parquet and Arrow, the combination of blob storage, a columnar format, sorting, partitioning and table metadata enables efficient data access for a large array of OLAP (online analytical processing) use cases. When a query engine accesses data, it wants to minimize how much data needs to actually be scanned or deserialized from the storage format. Iceberg facilitates this by consolidating table metadata from the files that make a snapshot. We can decouple data access from the actual layout of the table, enabling storage optimization independently of the jobs accessing it.
+
+> With this new setup, you can own your data, store it once in your own bucket and connect various processing engines, open source or proprietary. There is no need to import or export data, trying out new tools is easy and data can be mutated without requiring additional coordination. Owning your data in cheap scalable storage in your own cloud account allows you to avoid vendor lock-in and removes silos. You are now free to optimize your cloud costs better than if storage becomes abstracted behind several vendors. If you’re wondering what all the fuss is about lately, this is what’s driving the adoption of Iceberg with Parquet to implement the Open Data Lake. Vendors are adopting this pattern not only because their customers do not appreciate vendor lock-in (they never did) but because there is enough momentum that there is an alternative and they will lose market share if they don’t.
+
+*Julien Le Dem, Nov. 2024, The Advent of The Open Data Lake^[[The advent of the Open Data Lake:](https://sympathetic.ink/2024/11/07/The-Advent-Of-The-Open-Data-Lake.html), Julien Le Dem, Nov. 2024]*
+
+Data-engineering tooling like [`dlt`](https://dlthub.com/product/dlt) are tightly integrated with these formats, making it easier to build-out data resources using best-practices. Other open-source libraries like [`ibis`](https://ibis-project.org/) can then bridge the data-science and data-engineering worlds by providing a unified querying experience across diverses backends, enabling data processing without platform-specific rewrites.
+
+Supporting different open-source file formats (eg. parquet), reliable open-source table structures (eg. iceberg, delta) and a unified open-source query tool (eg. ibis) makes data lakes more flexible and portable. These elements ensure data can be easily moved, managed and queried across different platforms. It also makes it easier for these data lakes to be spawned in local environments enabling local workflow testing prior to pushing to cloud-based production.
+
+![Evolution of data platform architectures towards today's Lakehouse model^[[Lakehouse: A New Generation of Open Platforms that Unify Data Warehousing and Advanced Analytics](https://15721.courses.cs.cmu.edu/spring2023/papers/02-modern/armbrust-cidr21.pdf), Michael Armbrust et al., Jan. 2021.]](./images/lakehouse-evolution.png){#fig-data-lakehouse}
+
+
+### Embedded Databases as viable Serverless Solutions
+
+The client/server architecture for databases has been around for a very long time, and has been proven to be a successful commercial model, which is why they are the norm in large-scale production use cases. However, they aren't well adapted to serverless use-cases, since they require to be on all the time, incurring server costs, even if they aren't being actively used. It turns out that new embedded database model solves this problem, so we should sit up and take note. There are a number of very informative blog-posts ^[The Data Quarry: [Series on Embedded Databases](https://thedataquarry.com/tags/embedded-db/), Prashant Rao, 2023] on embedded-databases that are recommended reading. We also include a one-pager (embedded below) that discusses some of the tools out there that deliver compelling value across relational, graph and vector data-model paradigms.
+
+An embedded database is an in-process database management system that’s tightly integrated with the application layer. The term “in-process” is important because the database compute runs within the same underlying process as the application. A key characteristic of embedded databases is how close the storage layer is to the application layer. Additionally, data that’s larger than memory can be stored and queried on-disk, allowing them to scale to pretty huge amounts of data (TB) with relatively low query latencies and response times.
+
+The evolution of modular data-tooling has been an important driver of the new database models, with Arrow as a de-facto standard for efficiency gains with in-memory and on-disk capabilities that are core features of this new class of embedded database. The embedded architecture is still relatively new, at least for OLAP databases, nevertheless vendors are delivering rich feature-sets as open-source solutions, even as they figure out their monetization strategies.
+
+Being able to dispense with traditional databases in favour of cheaper object-stores, such as S3 is a game-changer. It means you can work with ever-scaling amounts of data, that working with AI-based solutions requires, benefit from the low-cost object-store model and get to keep the query-processing power that embedded-databases bring. You also don't have to compromise on query latency, with the advent of more performant variants such as S3 Express.
+
+#### The Ubiquity of DuckDB 
+
+Wes McKinney also posited here^[[The Road to Composable Data Systems:](https://wesmckinney.com/blog/looking-back-15-years/),Thoughts on the Last 15 Years and the Future, Wes McKinney, September 2023] that the ability to add cutting-edge analytic SQL processing to almost any application is a disruptive and transformative change for our industry --- in effect, that every DBMS will have the same vectorized execution capabilities that were unique to Snowflake ten years ago.
+
+From @fig-voltron-codex-ibis-composable, sitting alongside the likes of Snowflake on the execution-engine layer of our composable data system is [DuckDB](https://duckdb.org/), which has become a ubiquitous component of most data-stacks for its versatility. First introduced in 2019, akin to SQLite, it allows you to store your data in a single `.duckdb` database file, making it easily portable within other projects. It dispenses with the client-server convention --- all you need to do is point to where the single DuckDB database file is stored (that could be remotely), or start an in-memory session without even requiring to use a physical database. In fact, here is a great illustration^[[DuckDB Doesn’t Need Data To Be a Database](https://www.nikolasgoebel.com/2024/05/28/duckdb-doesnt-need-data.html), Nikolas Gobel, May 2024] of what's possible with DuckDB.
+
+Alluding to our earlier discussions around the importance of standards, DuckDB has an ability to run SQL queries directly on Python dataframes, enabling it to query Pandas, Polars and Apache Arrow dataframe objects as though they were SQL tables. In the case of the latter, it leverages a [zero-copy-mode](https://duckdb.org/2021/12/03/duck-arrow.html) that dispenses with the data-serialisation overhead of old, often a bottleneck for data-tooling. With DuckDB, you can directly query DBMS systems like MySQL and Postgres, open data files like JSON, CSV, and Parquet files stored in cloud storage systems like Amazon S3, and modern open table formats like Apache Iceberg and Delta Lake. For illustration, below is a basic query running on DuckDB that encapsulates a data pipeline to push parquet files from a public to private bucket and then write an aggregation query to update that private data-source.
+
+![](./images/duckdb-query-medallion-architecture.png)
+
+![Sample DuckDB-centric data pipeline enabled by DuckDB^[Sample DuckDB-centric data pipeline enabled by DuckDB from [DuckDB Beyond the Hype](https://medium.com/@alirezasadeghi1/duckdb-beyond-the-hype-8b1e59360cf3), Alireza Sadeghi, Sept. 2024.]](./images/duckdb-defined-workflows.png){#fig-duckdb-defined-workflows}
+
+Below are a selection of one-pagers relevant to our discussions derived from a library I maintain around these technologies for my own and my clients' reference. These are intended as summaries and don't look to cover a topic thoroughly, but often link off to more detailed resources.
+
+::: {.column-page-right}
+
+::: {.panel-tabset}
+
+## Embedded Databases for Serverless
+
+{{< pdf assets/202411_mccoole_strategyAI_deck23.pdf width=100% height=800 >}}
+
+## Modular Data Tooling
+
+{{< pdf assets/202411_mccoole_strategyAI_deck22.pdf width=100% height=800 >}}
+
+## New Generation of Pipeline Tools 
+
+{{< pdf assets/202411_mccoole_strategyAI_deck46.pdf width=100% height=800 >}}
+
+:::
+:::
+
+### New Generation of Pipeline and Orchestration Tools
+
+[The Composable Codex](https://voltrondata.com/codex/a-new-frontier#what-is-a-composable-data-system) envisaged three layers of a minimum viable data-system --- **data**, **execution** and **UI** (expression). The [DAGWork's variant](https://blog.dagworks.io/p/hamilton-and-kedro-for-modular-data) is presented below, where they include an **asset** layer that is responsible for structuring code into assets that are meaningful to the business and, for producing them, the **orchestration** layer that triggers their computation.
+
+:::: {.column-page-right}
+::: {.grid}
+::: {.g-col-6}
+- **Data:** the physical representation of data, both inputs and outputs
+- **Execution:** perform data transformations
+- **Expression:** the language to write data transformations
+- **Asset:** an object in persistent storage that captures some understanding of the world (e.g., a dataset, a database table, an ML model, dashboards)
+- **Orchestration:** operational system for the creation of assets
+:::
+
+::: {.g-col-6}
+![DAGWork's 5-layer modular data-stack^[DAGWork's 5-layer modular data-stack from [Hamilton & Kedro for modular data pipelines](https://blog.dagworks.io/p/hamilton-and-kedro-for-modular-data), DAGWorks, Mar. 2024.]](./images/pipeline-tooling-layers.png){#fig-pipeline-tooling-layers}
+:::
+:::
+::::
+
+Pipeline solutions like [Airflow](https://airflow.apache.org/), [Dagster](https://dagster.io/), [Hamilton](https://hamilton.dagworks.io/en/latest/) and [Kedro](https://kedro.org/), all use a directed-acyclic-graph (DAG) to represent a pipeline, specifying how 'assets' (a node within the DAG) relate and depend upon eachother. Imperative systems (like Airflow) require developers to expressly tell  the orchestrator 'what to do'. Declarative ones (like Dagster and Hamilton), *declare* what can be computed and each function infers its dependencies.
+
+Common to all tools we profile here is the ability to run and test locally, but also then the possibility of running them in-production in the cloud, usually without any need to adjust the code much, if at all, making them efficient to work with. Refer to the 'New Generation of Pipeline Tools' tab above, for an embedded one-pager that discusses these tools that are integral to the composable data system in more detail.
+
+### Greater Alignment to ML / AI Workloads
+
+Before we wrap up this high-level review of the data-tooling landscape, let's bridge to our next topic of LLMs.
+
+Companies are increasingly turning to machine learning and AI tools to clean up existing data. A large body of in-situ machine-learning algorithms are classical in nature, involving supervised learning, which involves the labeling of data. These algorithms tend to be performant (in terms of inference cost and latency) and are improved as the underlying data on which they are trained is potentially improved, with the advent of LLMs that can be used to more easily generate more accurate features from underlying data with other LLMs simultaneously used to 'judge' the quality of what was generated. Known as [**Data-centric AI**](https://dcai.csail.mit.edu/) (DCAI), this is an emerging field that studies techniques to improve datasets and considers the improvement of data as a systematic engineering discipline. On the contrary, **Model-centric AI**^[[Data-Centric AI vs. Model-Centric AI](https://dcai.csail.mit.edu/2024/data-centric-model-centric/) MIT Lecture series, 2024] is about model-selection, training techniques and hyperparameter selection to maximise model performance without altering the data.
+
+The sheer size of data needing to be handled in the context of working with LLMs is demanding a more performant data layer. Per this talk^[[Foundations for a Multi-Modal Lakehouse for AI](https://www.datacouncil.ai/talks24/foundations-for-a-multi-modal-lakehouse-for-ai), Data Council Technical Talk, April 2024], Chang She, CEO of LanceDB, contends that the current need to duplicate data depending on the end use-case, in the context of experimentation with AI, is inconvenient and expensive. You have a requirement to hold raw data, vector data, often tensor-based data in a different form again, with each potentially duplicated further with experimentation around adjusting a relevant feature-set.
+
+His solution, LanceDB (also a new-breed embeddable database), is able to have a single data-store and therefore a single source of truth that is able to hold multi-modal raw data and the calculated vectors from that data as well as various forms of indexing that sits above that data, making it potentially seamlessly available to different end use-cases in the requisite formats. This makes it much more amenable to being a composable solution for data in an AI training and exploration context.
+
+We'll dive into [LLMs: Key Emerging Components of the AI Tech Stack](./../5-llm-apps-llmops/index.qmd), in our next blog-post.
