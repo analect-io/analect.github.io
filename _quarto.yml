@@ -6,6 +6,7 @@ resources:
 website:
   title: "Analect"
   site-url: https://analect.com
+  favicon: images/analect_89_x_75.png
   google-analytics: 
     tracking-id: "G-5CKF247L1G" #see https://github.com/quarto-dev/quarto-cli/discussions/9065
   # cookie-consent: true
