@@ -15,17 +15,19 @@ format:
 listing:
   id: blog-list
   contents: 
-    - "posts/ai-strategy-series/"
+    - "posts/ai-strategy-series/**/index.qmd"
     - "!posts/ai-strategy-series/**/_*.qmd"
   sort: "date asc"
   type: grid
   categories: false
   sort-ui: false
   filter-ui: false
-  max-items: 5
+  max-items: 10
   image-height: 300px
   max-description-length: 300
   feed: false
+filters:
+  - d2  
 ---
 
 ```{=html}
@@ -116,12 +118,96 @@ So we've put together a **blog-series** to get you started, instead.
 
 \
 \
-\
 
-:::{#blog-list}
+### AI Strategy Series
+
+:::: {.grid}
+::: {.g-col-3 style="font-size: 85%"}
+This is a collection of five blog-posts intended to introduce the reader to how they may begin to think about introducing AI or machine learning to their business. It is deliberately not diving into the technologies. Rather, it is a distillation of my own thinking as well as readings from elsewhere that I have found valuable in evolving a better understanding of what's needed to succeed, ancillary to the tooling and technologies.
+:::
+
+::: {.g-col-9}
+
+```{.d2 pad=10 width="100%" theme="NeutralDefault" dark-theme="DarkMauve" sketch=true layout="elk"}
+**.style.font-size: 30
+
+catalog: "" {
+  grid-columns: 5
+  style: {
+    fill: transparent
+    font-size: 50
+  }
+  skaffolding: 1. Skaffold a Plan {
+    grid-columns: 1
+    style: {
+      font-size: 40
+    }
+    Upskill Across the Org
+    Stage your Adoption
+    Plan using Documentation
+  }
+
+  applicability: 2. Business Applicability {
+    grid-columns: 1
+    style: {
+      font-size: 40
+    }
+    What Can be Solved with AI
+    Blueprints for Planning
+    Importance Envisaging Personas
+    Change Management Embed AI
+    ML Project templates
+    Codify Patterns / Modularity
+  }
+
+  platforms: 3. Platform for Scale {
+    grid-columns: 1
+    style: {
+      font-size: 40
+    }
+    Envisioning Tech Stack
+    DevOps, GitOps, MLOps
+    Platforms for MLOps / IDPs
+    Fast Feedback Loop
+    Data-centric MLOps
+  }
+
+  dataops: 4. DataOps Foundations {
+    grid-columns: 1
+    style: {
+      font-size: 40
+    }
+    What is DataOps?
+    Composable Data Systems
+    Converging Table Formats
+    Embedded Databases
+    #Serverless Solutions
+    New Gen Pipelines / Orch.
+    ML / AI Workloads
+  }
+
+  llms: 5. Emerging LLM Stack {
+    grid-columns: 1
+    style: {
+      font-size: 40
+    }
+    LLM State of Play
+    LLMs as a Developer Tool
+    LLMOps more than MLOps ext.
+    Risks with Using LLMs
+    LLM Evals + Monitoring
+    Better Flow Controls
+  }
+}
+```
+:::
+::::
+
+::: {#blog-list}
 :::
 
 :::: {.grid}
+
 ::: {.g-col-2}
 \
 \
@@ -144,4 +230,5 @@ I have been working at the intersection of finance and technology most of my car
 \
 [![](./images/aws-cert-solutions-arch-prof.png)](https://www.credly.com/badges/a6053261-f1a2-4b33-876e-2bb872a30daa/linked_in_profile)
 :::
+
 ::::

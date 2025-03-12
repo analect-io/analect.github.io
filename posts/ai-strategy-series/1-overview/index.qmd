@@ -45,8 +45,8 @@ It's still early for the adoption of a strategy around AI, one that is initially
 :::
 
 ::: {.g-col-6}
-- [#4. DataOps Strategy: Embedding Data Everywhere]{style="color:  #D3D3D3;"}
-- [#5. LLMs: Key Emerging Components of the AI Tech Stack (forthcoming)]{style="color:  #D3D3D3;"}
+- [#4. DataOps Strategy: Embedding Data Everywhere](./../4-dataops-modular-tooling/index.qmd)
+- [#5. LLMs: Key Emerging Components of the AI Tech Stack](./../5-llm-apps-llmops/index.qmd)
 :::
 
 :::
@@ -250,3 +250,5 @@ catalog: "" {
 }
 ```
 :::
+
+Next up [#2. AI is Here, But its Business-Applicability may not be Obvious](./../2-business-applicability-digital-transform/index.qmd).

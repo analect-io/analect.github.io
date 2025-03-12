@@ -35,8 +35,8 @@ Platforms work well when they help automate processes and when the feedback loop
 :::
 
 ::: {.g-col-6}
-- [#4. DataOps Strategy: Embedding Data Everywhere (forthcoming)]{style="color:  #D3D3D3;"}
-- [#5. LLMs: Key Emerging Components of the AI Tech Stack (forthcoming)]{style="color:  #D3D3D3;"}
+- [#4. DataOps Strategy: Embedding Data Everywhere](./../4-dataops-modular-tooling/index.qmd)
+- [#5. LLMs: Key Emerging Components of the AI Tech Stack](./../5-llm-apps-llmops/index.qmd)
 :::
 
 :::
@@ -161,3 +161,5 @@ These are the actual processes involved in performing machine-learning operation
 Proprietary data is often referred to as the 'secret sauce' and those organisations who best harness it with ML will capture disproportionate economic value. A data-centric approach to building ML systems emphasizes data management over incremental modeling improvements. Synthetic data generation and data labeling (often performed by LLMs), validation, auditing, and ML monitoring have all become important parts of the MLOps process. The data-centric approach emphasizes data quality and monitoring as an essential part of building production ML systems. 
 
 The next blog-post in this series will be delving into all things DataOps. Having some strategy around data-management, automated builds with gitops patterns, containerising workloads and using some form of orchestration can get you a good distance towards a well-functioning blueprint for a system that can work universally for different industry client-types.
+
+Next up [#4. DataOps Strategy: Embedding Data Everywhere](./../4-dataops-modular-tooling/index.qmd).
