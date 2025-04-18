@@ -34,9 +34,9 @@ Even if the term AI is flawed for its imprecision, the shift in thinking that it
 It's still early for the adoption of a strategy around AI, one that is initially explorative. Since advancements in this field are currently so rapid, no business can fully know how this will shape their future product or service, but to dismiss this as hype and not engage, would be a fatal error, in my opinion.
 :::
 
-::: {.callout-note collapse="true"}
+::::: {.callout-note collapse="true"}
 ## AI Strategy Series (#1 of 5)
-::: {.grid}
+:::: {.grid}
 
 ::: {.g-col-6}
 - #1. Framing an AI Strategy: Where Do You Start? (this one)
@@ -49,8 +49,8 @@ It's still early for the adoption of a strategy around AI, one that is initially
 - [#5. LLMs: Key Emerging Components of the AI Tech Stack](./../5-llm-apps-llmops/index.qmd)
 :::
 
-:::
-:::
+::::
+:::::
 
 ## Forming a Strategy around Machine Learning / AI
 
@@ -96,7 +96,7 @@ While it was offered in the context of working with Large Language Models (LLMs)
 * **Reliable phase** --- even though the models have been generated via the ML pipelines, they need to be tested before they get promoted to production. An automatic testing methodology is introduced, for both the model and triggering infrastructure, in an isolated staging (pre-production) environment that simulates production.
 * **Scalable phase** --- after the productionisation of the first ML solution, scaling of the MLOps foundation to support multiple data science teams to collaborate and productionize tens or hundreds of ML use cases is necessary.
 
-::: {.column-page}
+:::: {.column-page}
 ::: {#fig-stages layout-ncol=2}
 
 ![Georgian - Stages of LLM Adoption^[[Introducing Georgian's 'Call, Walk, Run' Framework for Adopting Generative AI](https://georgian.io/introducing-georgians-crawl-walk-run-framework-for-adopting-generative-ai/), by Ben Wilde, Eli Scott and Royal Sequeira, 2023]](images/georgian-approach-genai-dev.png){#fig-georgian}
@@ -105,7 +105,7 @@ While it was offered in the context of working with Large Language Models (LLMs)
 
 Ramping to Different Levels of ML/AI Sophistication Happens in Stages
 :::
-:::
+::::
 
 ### Documentation as a Framing Mechanism
 
@@ -142,7 +142,7 @@ This documentation hierarchy could also form as a **framework for planning** an 
 This blog series will reference technological approaches, but it won't be drilling down into the technical details of these. I'll aim to cover those off in a later blog-series.  Below you'll find a map of what we'll be covering. There's enough material and opinions out there to fill a book on each, no doubt, but sometimes it's better to get started with a simple approach and refine to your own business' unique needs.
 
 
-::: {.column-page}
+:::: {.column-page}
 ```{.d2 pad=10 width="100%" theme="NeutralDefault" dark-theme="DarkMauve" sketch=true layout="elk"}
 **.style.font-size: 30
 
@@ -249,6 +249,6 @@ catalog: "" {
   }
 }
 ```
-:::
+::::
 
 Next up [#2. AI is Here, But its Business-Applicability may not be Obvious](./../2-business-applicability-digital-transform/index.qmd).

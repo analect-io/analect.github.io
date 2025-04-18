@@ -22,12 +22,12 @@ code-copy: hover
 ## Key Takeaway
 Even if a business has a highly-capable IT function, it may only have a handful of specialists experimenting with AI technologies. How do you scale that? Even if you have built valuable AI-driven prototypes (or are even in-production), getting customers or business users to adopt that solution as part of their day-to-day activities is often the biggest challenge.
 
-Even if you have managed to attract and retain many data-science types within your business, real bandwidth to embed AI within the organisation will only come with training those non-technical employees and reskilling them to leverage these new class of tools such as agentic-AI.
+Even if you have managed to attract and retain many data-science types within your business, real bandwidth to embed AI within the organisation will only come with training those non-technical employees and reskilling them to leverage these new classes of tools such as agentic-AI.
 :::
 
-::: {.callout-note collapse="true"}
+::::: {.callout-note collapse="true"}
 ## AI Strategy Series (#2 of 5)
-::: {.grid}
+:::: {.grid}
 
 ::: {.g-col-6}
 - [#1. Framing an AI Strategy: Where Do You Start?](./../1-overview/index.qmd)
@@ -40,8 +40,8 @@ Even if you have managed to attract and retain many data-science types within yo
 - [#5. LLMs: Key Emerging Components of the AI Tech Stack](./../5-llm-apps-llmops/index.qmd)
 :::
 
-:::
-:::
+::::
+:::::
 
 ### Identifying What Can be Solved with AI
 
@@ -59,7 +59,7 @@ The difference between AI and ML is not always clear, and people tend to use the
 :::
 
 ::: {.g-col-5}
-[Machine Learning (ML)]{style="background-color: #E0E0E0;"}, more specifically, is a *subset of AI* that focuses on developing algorithms and statistical models to enable a model to recognize patterns in data and then make predictions based on those patterns --- to effectively perform the complex tasks described above. For example, training an ML model on a dataset that has customer data and an indication of which customers defaulted on their debt, and enabling that model to predict whether other customers may default on their debt.
+[Machine Learning (ML)]{style="background-color: #E0E0E0;"}, more specifically, is a *subset of AI* that focuses on developing algorithms and statistical models to enable a model to recognize patterns in data and then make predictions based on those patterns --- to effectively perform the complex tasks described on the left. For example, training an ML model on a dataset that has customer data and an indication of which customers defaulted on their debt, and enabling that model to predict whether other customers may default on their debt.
 :::
 
 ::: {.g-col-4}
@@ -69,7 +69,7 @@ The difference between AI and ML is not always clear, and people tend to use the
 
 
 
-:::{.grid}
+::::{.grid}
 
 :::{.g-col-4}
 In spite of all the hype, Generative AI remains small, compared to the *installed-base* of classical ML models (such as supervised and unsupervised learning). I'm not sure how scientific this bubble-chart is, but as a key thought-leader in this field, Andrew Ng's opinion is important. GenAI penetration, as yet, is small since it is relatively new and it still suffers from certain key risks including potential issues with hallucination and safety, and public relations issues with deploying genAI.
@@ -79,7 +79,7 @@ In spite of all the hype, Generative AI remains small, compared to the *installe
 ![Andrew Ng's Assessment of Value from AI technologies 3 Years Out^[[Opportunities in AI, DeepLearning.AI / Stanford](https://www.youtube.com/watch?v=5p248yoa3oE) Andrew Ng's Assessment of Growth (shaded part) in different fields of AI, July 2023]](./images/ng-growth-areas-ml.png){#fig-andrewng}
 :::
 
-:::
+::::
 
 Indeed, the posture of most corporates, as borne out by a16z's survey below, remains much more internal-facing. Let's find use-cases internally first, until such time as we are comfortable that the technology is good enough to evolve into customer-facing solutions.
 
@@ -129,9 +129,9 @@ An integral part of the problem-to-solve discovery (Step 1) in the domain reimag
 
 Based on my own engagement with clients in the finance and VC domains, I'm including a few one-pagers that I assemble as part of a larger deck, aggregating various considerations that a persona in those fields might consider. This could be an exercise prior to delineating-out user needs and associated problems-to-solve, per the McKinsey framework described above. The Finance Executive persona (below) draws from a useful report from Celent^[[Generative AI Making Waves](https://pages.awscloud.com/rs/112-TZM-766/images/AWS_Gen_AI_Making_Waves_Report.pdf), Adoption waves in banking and capital markets, Celent, AWS, May 2024.] which echoes what we saw in @fig-a16z, where the tendency among corporates (and banks, in this case) is to develop GenAI applications for an internal audience, only planning a roll-out for external users much later, when presumably rough-edges and hallucination risks can be mitigated.
 
-::: {.column-page-right}
+::::: {.column-page-right}
 
-::: {.panel-tabset}
+:::: {.panel-tabset}
 
 ## Finance Executive Persona
 
@@ -140,8 +140,8 @@ Based on my own engagement with clients in the finance and VC domains, I'm inclu
 ## Private Equity Investor Persona
 
 {{< pdf assets/202411_mccoole_strategyAI_deck10.pdf width=100% height=800 >}}
-:::
-:::
+::::
+:::::
 
 ### Change Management Required to Embed AI Usage
 
@@ -153,8 +153,8 @@ This all might seem a little overkill, but it acknowledges the fact that as much
 
 A central idea behind this *Five Frames* approach in delivering successful change at scale is that leaders should put equal emphasis on *performance-* and *health-related* efforts --- where **Performance** is '*What* an enterprise does to deliver to its stakeholders in financial and operational terms', while **Health** is '*How* effectively an organization works together in pursuit of a common goal'.
 
-::: {.column-page-right}
-::: {.grid}
+::::: {.column-page-right}
+:::: {.grid}
 
 ::: {.g-col-3 style="font-size: 80%;"}
 The five [performance frameworks]{style="background-color: #E0E0E0;"} are:
@@ -180,8 +180,8 @@ The five [health frameworks]{style="background-color: #E0E0E0;"} are:
 5. *Advance:* **Leadership placement.** Prioritize roles by value-creation potential based on the go-forward strategy, match the best talent to priority roles, and operationalize the talent match process to ensure it’s regularly revisited.
 :::
 
-:::
-:::
+::::
+:::::
 
 ### Setting up Machine Learning projects for success
 
@@ -189,7 +189,7 @@ Leading on from the points above, part of the *health* of an organisation is hav
 
 In the next blog-post in this series, I'll be talking about platforms, which is where an organisation will begin to formalise their own best-practices around working with AI.
 
-::: {.column-page-right}
+:::: {.column-page-right}
 
 ::: {.panel-tabset}
 
@@ -198,7 +198,7 @@ In the next blog-post in this series, I'll be talking about platforms, which is 
 {{< pdf assets/202411_mccoole_strategyAI_deck13.pdf width=100% height=800 >}}
 
 :::
-:::
+::::
 
 ### Codify Patterns, Template and Platform them
 

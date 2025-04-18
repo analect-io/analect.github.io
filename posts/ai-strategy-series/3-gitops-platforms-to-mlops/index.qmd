@@ -24,9 +24,9 @@ To do machine-learning well requires rigour. Models trained on data are only as 
 Platforms work well when they help automate processes and when the feedback loop for those developing solutions is fast, requiring the underlying compute infrastructure to be fast. This is what is commonly referred to as the fly-wheel effect, enabling value-creation.
 :::
 
-::: {.callout-note collapse="true"}
+::::: {.callout-note collapse="true"}
 ## AI Strategy Series (#3 of 5)
-::: {.grid}
+:::: {.grid}
 
 ::: {.g-col-6}
 - [#1. Framing an AI Strategy: Where Do You Start?](./../1-overview/index.qmd)
@@ -39,8 +39,8 @@ Platforms work well when they help automate processes and when the feedback loop
 - [#5. LLMs: Key Emerging Components of the AI Tech Stack](./../5-llm-apps-llmops/index.qmd)
 :::
 
-:::
-:::
+::::
+:::::
 
 
 ### Envisioning a Tech Stack
@@ -76,8 +76,8 @@ I've tended to follow the well-beaten track of open-source solutions and many of
 
 The alternative is to go all-in with cloud-solutions, where the likes of AWS offer a suite of pre-built machine-learning tools, but these, at scale, can become very expensive.
 
-:::: {.column-page-right}
-::: {.grid}
+::::: {.column-page-right}
+:::: {.grid}
 
 ::: {.g-col-4}
 The **stage of MLOps maturity**, something I introduced in the first blog of this series, has an important bearing on the sophistication of the solution too. In the *Initial* phase, disparate tooling used for different parts of the value-chain doesn't all have to fit seamlessly together. There are more manual interventions in the chain to get things working. However, by the *Scalable* phase, everything needs to be fully integrated and automated.
@@ -89,8 +89,8 @@ There's a thorough review of the MLOps tooling landscape from Neptune.ai^[[MLOps
 ![AWS MLOps Maturity Model^[derived from: [MLOps: Emerging Trends in Data, Code, and Infrastructure](https://aifund.ai/wp-content/uploads/2022/06/mlops-emerging-trends-in-data-code-and-infrastructure.pdf), Venture Capital and Startup Perspective, June 2022]](./images/mlops-maturity-model-aws-notitle.png){#fig-mlops-maturity}
 :::
 
-:::
 ::::
+:::::
 
 An **organisation's size** could also be a determinant of the complexity of a solution and whether it is Saas or self-hosted.  At one end of the range are companies experimenting with ML models or just starting to scale their first few deployments. At the other end are businesses that need powerful capabilities to develop and operate sophisticated ML models in production that drive mission-critical business applications deriving value from massive amounts of harvested data.
 
@@ -106,7 +106,7 @@ One of the easier ways I have found to get up-and-running with Backstage, in con
 
 [Onyxia Datalab](https://www.onyxia.sh/) is another interesting open-source platform for data-science developed by [INSEE](https://insee.fr/), the French National Institute of Statistics and Economic Studies. It resembles Backstage in part, especially [Service Catalog](https://datalab.sspcloud.fr/catalog/ide), which is essentially a libary of tooling as helm-charts, that get launched into a kubernetes environment on your users' behalf. They have control allocating RAM, CPU and GPU to specific containers. The system is already tightly-integrated with S3 for data and [Vault](https://www.vaultproject.io/) for secret management. For teams that have restrictions on exposing their data to cloud-based Saas systems, this might be an ideal proving-ground system for intial proof-of-concept work.
 
-::: {.column-page-right}
+:::: {.column-page-right}
 
 ::: {.panel-tabset}
 
@@ -118,7 +118,7 @@ One of the easier ways I have found to get up-and-running with Backstage, in con
 
 {{< pdf assets/202411_mccoole_strategyAI_deck16.pdf width=100% height=800 >}}
 :::
-:::
+::::
 
 ### Importance of a fast Feedback Loop
 

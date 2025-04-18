@@ -29,9 +29,9 @@ Unlike traditional ML models, which operate on structured data, LLMs handle the 
 LLMOps is about production monitoring and continual improvement, linked by evaluation. The better your evals, the faster you can iterate on experiments, and thus the faster you can converge on the best version of your system.
 :::
 
-::: {.callout-note collapse="true"}
+::::: {.callout-note collapse="true"}
 ## AI Strategy Series (#5 of 5)
-::: {.grid}
+:::: {.grid}
 
 ::: {.g-col-6}
 - [#1. Framing an AI Strategy: Where Do You Start?](./../1-overview/index.qmd)
@@ -44,16 +44,16 @@ LLMOps is about production monitoring and continual improvement, linked by evalu
 - #5. LLMs: Key Emerging Components of the AI Tech Stack (this one)
 :::
 
-:::
-:::
+::::
+:::::
 
 ### LLM State of Play
 
-:::: {.column-page-right}
-::: {.grid}
-::: {.g-col-6}
+:::::: {.column-page-right}
+::::: {.grid}
+:::: {.g-col-6}
 ::: {.callout-important}
-If you skip this section, the only thing I would urge you to take away is that LLMs are getting more capable by the day and the cost of using them has plummeted. There's also a mix of *as-good-as-best-in-class* opensource models now available, with variants that are viable to self-hosted, bringing with it more choice for users that may not wish to utilise API endpoints of the big foundation-model vendors. This, together with some other use-cases I hope to demonstrate in here, should convince those on the fence to embrace this innovation for their business.
+If you skip this section, the only thing I would urge you to take away is that LLMs are getting more capable by the day and the cost of using them has plummeted. There's also a mix of *as-good-as-best-in-class* opensource models now available, with variants that are viable to self-host, bringing with it more choice for users that may not wish to utilise API endpoints of the big foundation-model vendors. This, together with some other use-cases I hope to demonstrate in here, should convince those on the fence to embrace this innovation for their business.
 :::
 
 Given the pace of innovation in LLMs, it's a somewhat moveable topic, so it's perhaps useful to take a snapshot of where we currently stand in Q1 2025. In this field, I defer to better experts than myself and Simon Willison's uncanny ability to offer precient observations^[Simon Willison's [content tagged with 'llm'](https://simonwillison.net/tags/llm/)] makes him a go-to source. In a recent review^[[What's new in the world of LLMs, for NICAR 2025](https://simonwillison.net/2025/Mar/8/nicar-llms/), National Institute for Computer-Assisted Reporting, 8 March 2025], he made some of following observations:
@@ -66,16 +66,16 @@ Given the pace of innovation in LLMs, it's a somewhat moveable topic, so it's pe
   - [Llama 3.3 70B](https://simonwillison.net/2024/Dec/9/llama-33-70b/)
   - [Mistral Small 3](https://simonwillison.net/2025/Jan/30/mistral-small-3/)
 
-:::
+::::
 
-::: {.g-col-6}
+:::: {.g-col-6}
 
 ![LLM inference cost is going down fast^[LLM inference cost is going down fast, from: [Welcome to LLMflation](https://a16z.com/llmflation-llm-inference-cost/), Guido Appenzeller, a16z, Nov. 2024]](./images/LLMflation-a16z.png){#fig-a16z-llm-cost}
 
 ![LLM Leaderboard - Comparison of GPT-4o, Llama 3, Mistral, Gemini and over 30 models --- Dominance of Reasoning (inference-time compute) models^[LLM Leaderboard from: [artificialanalysis.ai](https://artificialanalysis.ai/leaderboards/models), Comparison of GPT-4o, Llama 3, Mistral, Gemini and over 30 models]](./images/top-llm-models-march-2025.png){#fig-llm-ranking}
 
-:::
-:::
+::::
+:::::
 - per model ranking in @fig-llm-ranking, the presence of top-ranked opensource models is predominantly down to the efforts of labs from China, including DeepSeek and Alibaba (Qwen).
 - January 2025 marked the arrival of DeepSeek V3 and R1 models, which you may recall rattled people's assumptions around the possibility of being able to train these cutting-edge models for much less in compute cost than was previously assumed. It turns out that the low training cost posted at the time was taken a little out of context.
 - Most compellingly, DeepSeek have been the first to properly opensource their methods (not just weights), which is a step-change.
@@ -84,7 +84,7 @@ Given the pace of innovation in LLMs, it's a somewhat moveable topic, so it's pe
 - The top-ranked models (@fig-llm-ranking) are predominantly reasoning (inference-time compute) ones --- OpenAI o1 and o3, DeepSeek R1, Qwen QwQ, Claude 3.7 Thinking and Gemini 2.0 Thinking are all examples of this pattern in action --- or so-called MoE (mixture of experts)^[Mixture of experts (MoE) basics: The MoE architecture uses different subsets of its parameters to process different inputs. Each MoE layer contains a group of neural networks, or experts, preceded by a gating module that learns to choose which one(s) to use based on the input. In this way, different experts learn to specialize in different types of examples. Because not all parameters are used to produce any given output, the network uses less energy and runs faster than models of similar size that use all parameters to process every input.], with Deepseek-V3 using as many as 256 different experts, per their paper^[[DeepSeek-V3 Technical Report](https://github.com/deepseek-ai/DeepSeek-V3/blob/main/DeepSeek_V3.pdf), DeepSeek-AI, Dec. 26, 2024]. Technical readers may find this discussion^[[DeepSeek, Reasoning Models, and the Future of LLMs](https://youtu.be/Ae_Ieh93K64?t=286), a16z partners Guido Appenzeller and Marco Mascorro, discussing reasoning models, 5 March 2025].
 - Willison also observes that these models are getting much better at handling PDFs and he offers well-documented approaches to leveraging this^[[Structured data extraction using LLM](https://github.com/simonw/nicar-2025-scraping/blob/main/README.md#3-structured-data-extraction-using-llm), Simon Willison, Nicar25 Scraping Workshop, March 2025]. For instance, Gemini and Claude can both accept PDFs directly. For other models (including OpenAI) you need to break them up into images first—a PNG per page works well. These capabilities and reduced cost will only accelerate the sophistication of RAG (retrieval-augmented-generation) systems, a foundational capability for any business looking to use these technologies, as we'll elaborate on lower down.
 
-::::
+::::::
 
 
 ### LLMs as a Developer Tool
@@ -117,9 +117,9 @@ As a proving ground for developing AI use-cases, the AWS ecosystem is no bad sta
 
 Alternatively, their [SageMaker](https://aws.amazon.com/sagemaker/) is a multi-functional platform enabling you to customize your ML logic fully and is aimed at the 'fine-tuners', if not the 'providers'. This incidentally is the system leveraged by the end-to-end project contained in the LLM Engineer's Handbook, linked to earlier, for its greater versatility.
 
-:::: {.column-screen style="background-color: #E0E0E0"}
+::::: {.column-screen style="background-color: #E0E0E0"}
 #### Importance of the RAG Pattern
-::: {.grid}
+:::: {.grid}
 
 ::: {.g-col-6}
 ![Anatomy of RAG, derived from this blog^[[From RAG to fabric: Lessons learned from building real-world RAGs at GenAIIC – Part 1](https://aws.amazon.com/blogs/machine-learning/from-rag-to-fabric-lessons-learned-from-building-real-world-rags-at-genaiic-part-1/), AWS Machine Learning Blog, Oct. 2024]](./images/ML-16452-full-rag.jpg){#fig-aws-rag-pattern}
@@ -145,8 +145,8 @@ From left to right (on left) are the **retrieval**, the **augmentation**, and th
 - **Retrieving and summarizing financial news** – Analysts need the most up-to-date information on markets and the economy and rely on large databases of news or commentary articles. A RAG solution is a way to efficiently retrieve and summarize the relevant information on a given topic.
 :::
 
-:::
 ::::
+:::::
 \
 With experience, an organisation's sophistication in using these technologies will grow. As articulated in this blog^[[Achieve operational excellence with well-architected generative AI solutions using Amazon Bedrock](https://aws.amazon.com/blogs/machine-learning/achieve-operational-excellence-with-well-architected-generative-ai-solutions-using-amazon-bedrock/), AWS Machine Learning Blog, Oct. 2024]:
 
@@ -166,7 +166,7 @@ Anyone who has been following the development of LLMs over the past few years is
 
 To illustrate the changing sophistication of websites, a furniture retailer site is used. For the past 30 years, the same basic website design entails giving users an ability to filter available stock by price, type etc. with a query to the backend and the front-end refreshing to show the available products. The only real change in this model up until recently has been slicker photos of the products.
 
-However, with the arrival of LLMs, it's now possible to allow users to place products into a picture of their own room and to interactively swap out products using natural language. Certain objects added within an image can be queried based on where you click within that image. LLMs can be used to improve product description summaries and a whole host of other things (blue squares on left below). Mean various other modelling opportunities with collected data present themselves (yellow squares on right below), taking the degree of sophistication around customer interaction to new heights.
+However, with the arrival of LLMs, it's now possible to allow users to place products into a picture of their own room and to interactively swap out products using natural language. Certain objects added within an image can be queried based on where you click within that image. LLMs can be used to improve product description summaries and a whole host of other things (blue squares on right). Various other modelling opportunities with collected data present themselves (yellow squares on right), taking the degree of sophistication around customer interaction to new heights.
 \
 \
 \
@@ -181,7 +181,7 @@ However, with the arrival of LLMs, it's now possible to allow users to place pro
 While all the focus these days seems to be on LLMs, a much broader set of models will become important in the coming years. This includes:
 
 - **Multi-modal** - where text, audio, images and potentially video are handled by a single model. Use-cases, based on our simple furniture retailer, might include an image-generator (show me a leather sofa) and object-recognizer (what is this lamp that has been placed in the image).
-- **Hybrid Models** - this is where pre-existing machine-learning models can be further enhanced with richer data-sets aided by LLMs that can help surface that data from unstructured sources.
+- **Hybrid Models** - this is where pre-existing machine-learning models can be further enhanced with richer data-sets aided by LLMs that can help surface that data from unstructured sources (see @fig-hybrid-models).
 :::
 
 ::::
@@ -204,7 +204,7 @@ While all the focus these days seems to be on LLMs, a much broader set of models
 
 #### LLM Codegen Workflow
 
-Much of our discussion of LLMs so far has been very much at the macro level --- how can LLM be deployed as part of RAG system or used to underpin image generators or object recognizers on a modern website. But of course, LLMs, particularly those that are orientated towards code-generation, have become invaluable at the micro-level for developers too. As an illustration of this, Simon Willison's blog that we linked to earlier, is teeming with examples of how he levers LLMs cleverly to bring greater levels of productivity to his work. His own [llm](https://llm.datasette.io/en/stable/) CLI tool is being constantly enhanced for better integration into new capabilities being enabled by large language models. Another seasoned developer and blogger, Harper Reed, has also penned a valuable piece^[[My LLM codegen workflow atm](https://harper.blog/2025/02/16/my-llm-codegen-workflow-atm/), by Harper Reed, 16 Feb. 2025] which illustrates his usage of LLMs to structure a software solution through a series of question prompts, which he then step-by-step converts into code, also leveraging LLMs. In addition to 'greenfield' coding, he adapts this approach to work with legacy code-bases too. There have been plenty of doom-and-gloom narratives around the damaging effect of Co-pilot on nascent programmers, but like any tool, LLMs, when wielded sensibly, can be massively productivity-enhancing.
+Much of our discussion of LLMs so far has been very much at the macro level --- how can a LLM be deployed as part of a RAG system or used to underpin image generators or object recognizers on a modern website. But of course, LLMs, particularly those that are orientated towards code-generation, have become invaluable at the micro-level for developers too. As an illustration of this, Simon Willison's blog that we linked to earlier, is teeming with examples of how he levers LLMs cleverly to bring greater levels of productivity to his work. His own [llm](https://llm.datasette.io/en/stable/) CLI tool is being constantly enhanced for better integration into new capabilities being enabled by large language models. Another seasoned developer and blogger, Harper Reed, has also penned a valuable piece^[[My LLM codegen workflow atm](https://harper.blog/2025/02/16/my-llm-codegen-workflow-atm/), by Harper Reed, 16 Feb. 2025] which illustrates his usage of LLMs to structure a software solution through a series of question prompts, which he then step-by-step converts into code, also leveraging LLMs. In addition to 'greenfield' coding, he adapts this approach to work with legacy code-bases too. There have been plenty of doom-and-gloom narratives around the damaging effect of Co-pilot on nascent programmers, but like any tool, LLMs, when wielded sensibly, can be massively productivity-enhancing.
 
 ### LLMOps is more than an Extension of MLOps
 
@@ -223,7 +223,7 @@ Takeaways from the piece I found most compelling include:
 - **Empower everyone to use new AI technology** - while it may seem expensive to have a team spend a few days hacking on speculative projects, the outcomes may surprise you.
 
 
-::: {.column-page-right}
+:::: {.column-page-right}
 
 ::: {.panel-tabset}
 
@@ -232,7 +232,7 @@ Takeaways from the piece I found most compelling include:
 {{< pdf assets/202411_mccoole_strategyAI_deck27.pdf width=100% height=800 >}}
 
 :::
-:::
+::::
 
 
 ### Risks with Using LLMs
@@ -263,11 +263,12 @@ He's not a big fan of off-the-shelf model evaluation tools. Rather, there can be
 LLM-as-a-judge can be helpful as a bolt-on capability to a functioning eval system, but it is really important that it is aligned to a human. Use experts to label LLM-as-a-judge output until this judge-human alignment is sufficiently good. The important thing is not to revert to using this approach too early before exhausting the prompt-engineering and fine-tuning steps. He's also adamant that you need to design metrics that are specific to your business, along with tests to evaluate your AI’s performance. The data you get from these tests should also be reviewed regularly to make sure you’re on track. There's a presentation^[[How to Construct Domain Specific LLM Evaluation Systems: Hamel Husain and Emil Sedgh](https://www.youtube.com/watch?v=eLXF0VojuSs), Rechat development of Lucy, an AI personal assistant designed to support real estate agents.] on this approach worth watching.
 
 
-:::: {.column-screen}
+::::: {.column-screen}
 
-::: {.grid style="background-color: #E0E0E0"}
+:::: {.grid style="background-color: #E0E0E0"}
 
 ::: {.g-col-1}
+
 :::
 
 ::: {.g-col-5}
@@ -295,15 +296,15 @@ The results then inform two parallel streams:
 2. **Fine-tuning** with carefully curated data - by having a system to capture human evaluation (labelling good and bad cases), this curated data has the potential to be leveraged for fine-tuning a model, driving further improvement.
 :::
 
-:::
 ::::
+:::::
 \
 A useful case-study from the wild on LLM usage^[[How Clearwater Analytics is revolutionizing investment management with generative AI and Amazon SageMaker JumpStart](https://aws.amazon.com/blogs/machine-learning/how-clearwater-analytics-is-revolutionizing-investment-management-with-generative-ai-and-amazon-sagemaker-jumpstart/) AWS Machine Learning Blog, Dec. 2024] at **Clearwater Analytics** and their rigorous LLM evaluation process is available from this blog^[[A Cutting-Edge Framework for Evaluating LLM Output](https://medium.com/cwan-engineering/a-cutting-edge-framework-for-evaluating-llm-output-edab53373514), Clearwater Analytics Engineering, Aug. 2024]. This is evidence of the lengths to which companies, utilising LLMs, will go to ensure that their solutions are particularly robust. We've captured the essence of the Clearwater evaluation process in the box below, but we would point you back to the linked blog for more detail. We also have an embedded one-pager lower down, summarising a series of really thoughtful pieces put out by their engineering team. For those looking for a larger-scale evaluation framework that already fully-formed, we would urge your to study this Sagemaker-based^[[Operationalize LLM Evaluation at Scale using Amazon SageMaker Clarify and MLOps services](https://aws.amazon.com/blogs/machine-learning/operationalize-llm-evaluation-at-scale-using-amazon-sagemaker-clarify-and-mlops-services/), Sokratis Kartakis, Jagdeep Singh Soni, and Riccardo Gatti, AWS, Nov. 2023.] approach. 
 
-:::: {.column-page-right}
+::::: {.column-page-right}
 
 
-::: {.grid style="background-color: #E0E0E0"}
+:::: {.grid style="background-color: #E0E0E0"}
 
 ::: {.g-col-6}
 ##### Clearwater's Evaluation Framework for LLMs:
@@ -321,15 +322,15 @@ A useful case-study from the wild on LLM usage^[[How Clearwater Analytics is rev
 ![](./images/clearwater_llm-as-judge-evaluation.webp)
 :::
 
-:::
 ::::
+:::::
 \
 
 ### Better Flow Controls for LLM Apps
 
 We've covered alot of ground here, so we'll close-out with a final nod towards some novel opensource tooling designed to aid the development process of LLM Apps, especially ones that expect to leverage calling out to agentic systems. Those with greatest experience in developing LLMs articulate that common friction points with GenAI applications can include logically modeling application flow, debugging and recreating error cases, and curating data for testing/evaluation. The developers of [Burr](https://burr.dagworks.io/) say these problems all got easier to reason about when they modeled applications as state machines composed of actions designed for introspection. An application will hold state and make decisions off of that state. You can therefore capture your application as a state-machine, modifying the state as you go. The nice thing about this tooling is that it's light-weight, it doesn't seek to obfuscate function calling (as some other agentic frameworks do) and it has nice byproduct properties allowing for data-gathering for evaluation. We've tried to capture the essence of the solution in the one-pager embedded below. 
 
-::: {.column-page-right}
+:::: {.column-page-right}
 
 ::: {.panel-tabset}
 
@@ -342,7 +343,6 @@ We've covered alot of ground here, so we'll close-out with a final nod towards s
 {{< pdf assets/202411_mccoole_strategyAI_deck28.pdf width=100% height=800 >}}
 
 :::
-:::
+::::
 
 That concludes our intial AI Strategy series. We've probably just scratched the surface on various topics, but hopefully we've sketched for you an outline for an approach to get started with leveraging AI for your business. We hope to follow-up with another series that gets more technical in nature and that builds upon this foundational perspective we've shared.
-

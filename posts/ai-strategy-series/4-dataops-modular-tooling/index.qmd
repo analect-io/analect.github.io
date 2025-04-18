@@ -22,26 +22,26 @@ filters:
   - d2
 ---
 
-::: {.callout-tip}
+::::: {.callout-tip}
 ## Key Takeaway
 
-::: {.grid}
+:::: {.grid}
 ::: {.g-col-6}
 Although many data scientists are eager to build and tune ML models, the reality is an estimated 70% to 80% of their time is spent toiling in the bottom three parts of the hierarchy — **gathering data**, **cleaning data**, **processing data**.
 
-Making it easy for your team to work with a curated set of data, by combining modular components of modern data-stack, will ease the iterative process of experimentation and allow for productionisation of workflows that scale more easily.
+Making it easy for your team to work with a curated set of data, by combining modular components of a modern data-stack, will ease the iterative process of experimentation and allow for productionisation of workflows that scale more easily.
 :::
 
 ::: {.g-col-6}
 ![Data Science Hierarchy of Needs^[[The AI Hierarchy of Needs](https://hackernoon.com/the-ai-hierarchy-of-needs-18f111fcc007), Monica Rogati, June 2017.]](./images/fode_0105_data-science-hierarchy.png){#fig-data-science-hierarchy}
 :::
-:::
+::::
 We are in a sweet-spot in terms of being able to harvest the fruits of years of effort from various opensource projects directed at making working with data at scale more efficient and less dependent on proprietary solutions. For those locked into vendors, it's perhaps time to dispense with those relationships and avail of this new generation of performant tools.
-:::
+:::::
 
-::: {.callout-note collapse="true"}
+::::: {.callout-note collapse="true"}
 ## AI Strategy Series (#4 of 5)
-::: {.grid}
+:::: {.grid}
 
 ::: {.g-col-6}
 - [#1. Framing an AI Strategy: Where Do You Start?](./../1-overview/index.qmd)
@@ -54,8 +54,8 @@ We are in a sweet-spot in terms of being able to harvest the fruits of years of 
 - [#5. LLMs: Key Emerging Components of the AI Tech Stack](./../5-llm-apps-llmops/index.qmd)
 :::
 
-:::
-:::
+::::
+:::::
 
 ### Recap So Far
 
@@ -212,8 +212,8 @@ While compute and networking speeds have soared over the past decade, data-analy
 Hence his involvement in various parallel projects to solve these problems, culminating in The Composable Data Management System Manifesto^[[The Composable Data Management System Manifesto](https://www.vldb.org/pvldb/vol16/p2679-pedreira.pdf), Proceedings of the VLDB (very large database) Endowment, Volume 16 No. 10, Pedro Pedreira et al., June 2023] and a more detailed version articulated by Voltron Data (the driving force behind the open-source [Ibis project](https://github.com/ibis-project)) who have assembled a well-articulated technical series called [The Composable Codex](https://voltrondata.com/codex) which brings a useful historical context to what has needed to happen to unleash better productivity around the data ecosystem, all enabled by open standards for exchanging and operating on data, allowing for more composable data systems being built that are **modular**, **interoperable**, **customizable**, and **extensible** (MICE). While we summarise some key concepts from this manifesto below, I would urge readers to read the Codex in full for a greater understanding of the importance of this seismic shift in thinking that will underpin how companies perform DataOps into the future.
 
 
-::: {.column-page-right}
-::: {.grid}
+::::: {.column-page-right}
+:::: {.grid}
 
 ::: {.g-col-4}
 Even before the rise of LLMs, there was a real need for faster, more scalable, more cost-effective machine learning, as volumes of data grew exponentially. A *before* and *after* illustration of this shift to a better data ecosystem is probably well illustrated by NVIDIA's tongue-and-cheek portrayal of a day in the life of a data-scientist, prior to GPUs. The data ecosystem changes are obviously more than just GPUs, but are probably best summarised as **Accelerated Workflows**, in general, enabled by tooling that operates on layers and as standards between those layers envisaged by the composable data system.
@@ -223,14 +223,14 @@ Even before the rise of LLMs, there was a real need for faster, more scalable, m
 ![GPU-powered data science enables much greater interactivity, but affords fewer coffee breaks^[[GPU-powered data science enables much greater interactivity, but affords fewer coffee breaks](https://developer.nvidia.com/blog/gpu-accelerated-analytics-rapids/), Shashank Prasanna & Mark Harris, NVIDIA, Oct. 2018]](./images/a-day-in-the-life-1-1024x410.png){#fig-nvidia-day-in-the-life}
 :::
 
-:::
-:::
+::::
+:::::
 
 <!-- The Composable Codex -->
 
-::::: {.column-screen}
-:::: {.grid}
-::: {.g-col-6}
+:::::: {.column-screen}
+::::: {.grid}
+:::: {.g-col-6}
 ::: {.panel-tabset}
 
 ## Standards + Layers
@@ -250,9 +250,9 @@ Even before the rise of LLMs, there was a real need for faster, more scalable, m
 ![Comparison of the three connectivity approaches: with a database-specific connector (Status Quo), with ADBC and a non-Arrow native driver, and with ADBC and an Arrow-native driver^[ Comparison of the three connectivity approaches: [From data sprawl to data connectivity](https://voltrondata.com/codex/data-connectivity), Chapter 3, Data Connectivity, The Composable Codex, Voltron Data, 2023]](./images/different-data-sources-data-connectivity.png){#fig-voltron-datasource-connectivity}
 
 :::
-:::
+::::
 
-::: {.g-col-6}
+:::: {.g-col-6}
 \
 \
 [The Composable Codex](https://voltrondata.com/codex) has a concept of *Layers* (1, 2 and 3) and *Standards* (A, B and C).
@@ -270,10 +270,10 @@ Even before the rise of LLMs, there was a real need for faster, more scalable, m
 - [**[Arrow](https://arrow.apache.org/) [C]**]{style="background-color: #E0E0E0;"} - is focused on a standardized memory representation of columnar data.
 
 Cycling through the series of tabs on the left, The Composable Codex envisages a minimal viable data system as broken down into three main *layers*: UI, a query execution engine and a data-storage layer. Between those layers are [*standards*](https://standards.theodi.org/introduction/what-are-open-standards-for-data/), intended to ease friction between those layers and enhance interoperablitity for data (common data-structures), queries (common formats) and systems (serialization/data-interchange). On the second tab, we see projects like [Ibis](https://ibis-project.org/) which works by decoupling the dataframe API (python) from the backend execution. Most backends support a SQL dialect, which Ibis compiles its expressions into, enabling queries (driving complex ETL) to be written once and work against multiple backends. Ibis uses [Apache Arrow](https://arrow.apache.org/) to provide a common data format for data interchange between Ibis and backends that is fast. Ibis is also able to compile queries to Substrait, an evolving cross-language serialization protocol. On the right-most tab, we see an evolution of status-quo systems (squareDB) towards using this fully-integrated modern data-tooling (triangleDB) resulting in vastly improved data-stack performance.
-:::
-
 ::::
+
 :::::
+::::::
 
 
 ### Convergence of technologies around Table Formats
@@ -319,7 +319,7 @@ Alluding to our earlier discussions around the importance of standards, DuckDB h
 
 Below are a selection of one-pagers relevant to our discussions derived from a library I maintain around these technologies for my own and my clients' reference. These are intended as summaries and don't look to cover a topic thoroughly, but often link off to more detailed resources.
 
-::: {.column-page-right}
+:::: {.column-page-right}
 
 ::: {.panel-tabset}
 
@@ -336,14 +336,14 @@ Below are a selection of one-pagers relevant to our discussions derived from a l
 {{< pdf assets/202411_mccoole_strategyAI_deck46.pdf width=100% height=800 >}}
 
 :::
-:::
+::::
 
 ### New Generation of Pipeline and Orchestration Tools
 
 [The Composable Codex](https://voltrondata.com/codex/a-new-frontier#what-is-a-composable-data-system) envisaged three layers of a minimum viable data-system --- **data**, **execution** and **UI** (expression). The [DAGWork's variant](https://blog.dagworks.io/p/hamilton-and-kedro-for-modular-data) is presented below, where they include an **asset** layer that is responsible for structuring code into assets that are meaningful to the business and, for producing them, the **orchestration** layer that triggers their computation.
 
-:::: {.column-page-right}
-::: {.grid}
+::::: {.column-page-right}
+:::: {.grid}
 ::: {.g-col-6}
 - **Data:** the physical representation of data, both inputs and outputs
 - **Execution:** perform data transformations
@@ -355,8 +355,8 @@ Below are a selection of one-pagers relevant to our discussions derived from a l
 ::: {.g-col-6}
 ![DAGWork's 5-layer modular data-stack^[DAGWork's 5-layer modular data-stack from [Hamilton & Kedro for modular data pipelines](https://blog.dagworks.io/p/hamilton-and-kedro-for-modular-data), DAGWorks, Mar. 2024.]](./images/pipeline-tooling-layers.png){#fig-pipeline-tooling-layers}
 :::
-:::
 ::::
+:::::
 
 Pipeline solutions like [Airflow](https://airflow.apache.org/), [Dagster](https://dagster.io/), [Hamilton](https://hamilton.dagworks.io/en/latest/) and [Kedro](https://kedro.org/), all use a directed-acyclic-graph (DAG) to represent a pipeline, specifying how 'assets' (a node within the DAG) relate and depend upon eachother. Imperative systems (like Airflow) require developers to expressly tell  the orchestrator 'what to do'. Declarative ones (like Dagster and Hamilton), *declare* what can be computed and each function infers its dependencies.
 
