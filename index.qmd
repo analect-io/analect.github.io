@@ -15,17 +15,17 @@ format:
 listing:
   id: blog-list
   contents: 
-    - "posts/ai-strategy-series/**/index.qmd"
-    - "!posts/ai-strategy-series/**/_*.qmd"
+    - "posts/ai-strategy-series/**/*.qmd"
+    # - "!posts/ai-strategy-series/**/_*.qmd"
   sort: "date asc"
-  type: grid
-  categories: false
+  type: table
+  fields: [date, reading-time, title, author]
   sort-ui: false
   filter-ui: false
   max-items: 10
-  image-height: 300px
-  max-description-length: 300
-  feed: false
+  # image-height: 300px
+  # max-description-length: 300
+  # feed: false
 filters:
   - d2  
 ---
@@ -48,7 +48,7 @@ filters:
 </style>
 ```
 
-::::{.cr-section} 
+:::::{.cr-section} 
 
 :::{focus-on="cr-analect"}
 # On Developing an AI Strategy 
@@ -114,7 +114,7 @@ So we've put together a **blog-series** to get you started, instead.
 |  
 *[https://en.wikipedia.org/wiki/Foundation_model](https://en.wikipedia.org/wiki/Foundation_model)*
 :::
-::::
+:::::
 
 \
 \
@@ -214,15 +214,15 @@ catalog: "" {
 ![](./images/Analect_Intelligent_Analysis.png)
 :::
 
-::: {.g-col-1}
-:::
-
 ::: {.g-col-6 style="font-size: 80%;"}
 #### About Analect
 I have been working at the intersection of finance and technology most of my career. While all my roles in finance involved leveraging technology, I focused on deepening my technical knowledge with my own start-up, Analect, formed in 2012. My motivation at the time, as a financial analyst, was to bring some of the compelling open-source tooling in the scientific community to the finance domain. More recently, my focus has been on cloud-based platform engineering for machine-learning use-cases (MLOps). Direct hands-on experience with these systems is a necessary part of being able to articulate ideas and strategy around how they can be leveraged within a financial services domain but also other industry domains too. Let's collaborate together.
 :::
 
-::: {.g-col-1}
+::: {.g-col-2}
+\
+\
+[![](./images/aws-certified-machine-learning-specialty.png)](https://www.credly.com/badges/e0a27b46-2aed-4c28-9b00-3c661a077616/linked_in_profile)
 :::
 
 ::: {.g-col-2}

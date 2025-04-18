@@ -27,19 +27,21 @@ Lately, my focus has been on cloud-based platform engineering for machine-learni
 
 ::: {.grid}
 
-::: {.g-col-6}
-[AWS Solutions Architect – Professional](https://aws.amazon.com/certification/certified-solutions-architect-professional/)
+::: {.g-col-4}
+[![](./images/aws-certified-machine-learning-specialty.png)](https://www.credly.com/badges/e0a27b46-2aed-4c28-9b00-3c661a077616/linked_in_profile)
+[AWS Machine Learning – Specialty](https://aws.amazon.com/certification/certified-machine-learning-specialty/)
+:::
 
+::: {.g-col-4}
+[![](./images/aws-cert-solutions-arch-prof.png)](https://www.credly.com/badges/a6053261-f1a2-4b33-876e-2bb872a30daa/linked_in_profile)
+[AWS Solutions Architect – Professional](https://aws.amazon.com/certification/certified-solutions-architect-professional/)
+:::
+
+::: {.g-col-4}
+[![](./images/dlt_ELT_specialist.png)](https://github.com/dlt-hub/dlt-certificates/blob/main/certificates/technical_certification/93731f82ecf6b105f8c18a1e40adddb210d00a6f00957e5e2ca00948964cd550.md)
 [dlt ELT Specialist](https://github.com/dlt-hub/dlt-certificates/blob/main/certificates/technical_certification/93731f82ecf6b105f8c18a1e40adddb210d00a6f00957e5e2ca00948964cd550.md)
 :::
 
-::: {.g-col-3}
-[![](./images/aws-cert-solutions-arch-prof.png)](https://www.credly.com/badges/a6053261-f1a2-4b33-876e-2bb872a30daa/linked_in_profile)
-:::
-
-::: {.g-col-3}
-[![](./images/dlt_ELT_specialist.png)](https://github.com/dlt-hub/dlt-certificates/blob/main/certificates/technical_certification/93731f82ecf6b105f8c18a1e40adddb210d00a6f00957e5e2ca00948964cd550.md)
-:::
 :::
 
 ### Personal life
