@@ -9,7 +9,7 @@
 <link>https://analect.com/posts/</link>
 <atom:link href="https://analect.com/posts/index.xml" rel="self" type="application/rss+xml"/>
 <description></description>
-<generator>quarto-1.6.42</generator>
+<generator>quarto-1.6.43</generator>
 <lastBuildDate>Fri, 07 Mar 2025 00:00:00 GMT</lastBuildDate>
 <item>
   <title>5. LLMs: Key Emerging Components of the AI Tech Stack</title>
@@ -80,7 +80,7 @@ Important
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>If you skip this section, the only thing I would urge you to take away is that LLMs are getting more capable by the day and the cost of using them has plummeted. There’s also a mix of <em>as-good-as-best-in-class</em> opensource models now available, with variants that are viable to self-hosted, bringing with it more choice for users that may not wish to utilise API endpoints of the big foundation-model vendors. This, together with some other use-cases I hope to demonstrate in here, should convince those on the fence to embrace this innovation for their business.</p>
+<p>If you skip this section, the only thing I would urge you to take away is that LLMs are getting more capable by the day and the cost of using them has plummeted. There’s also a mix of <em>as-good-as-best-in-class</em> opensource models now available, with variants that are viable to self-host, bringing with it more choice for users that may not wish to utilise API endpoints of the big foundation-model vendors. This, together with some other use-cases I hope to demonstrate in here, should convince those on the fence to embrace this innovation for their business.</p>
 </div>
 </div>
 <p>Given the pace of innovation in LLMs, it’s a somewhat moveable topic, so it’s perhaps useful to take a snapshot of where we currently stand in Q1 2025. In this field, I defer to better experts than myself and Simon Willison’s uncanny ability to offer precient observations<sup>1</sup> makes him a go-to source. In a recent review<sup>2</sup>, he made some of following observations:</p>
@@ -216,7 +216,7 @@ With experience, an organisation’s sophistication in using these technologies 
 <div class="grid">
 <div class="g-col-6" style="font-size: 80%;">
 <p>To illustrate the changing sophistication of websites, a furniture retailer site is used. For the past 30 years, the same basic website design entails giving users an ability to filter available stock by price, type etc. with a query to the backend and the front-end refreshing to show the available products. The only real change in this model up until recently has been slicker photos of the products.</p>
-<p>However, with the arrival of LLMs, it’s now possible to allow users to place products into a picture of their own room and to interactively swap out products using natural language. Certain objects added within an image can be queried based on where you click within that image. LLMs can be used to improve product description summaries and a whole host of other things (blue squares on left below). Mean various other modelling opportunities with collected data present themselves (yellow squares on right below), taking the degree of sophistication around customer interaction to new heights.<br>
+<p>However, with the arrival of LLMs, it’s now possible to allow users to place products into a picture of their own room and to interactively swap out products using natural language. Certain objects added within an image can be queried based on where you click within that image. LLMs can be used to improve product description summaries and a whole host of other things (blue squares on right). Various other modelling opportunities with collected data present themselves (yellow squares on right), taking the degree of sophistication around customer interaction to new heights.<br>
 <br>
 <br>
 </p>
@@ -237,7 +237,7 @@ Figure&nbsp;5: An ML/AI-driven company of 2026: Categories of models leveraged<s
 <p>While all the focus these days seems to be on LLMs, a much broader set of models will become important in the coming years. This includes:</p>
 <ul>
 <li><strong>Multi-modal</strong> - where text, audio, images and potentially video are handled by a single model. Use-cases, based on our simple furniture retailer, might include an image-generator (show me a leather sofa) and object-recognizer (what is this lamp that has been placed in the image).</li>
-<li><strong>Hybrid Models</strong> - this is where pre-existing machine-learning models can be further enhanced with richer data-sets aided by LLMs that can help surface that data from unstructured sources.</li>
+<li><strong>Hybrid Models</strong> - this is where pre-existing machine-learning models can be further enhanced with richer data-sets aided by LLMs that can help surface that data from unstructured sources (see Figure&nbsp;6).</li>
 </ul>
 </div>
 </div>
@@ -269,7 +269,7 @@ Figure&nbsp;6: Illustration of Hybrid models - combining classic ML and LLM mode
 </section>
 <section id="llm-codegen-workflow" class="level4">
 <h4 class="anchored" data-anchor-id="llm-codegen-workflow">LLM Codegen Workflow</h4>
-<p>Much of our discussion of LLMs so far has been very much at the macro level — how can LLM be deployed as part of RAG system or used to underpin image generators or object recognizers on a modern website. But of course, LLMs, particularly those that are orientated towards code-generation, have become invaluable at the micro-level for developers too. As an illustration of this, Simon Willison’s blog that we linked to earlier, is teeming with examples of how he levers LLMs cleverly to bring greater levels of productivity to his work. His own <a href="https://llm.datasette.io/en/stable/">llm</a> CLI tool is being constantly enhanced for better integration into new capabilities being enabled by large language models. Another seasoned developer and blogger, Harper Reed, has also penned a valuable piece<sup>19</sup> which illustrates his usage of LLMs to structure a software solution through a series of question prompts, which he then step-by-step converts into code, also leveraging LLMs. In addition to ‘greenfield’ coding, he adapts this approach to work with legacy code-bases too. There have been plenty of doom-and-gloom narratives around the damaging effect of Co-pilot on nascent programmers, but like any tool, LLMs, when wielded sensibly, can be massively productivity-enhancing.</p>
+<p>Much of our discussion of LLMs so far has been very much at the macro level — how can a LLM be deployed as part of a RAG system or used to underpin image generators or object recognizers on a modern website. But of course, LLMs, particularly those that are orientated towards code-generation, have become invaluable at the micro-level for developers too. As an illustration of this, Simon Willison’s blog that we linked to earlier, is teeming with examples of how he levers LLMs cleverly to bring greater levels of productivity to his work. His own <a href="https://llm.datasette.io/en/stable/">llm</a> CLI tool is being constantly enhanced for better integration into new capabilities being enabled by large language models. Another seasoned developer and blogger, Harper Reed, has also penned a valuable piece<sup>19</sup> which illustrates his usage of LLMs to structure a software solution through a series of question prompts, which he then step-by-step converts into code, also leveraging LLMs. In addition to ‘greenfield’ coding, he adapts this approach to work with legacy code-bases too. There have been plenty of doom-and-gloom narratives around the damaging effect of Co-pilot on nascent programmers, but like any tool, LLMs, when wielded sensibly, can be massively productivity-enhancing.</p>
 </section>
 </section>
 <section id="llmops-is-more-than-an-extension-of-mlops" class="level3 page-columns page-full">
@@ -493,7 +493,7 @@ Key Takeaway
 <div class="grid">
 <div class="g-col-6">
 <p>Although many data scientists are eager to build and tune ML models, the reality is an estimated 70% to 80% of their time is spent toiling in the bottom three parts of the hierarchy — <strong>gathering data</strong>, <strong>cleaning data</strong>, <strong>processing data</strong>.</p>
-<p>Making it easy for your team to work with a curated set of data, by combining modular components of modern data-stack, will ease the iterative process of experimentation and allow for productionisation of workflows that scale more easily.</p>
+<p>Making it easy for your team to work with a curated set of data, by combining modular components of a modern data-stack, will ease the iterative process of experimentation and allow for productionisation of workflows that scale more easily.</p>
 </div>
 <div class="g-col-6">
 <div id="fig-data-science-hierarchy" class="quarto-float quarto-figure quarto-figure-center anchored">
@@ -1082,7 +1082,7 @@ Key Takeaway
 </div>
 <div class="callout-body-container callout-body">
 <p>Even if a business has a highly-capable IT function, it may only have a handful of specialists experimenting with AI technologies. How do you scale that? Even if you have built valuable AI-driven prototypes (or are even in-production), getting customers or business users to adopt that solution as part of their day-to-day activities is often the biggest challenge.</p>
-<p>Even if you have managed to attract and retain many data-science types within your business, real bandwidth to embed AI within the organisation will only come with training those non-technical employees and reskilling them to leverage these new class of tools such as agentic-AI.</p>
+<p>Even if you have managed to attract and retain many data-science types within your business, real bandwidth to embed AI within the organisation will only come with training those non-technical employees and reskilling them to leverage these new classes of tools such as agentic-AI.</p>
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -1125,7 +1125,7 @@ AI Strategy Series (#2 of 5)
 <p><span style="background-color: #E0E0E0;">Artificial Intelligence (AI)</span> focuses on creating machines (software) to perform complex tasks that typically require human intelligence, such as problem-solving (analysing), decision-making (reasoning), and understanding language (learning).</p>
 </div>
 <div class="g-col-5">
-<p><span style="background-color: #E0E0E0;">Machine Learning (ML)</span>, more specifically, is a <em>subset of AI</em> that focuses on developing algorithms and statistical models to enable a model to recognize patterns in data and then make predictions based on those patterns — to effectively perform the complex tasks described above. For example, training an ML model on a dataset that has customer data and an indication of which customers defaulted on their debt, and enabling that model to predict whether other customers may default on their debt.</p>
+<p><span style="background-color: #E0E0E0;">Machine Learning (ML)</span>, more specifically, is a <em>subset of AI</em> that focuses on developing algorithms and statistical models to enable a model to recognize patterns in data and then make predictions based on those patterns — to effectively perform the complex tasks described on the left. For example, training an ML model on a dataset that has customer data and an indication of which customers defaulted on their debt, and enabling that model to predict whether other customers may default on their debt.</p>
 </div>
 <div class="g-col-4">
 <p><span style="background-color: #E0E0E0;">Generative AI (GenAI)</span>, is a <em>subset of AI</em> capable of creating new content, such as text, images, or music, based on user input prompts. While machine learning is used to perform more narrowly defined tasks like categorizing data or making predictions, GenAI can respond dynamically to user inputs, and so is used for more creative tasks like composing text or conversing with customers via AI agents<sup>2</sup>.</p>

@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-GB" xml:lang="en-GB"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.42">
+<meta name="generator" content="quarto-1.6.43">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -38,7 +38,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-d4d76bf8491c20bad77d141916dc28e1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../../../site_libs/bootstrap/bootstrap-e5bd5842818420112f2a87434b228a32.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
@@ -262,7 +262,7 @@ Important
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>If you skip this section, the only thing I would urge you to take away is that LLMs are getting more capable by the day and the cost of using them has plummeted. There’s also a mix of <em>as-good-as-best-in-class</em> opensource models now available, with variants that are viable to self-hosted, bringing with it more choice for users that may not wish to utilise API endpoints of the big foundation-model vendors. This, together with some other use-cases I hope to demonstrate in here, should convince those on the fence to embrace this innovation for their business.</p>
+<p>If you skip this section, the only thing I would urge you to take away is that LLMs are getting more capable by the day and the cost of using them has plummeted. There’s also a mix of <em>as-good-as-best-in-class</em> opensource models now available, with variants that are viable to self-host, bringing with it more choice for users that may not wish to utilise API endpoints of the big foundation-model vendors. This, together with some other use-cases I hope to demonstrate in here, should convince those on the fence to embrace this innovation for their business.</p>
 </div>
 </div>
 <p>Given the pace of innovation in LLMs, it’s a somewhat moveable topic, so it’s perhaps useful to take a snapshot of where we currently stand in Q1 2025. In this field, I defer to better experts than myself and Simon Willison’s uncanny ability to offer precient observations<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> makes him a go-to source. In a recent review<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>, he made some of following observations:</p>
@@ -398,7 +398,7 @@ With experience, an organisation’s sophistication in using these technologies 
 <div class="grid">
 <div class="g-col-6" style="font-size: 80%;">
 <p>To illustrate the changing sophistication of websites, a furniture retailer site is used. For the past 30 years, the same basic website design entails giving users an ability to filter available stock by price, type etc. with a query to the backend and the front-end refreshing to show the available products. The only real change in this model up until recently has been slicker photos of the products.</p>
-<p>However, with the arrival of LLMs, it’s now possible to allow users to place products into a picture of their own room and to interactively swap out products using natural language. Certain objects added within an image can be queried based on where you click within that image. LLMs can be used to improve product description summaries and a whole host of other things (blue squares on left below). Mean various other modelling opportunities with collected data present themselves (yellow squares on right below), taking the degree of sophistication around customer interaction to new heights.<br>
+<p>However, with the arrival of LLMs, it’s now possible to allow users to place products into a picture of their own room and to interactively swap out products using natural language. Certain objects added within an image can be queried based on where you click within that image. LLMs can be used to improve product description summaries and a whole host of other things (blue squares on right). Various other modelling opportunities with collected data present themselves (yellow squares on right), taking the degree of sophistication around customer interaction to new heights.<br>
 <br>
 <br>
 </p>
@@ -419,7 +419,7 @@ Figure&nbsp;5: An ML/AI-driven company of 2026: Categories of models leveraged<a
 <p>While all the focus these days seems to be on LLMs, a much broader set of models will become important in the coming years. This includes:</p>
 <ul>
 <li><strong>Multi-modal</strong> - where text, audio, images and potentially video are handled by a single model. Use-cases, based on our simple furniture retailer, might include an image-generator (show me a leather sofa) and object-recognizer (what is this lamp that has been placed in the image).</li>
-<li><strong>Hybrid Models</strong> - this is where pre-existing machine-learning models can be further enhanced with richer data-sets aided by LLMs that can help surface that data from unstructured sources.</li>
+<li><strong>Hybrid Models</strong> - this is where pre-existing machine-learning models can be further enhanced with richer data-sets aided by LLMs that can help surface that data from unstructured sources (see <a href="#fig-hybrid-models" class="quarto-xref">Figure&nbsp;6</a>).</li>
 </ul>
 </div>
 </div>
@@ -451,7 +451,7 @@ Figure&nbsp;6: Illustration of Hybrid models - combining classic ML and LLM mode
 </section>
 <section id="llm-codegen-workflow" class="level4">
 <h4 class="anchored" data-anchor-id="llm-codegen-workflow">LLM Codegen Workflow</h4>
-<p>Much of our discussion of LLMs so far has been very much at the macro level — how can LLM be deployed as part of RAG system or used to underpin image generators or object recognizers on a modern website. But of course, LLMs, particularly those that are orientated towards code-generation, have become invaluable at the micro-level for developers too. As an illustration of this, Simon Willison’s blog that we linked to earlier, is teeming with examples of how he levers LLMs cleverly to bring greater levels of productivity to his work. His own <a href="https://llm.datasette.io/en/stable/">llm</a> CLI tool is being constantly enhanced for better integration into new capabilities being enabled by large language models. Another seasoned developer and blogger, Harper Reed, has also penned a valuable piece<a href="#fn19" class="footnote-ref" id="fnref19" role="doc-noteref"><sup>19</sup></a> which illustrates his usage of LLMs to structure a software solution through a series of question prompts, which he then step-by-step converts into code, also leveraging LLMs. In addition to ‘greenfield’ coding, he adapts this approach to work with legacy code-bases too. There have been plenty of doom-and-gloom narratives around the damaging effect of Co-pilot on nascent programmers, but like any tool, LLMs, when wielded sensibly, can be massively productivity-enhancing.</p>
+<p>Much of our discussion of LLMs so far has been very much at the macro level — how can a LLM be deployed as part of a RAG system or used to underpin image generators or object recognizers on a modern website. But of course, LLMs, particularly those that are orientated towards code-generation, have become invaluable at the micro-level for developers too. As an illustration of this, Simon Willison’s blog that we linked to earlier, is teeming with examples of how he levers LLMs cleverly to bring greater levels of productivity to his work. His own <a href="https://llm.datasette.io/en/stable/">llm</a> CLI tool is being constantly enhanced for better integration into new capabilities being enabled by large language models. Another seasoned developer and blogger, Harper Reed, has also penned a valuable piece<a href="#fn19" class="footnote-ref" id="fnref19" role="doc-noteref"><sup>19</sup></a> which illustrates his usage of LLMs to structure a software solution through a series of question prompts, which he then step-by-step converts into code, also leveraging LLMs. In addition to ‘greenfield’ coding, he adapts this approach to work with legacy code-bases too. There have been plenty of doom-and-gloom narratives around the damaging effect of Co-pilot on nascent programmers, but like any tool, LLMs, when wielded sensibly, can be massively productivity-enhancing.</p>
 </section>
 </section>
 <section id="llmops-is-more-than-an-extension-of-mlops" class="level3 page-columns page-full">
