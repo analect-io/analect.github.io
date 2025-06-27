@@ -214,7 +214,7 @@ catalog: "" {
 ![](./images/Analect_Intelligent_Analysis.png)
 :::
 
-::: {.g-col-6 style="font-size: 80%;"}
+::: {.g-col-4 style="font-size: 80%;"}
 #### About Analect
 I have been working at the intersection of finance and technology most of my career. While all my roles in finance involved leveraging technology, I focused on deepening my technical knowledge with my own start-up, Analect, formed in 2012. My motivation at the time, as a financial analyst, was to bring some of the compelling open-source tooling in the scientific community to the finance domain. More recently, my focus has been on cloud-based platform engineering for machine-learning use-cases (MLOps). Direct hands-on experience with these systems is a necessary part of being able to articulate ideas and strategy around how they can be leveraged within a financial services domain but also other industry domains too. Let's collaborate together.
 :::
@@ -229,6 +229,12 @@ I have been working at the intersection of finance and technology most of my car
 \
 \
 [![](./images/aws-cert-solutions-arch-prof.png)](https://www.credly.com/badges/a6053261-f1a2-4b33-876e-2bb872a30daa/linked_in_profile)
+:::
+
+::: {.g-col-2}
+\
+\
+[![](./images/devops_engineer_badge.png)](https://www.credly.com/badges/d4fedda1-61dd-442f-b73d-72cb64acecca/linked_in_profile)
 :::
 
 ::::
