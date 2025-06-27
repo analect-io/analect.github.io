@@ -38,8 +38,11 @@ Lately, my focus has been on cloud-based platform engineering for machine-learni
 :::
 
 ::: {.g-col-4}
-[![](./images/dlt_ELT_specialist.png)](https://github.com/dlt-hub/dlt-certificates/blob/main/certificates/technical_certification/93731f82ecf6b105f8c18a1e40adddb210d00a6f00957e5e2ca00948964cd550.md)
-[dlt ELT Specialist](https://github.com/dlt-hub/dlt-certificates/blob/main/certificates/technical_certification/93731f82ecf6b105f8c18a1e40adddb210d00a6f00957e5e2ca00948964cd550.md)
+[![](./images/devops_engineer_badge.png)](https://www.credly.com/badges/d4fedda1-61dd-442f-b73d-72cb64acecca/linked_in_profile)
+[AWS DevOps Engineer – Professional](https://aws.amazon.com/certification/certified-devops-engineer-professional/)
+
+<!-- [![](./images/dlt_ELT_specialist.png)](https://github.com/dlt-hub/dlt-certificates/blob/main/certificates/technical_certification/93731f82ecf6b105f8c18a1e40adddb210d00a6f00957e5e2ca00948964cd550.md)
+[dlt ELT Specialist](https://github.com/dlt-hub/dlt-certificates/blob/main/certificates/technical_certification/93731f82ecf6b105f8c18a1e40adddb210d00a6f00957e5e2ca00948964cd550.md) -->
 :::
 
 :::
