@@ -1,35 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://analect.com/posts/ai-strategy-series/2-business-applicability-digital-transform/index.html</loc>
-    <lastmod>2025-04-18T13:48:43.223Z</lastmod>
-  </url>
-  <url>
-    <loc>https://analect.com/posts/ai-strategy-series/1-overview/index.html</loc>
-    <lastmod>2025-04-18T13:48:43.215Z</lastmod>
-  </url>
-  <url>
-    <loc>https://analect.com/posts/ai-strategy-series/3-gitops-platforms-to-mlops/index.html</loc>
-    <lastmod>2025-04-18T13:48:43.229Z</lastmod>
-  </url>
-  <url>
     <loc>https://analect.com/about.html</loc>
-    <lastmod>2025-04-18T13:48:43.201Z</lastmod>
-  </url>
-  <url>
-    <loc>https://analect.com/index.html</loc>
-    <lastmod>2025-04-18T13:48:43.212Z</lastmod>
+    <lastmod>2025-06-27T07:25:24.407Z</lastmod>
   </url>
   <url>
     <loc>https://analect.com/posts/index.html</loc>
-    <lastmod>2025-04-18T13:48:43.263Z</lastmod>
+    <lastmod>2025-06-27T07:25:24.468Z</lastmod>
   </url>
   <url>
-    <loc>https://analect.com/posts/ai-strategy-series/4-dataops-modular-tooling/index.html</loc>
-    <lastmod>2025-04-18T13:48:43.248Z</lastmod>
+    <loc>https://analect.com/posts/ai-strategy-series/1-overview/index.html</loc>
+    <lastmod>2025-06-27T07:25:24.421Z</lastmod>
+  </url>
+  <url>
+    <loc>https://analect.com/posts/ai-strategy-series/2-business-applicability-digital-transform/index.html</loc>
+    <lastmod>2025-06-27T07:25:24.429Z</lastmod>
   </url>
   <url>
     <loc>https://analect.com/posts/ai-strategy-series/5-llm-apps-llmops/index.html</loc>
-    <lastmod>2025-04-18T13:48:43.262Z</lastmod>
+    <lastmod>2025-06-27T07:25:24.468Z</lastmod>
+  </url>
+  <url>
+    <loc>https://analect.com/posts/ai-strategy-series/3-gitops-platforms-to-mlops/index.html</loc>
+    <lastmod>2025-06-27T07:25:24.435Z</lastmod>
+  </url>
+  <url>
+    <loc>https://analect.com/posts/ai-strategy-series/4-dataops-modular-tooling/index.html</loc>
+    <lastmod>2025-06-27T07:25:24.454Z</lastmod>
+  </url>
+  <url>
+    <loc>https://analect.com/index.html</loc>
+    <lastmod>2025-06-27T07:25:24.418Z</lastmod>
   </url>
 </urlset>
